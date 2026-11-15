@@ -128,3 +128,7 @@ Debug a few spots: `--only es-playa-de-el-palmar fr-loire-a-blois`; skip sources
 
 ~17 KB per spot (all series, 7 days hourly + `h3` to day 14) → ~230 MB for 13.3k spots plus index and
 zones; the validator fails above 800 MB.
+Each tile entry also carries `h0` (epoch seconds of the generation hour) and `hs` (36 hourly scores of its
+best mode `bm` from `h0`, `null` without data) so the map can tell which spots are fishing well right now
+without downloading spot files; that adds ~130 bytes per spot to the tiles. Both fields are optional in
+the validator for older files, but the build always writes them.

@@ -84,3 +84,46 @@ def test_round_list():
     assert products.round_list(np.array([359.6]), "dir") == [0]
     assert products.round_list(np.array([0.123, 123.45]), "q") == [0.12, 123.5]
     assert json.dumps(products.round_list(np.array([55.0]), "sc")) == "[55]"
+
+
+def _doc(n=48, start="2026-11-15T00:00:00Z"):
+    return {"id": "es-x", "name": "X", "lat": 43.2, "lon": -8.9, "kind": "sea", "type": "pier", "zone": "es-z",
+            "region": "es-ga", "tz": "Europe/Madrid", "modes": ["spin", "rock"],
+            "h": {"start": start, "step": 1, "n": n,
+                  "sc": {"spin": [k if k % 5 else None for k in range(n)], "rock": [90 - k for k in range(n)]}}}
+
+
+def test_index_entry_hourly_scores_from_generation_hour():
+    doc = _doc()
+    now = dt.datetime(2026, 11, 15, 10, 20, tzinfo=dt.timezone.utc)
+    e = products.index_entry(doc, now)
+    assert e["bm"] == "rock" and e["b"] == 90
+    assert e["h0"] == int(dt.datetime(2026, 11, 15, 10, tzinfo=dt.timezone.utc).timestamp())
+    assert len(e["hs"]) == 36
+    assert e["hs"] == [90 - k for k in range(10, 46)]
+    s = json.dumps(e, separators=(",", ":"))
+    assert '"h0":1794736800' in s and '"hs":[80,79,' in s
+
+
+def test_hourly_from_now_pads_with_null_and_clamps():
+    doc = _doc(n=20)
+    now = dt.datetime(2026, 11, 15, 10, 0, tzinfo=dt.timezone.utc)
+    h0, hs = products.hourly_from_now(doc, "spin", now)
+    assert h0 == int(now.timestamp())
+    assert hs[:10] == [None, 11, 12, 13, 14, None, 16, 17, 18, 19] and hs[10:] == [None] * 26
+    early = dt.datetime(2026, 11, 14, 22, tzinfo=dt.timezone.utc)
+    h0, hs = products.hourly_from_now(doc, "spin", early)
+    assert h0 == int(dt.datetime(2026, 11, 15, tzinfo=dt.timezone.utc).timestamp()) and hs[1] == 1
+    assert products.hourly_from_now(doc, None, now)[1] == [None] * 36
+
+
+def test_validate_tile_hours():
+    from fishershour_pipeline.validate import check_tile_hours
+    ok = {"h0": 1794736800, "hs": [50] * 35 + [None]}
+    assert check_tile_hours(ok) == []
+    assert check_tile_hours({}) == []  # older tiles without the fields stay valid
+    assert check_tile_hours({"h0": 1794736800}) != []
+    assert check_tile_hours({"h0": 1794736801, "hs": ok["hs"]}) != []
+    assert check_tile_hours({"h0": 1794736800, "hs": [50] * 35}) != []
+    assert check_tile_hours({"h0": 1794736800, "hs": [50.5] * 36}) != []
+    assert check_tile_hours({"h0": 1794736800, "hs": [101] * 36}) != []

@@ -8,6 +8,7 @@ BASE_URL = os.environ.get("FISHERSHOUR_BASE_URL", "https://dprados.github.io/fis
 
 # Horizons (data-schema §2): `h` = today 00Z .. +7 days hourly; `h3` = day 7 .. day 14 every 3 h.
 H_HOURS = 168
+TILE_HOURS = 36          # hourly scores of the best mode carried by each tile entry (h0/hs)
 H3_STEP = 3
 H3_N = 56
 DAILY_DAYS = 14          # daily.q / daily.qn length without GloFAS (GloFAS: up to 30)

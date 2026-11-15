@@ -294,10 +294,24 @@ def best_of_day(doc: dict, d: dt.date) -> tuple[int, str | None, int | None]:
     return best
 
 
+def hourly_from_now(doc: dict, mode: str | None, now: dt.datetime,
+                    n: int = config.TILE_HOURS) -> tuple[int, list]:
+    """(h0, hs): epoch seconds of the last hourly axis point at or before `now` (the axis start if `now`
+    precedes it) and the next `n` hourly scores of `mode` from there, None where there is no data."""
+    start = dt.datetime.strptime(doc["h"]["start"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=dt.timezone.utc)
+    t0 = int(start.timestamp())
+    k0 = max(0, (int(now.timestamp()) - t0) // 3600)
+    row = (doc["h"]["sc"].get(mode) or []) if mode else []
+    hs = [row[k] if k < len(row) else None for k in range(k0, k0 + n)]
+    return t0 + 3600 * k0, hs
+
+
 def index_entry(doc: dict, now: dt.datetime) -> dict:
     b, bm, _ = best_of_day(doc, local_today(doc["tz"], now))
+    h0, hs = hourly_from_now(doc, bm, now)
     return {"id": doc["id"], "n": doc["name"], "lat": doc["lat"], "lon": doc["lon"], "k": doc["kind"],
-            "t": doc["type"], "z": doc["zone"], "g": doc["region"], "m": doc["modes"], "b": b, "bm": bm}
+            "t": doc["type"], "z": doc["zone"], "g": doc["region"], "m": doc["modes"], "b": b, "bm": bm,
+            "h0": h0, "hs": hs}
 
 
 def zone_candidates(doc: dict, now: dt.datetime) -> dict[str, dict]:

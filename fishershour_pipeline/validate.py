@@ -50,6 +50,27 @@ def check_block(doc, name, n_expected, step, errors):
             errors.append(f"{doc['id']}: {name}.sc.{m} invalid")
 
 
+def _is_int(v) -> bool:
+    return isinstance(v, int) and not isinstance(v, bool)
+
+
+def check_tile_hours(e: dict) -> list[str]:
+    """Optional h0/hs of a tile entry (older files lack them; the pipeline always writes both)."""
+    if "h0" not in e and "hs" not in e:
+        return []
+    if ("h0" in e) != ("hs" in e):
+        return ["h0 and hs must come together"]
+    out = []
+    h0, hs = e["h0"], e["hs"]
+    if not _is_int(h0) or h0 <= 0 or h0 % 3600:
+        out.append(f"bad h0 {h0!r}")
+    if not isinstance(hs, list) or len(hs) != config.TILE_HOURS:
+        out.append(f"hs must be a list of {config.TILE_HOURS}")
+    elif any(v is not None and not (_is_int(v) and 0 <= v <= 100) for v in hs):
+        out.append("hs values must be ints 0-100 or null")
+    return out
+
+
 def check_spot(doc, errors, warnings):
     sid = doc.get("id", "?")
     for k in ("v", "id", "name", "aliases", "lat", "lon", "country", "zone", "region", "tz", "kind", "type", "modes",
@@ -119,6 +140,7 @@ def main(argv=None) -> int:
                 errors.append(f"tile {t}/{e['id']}: unknown region {e.get('g')}")
             if not (0 <= e.get("b", -1) <= 100):
                 errors.append(f"tile {t}/{e['id']}: bad b")
+            errors.extend(f"tile {t}/{e['id']}: {msg}" for msg in check_tile_hours(e))
             if not os.path.exists(os.path.join(root, "spots", f"{e['id']}.json")):
                 errors.append(f"tile {t}/{e['id']}: spot file missing")
     for z in zone_ids:
