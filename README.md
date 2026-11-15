@@ -3,7 +3,7 @@
 Open-data pipeline of **Fishers Hour** (fishing forecast for sea, rivers and reservoirs in Spain, Portugal,
 France and Atlantic Morocco). It builds a static JSON site, published with GitHub Pages at
 `https://dprados.github.io/fishershour-data/v1/`. The contract with the iOS app is
-`apps/ardora/docs/data-schema.md` in the app repo (moving to `apps/fishershour/`): change it there first.
+`apps/fishershour/docs/data-schema.md` in the app repo (moving to `apps/fishershour/`): change it there first.
 
 The fishing score (0–100 per hour and modality, §3 of the contract) is computed **only here**; the app
 shows it, groups it into windows and calibrates it. Tides are published as EOT20 constants and the app
