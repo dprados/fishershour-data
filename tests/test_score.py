@@ -139,7 +139,8 @@ def _sea_inputs(**kw):
     return {k: np.asarray(v, dtype=float) for k, v in base.items()}
 
 
-def test_sea_score_product_and_rounding():
+def test_sea_score_product_and_rounding(monkeypatch):
+    monkeypatch.setattr(S, "CALIB", {})   # raw product; calibration tested separately
     # spin: S=1, W=1, C=1, L=0.9 -> 90
     assert one(S.sea_scores("spin", _sea_inputs(), 270)) == 90
     # dawn bonus and full moon can exceed 100 -> clamped
@@ -176,8 +177,8 @@ def test_level_trend():
 
 def test_water_temperature():
     assert one(S.factor_water_temp("fly", [12], [12])) == 1
-    assert one(S.factor_water_temp("fly", [18], [18])) == pytest.approx(0.5)
-    assert one(S.factor_water_temp("fspin", [9], [9])) == pytest.approx(0.5)
+    assert one(S.factor_water_temp("fly", [17], [17])) == pytest.approx(0.5)
+    assert one(S.factor_water_temp("fspin", [12], [12])) == pytest.approx(0.5)
     assert one(S.factor_water_temp("bottom", [20], [24])) == pytest.approx(0.85)   # drop > 3 °C in 72 h
     assert one(S.factor_water_temp("bottom", [np.nan], [np.nan])) == 1
 
@@ -214,12 +215,26 @@ def _fresh_inputs(**kw):
     return out
 
 
-def test_fresh_score_river_flood_and_reservoir_level():
+def test_fresh_score_river_flood_and_reservoir_level(monkeypatch):
+    monkeypatch.setattr(S, "CALIB", {})
     assert one(S.fresh_scores("fly", "river", _fresh_inputs())) == 90
     assert one(S.fresh_scores("fly", "river", _fresh_inputs(r=[3.5]))) == 27      # flood: 0.3
     # reservoir: no flow factor, rising level 1.05, light wind 1.05
-    v = one(S.fresh_scores("fspin", "reservoir", _fresh_inputs(ws=[3.0], lvl_trend=2.0, r=[5.0])))
+    v = one(S.fresh_scores("fspin", "reservoir", _fresh_inputs(ws=[3.0], lvl_trend=2.0, r=[5.0], wt=[18], wt72=[18])))
     assert v == round(100 * 0.9 * 1.05 * 1.05)
+
+
+def test_calibration_stretch():
+    lo, hi = S.CALIB[("sea", "spin")]
+    assert lo == 0.0 and hi > 1
+    # a plain daytime hour (raw 0.9) is «buena», not «alta»; dawn + moving tide + moon reaches «alta»
+    assert S.level(one(S.sea_scores("spin", _sea_inputs(), 270))) == 3
+    assert S.level(one(S.sea_scores("spin", _sea_inputs(phase=[2], moon=np.array([1.03]), p=[1010]), 270))) == 4
+    # unsafe stays 0 and the scale never exceeds 100
+    assert one(S.finish(np.array([0.0]), np.array([False]), ("sea", "spin"))) == 0
+    assert one(S.finish(np.array([9.0]), np.array([False]), ("sea", "spin"))) == 100
+    # every family × mode has a calibration
+    assert {m for f, m in S.CALIB} == set(S.SEA_MODES) | set(S.FRESH_MODES)
 
 
 def test_levels():

@@ -1,6 +1,6 @@
 """Fishing score — data-schema.md §3, implemented literally (pipeline only; the app does not recompute it).
 
-sc = round(100 · Π factors), clamped to 0..100, per hour and modality. All functions are vectorised over
+sc = calibrated(Π factors) on 0..100 (§3.5), per hour and modality. All functions are vectorised over
 numpy arrays (NaN = missing). A missing input makes its factor 1, except the core inputs of each family
 (`hs` and wind for sea, wind for freshwater), whose absence makes the hour null.
 """
@@ -19,7 +19,26 @@ S_TRAPEZOID = {
     "kayak": (0.0, 0.0, 0.6, 1.2),
     "spear": (0.0, 0.0, 0.5, 1.0),
 }
-WT_TRAPEZOID = {"fly": (4, 8, 16, 20), "fspin": (6, 12, 24, 29), "bottom": (8, 15, 27, 31)}
+WT_TRAPEZOID = {"fly": (5, 9, 15, 19), "fspin": (8, 16, 24, 29), "bottom": (10, 17, 26, 31)}
+
+# Calibration (§3.5, 2026-11-15): raw product → 0..100 with a per-(family, mode) linear stretch, so that on
+# days where the modality is possible the daily best is «Picada alta» on ~25 % of
+# the days where the modality is possible (HI = 75th percentile of the non-zero daily best / 0.75; LO = 0). Fitted on 7 days × ~3,000 real spots (scratch script, see README «Calibración»).
+# raw ≤ LO → 0, raw ≥ HI → 100. Unsafe hours (raw 0) stay 0.
+CALIB: dict[tuple[str, str], tuple[float, float]] = {
+    ("sea", "surf"): (0.0, 1.192),
+    ("sea", "spin"): (0.0, 1.211),
+    ("sea", "rock"): (0.0, 1.220),
+    ("sea", "eging"): (0.0, 1.368),
+    ("sea", "kayak"): (0.0, 1.490),
+    ("sea", "spear"): (0.0, 1.338),
+    ("river", "fspin"): (0.0, 0.747),
+    ("river", "fly"): (0.0, 1.208),
+    ("river", "bottom"): (0.0, 0.667),
+    ("reservoir", "fspin"): (0.0, 1.590),
+    ("reservoir", "fly"): (0.0, 1.610),
+    ("reservoir", "bottom"): (0.0, 1.426),
+}
 KMH = 3.6
 
 
@@ -156,7 +175,7 @@ def sea_scores(mode: str, s: dict, facing) -> np.ndarray:
          * s["moon"]
          * safety_sea(mode, s["hs"], s["wg"], s["ws"], s["wd"], facing, s["cl"]))
     missing = ~np.isfinite(_a(s["hs"])) | ~np.isfinite(_a(s["ws"]))
-    return finish(f, missing)
+    return finish(f, missing, ("sea", mode))
 
 
 # ------------------------------------------------------------------ freshwater
@@ -220,11 +239,19 @@ def fresh_scores(mode: str, kind: str, s: dict) -> np.ndarray:
          * factor_pressure(s["p"], s["p12"])
          * s["moon"])
     missing = ~np.isfinite(_a(s["ws"]))
-    return finish(f, missing)
+    return finish(f, missing, (family(kind), mode))
 
 
-def finish(f, missing) -> np.ndarray:
-    sc = np.floor(np.clip(100.0 * _a(f), 0, 100) + 0.5 + 1e-9)
+def family(kind: str) -> str:
+    return "sea" if kind == "sea" else "river" if kind == "river" else "reservoir"
+
+
+def finish(f, missing, key: tuple[str, str] | None = None) -> np.ndarray:
+    f = _a(f)
+    if key in CALIB:
+        lo, hi = CALIB[key]
+        f = np.where(f > 0, (f - lo) / (hi - lo), 0.0)
+    sc = np.floor(np.clip(100.0 * f, 0, 100) + 0.5 + 1e-9)
     return np.where(missing, np.nan, sc)
 
 
