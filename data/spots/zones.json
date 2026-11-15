@@ -1,0 +1,4329 @@
+{
+"zones": {
+"es-a-coruna-fresh": {
+"es": "Ríos y embalses de La Coruña",
+"en": "A Coruña rivers and lakes",
+"fr": "Rivières et lacs : A Corogne",
+"pt": "Rios e albufeiras de Corunha"
+},
+"es-a-coruna-sea": {
+"es": "Costa de La Coruña",
+"en": "A Coruña coast",
+"fr": "Côte : A Corogne",
+"pt": "Costa de Corunha"
+},
+"es-alava-fresh": {
+"es": "Ríos y embalses de Álava",
+"en": "Álava rivers and lakes",
+"fr": "Rivières et lacs : Alava",
+"pt": "Rios e albufeiras de Araba"
+},
+"es-albacete-fresh": {
+"es": "Ríos y embalses de Albacete",
+"en": "Albacete rivers and lakes",
+"fr": "Rivières et lacs : Albacete",
+"pt": "Rios e albufeiras de Albacete"
+},
+"es-alicante-fresh": {
+"es": "Ríos y embalses de Alicante",
+"en": "Alacant rivers and lakes",
+"fr": "Rivières et lacs : Alicante",
+"pt": "Rios e albufeiras de Alacant"
+},
+"es-alicante-sea": {
+"es": "Costa de Alicante",
+"en": "Alacant coast",
+"fr": "Côte : Alicante",
+"pt": "Costa de Alacant"
+},
+"es-almeria-fresh": {
+"es": "Ríos y embalses de Almería",
+"en": "Almeria rivers and lakes",
+"fr": "Rivières et lacs : Alméria",
+"pt": "Rios e albufeiras de Almeria"
+},
+"es-almeria-sea": {
+"es": "Costa de Almería",
+"en": "Almeria coast",
+"fr": "Côte : Alméria",
+"pt": "Costa de Almeria"
+},
+"es-asturias-fresh": {
+"es": "Ríos y embalses de Asturias",
+"en": "Asturias rivers and lakes",
+"fr": "Rivières et lacs : Asturies",
+"pt": "Rios e albufeiras de Astúrias"
+},
+"es-asturias-sea": {
+"es": "Costa de Asturias",
+"en": "Asturias coast",
+"fr": "Côte : Asturies",
+"pt": "Costa de Astúrias"
+},
+"es-avila-fresh": {
+"es": "Ríos y embalses de Ávila",
+"en": "Ávila rivers and lakes",
+"fr": "Rivières et lacs : Ávila",
+"pt": "Rios e albufeiras de Ávila"
+},
+"es-badajoz-fresh": {
+"es": "Ríos y embalses de Badajoz",
+"en": "Badajoz rivers and lakes",
+"fr": "Rivières et lacs : Badajoz",
+"pt": "Rios e albufeiras de Badajoz"
+},
+"es-baleares-sea": {
+"es": "Costa de Baleares",
+"en": "Balearic Islands coast",
+"fr": "Côte : Baléares",
+"pt": "Costa de Baleares"
+},
+"es-barcelona-fresh": {
+"es": "Ríos y embalses de Barcelona",
+"en": "Barcelona rivers and lakes",
+"fr": "Rivières et lacs : Barcelone",
+"pt": "Rios e albufeiras de Barcelona"
+},
+"es-barcelona-sea": {
+"es": "Costa de Barcelona",
+"en": "Barcelona coast",
+"fr": "Côte : Barcelone",
+"pt": "Costa de Barcelona"
+},
+"es-bizkaia-sea": {
+"es": "Costa de Vizcaya",
+"en": "Biscay coast",
+"fr": "Côte : Biscaye",
+"pt": "Costa de Bizkaia"
+},
+"es-burgos-fresh": {
+"es": "Ríos y embalses de Burgos",
+"en": "Burgos rivers and lakes",
+"fr": "Rivières et lacs : Burgos",
+"pt": "Rios e albufeiras de Burgos"
+},
+"es-caceres-fresh": {
+"es": "Ríos y embalses de Cáceres",
+"en": "Cáceres rivers and lakes",
+"fr": "Rivières et lacs : Cáceres",
+"pt": "Rios e albufeiras de Cáceres"
+},
+"es-cadiz-fresh": {
+"es": "Ríos y embalses de Cádiz",
+"en": "Cádiz rivers and lakes",
+"fr": "Rivières et lacs : Cadix",
+"pt": "Rios e albufeiras de Cádiz"
+},
+"es-cadiz-sea": {
+"es": "Costa de Cádiz",
+"en": "Cádiz coast",
+"fr": "Côte : Cadix",
+"pt": "Costa de Cádiz"
+},
+"es-canarias-sea": {
+"es": "Costa de Canarias",
+"en": "Canary Islands coast",
+"fr": "Côte : Canaries",
+"pt": "Costa de Canárias"
+},
+"es-cantabria-fresh": {
+"es": "Ríos y embalses de Cantabria",
+"en": "Cantabria rivers and lakes",
+"fr": "Rivières et lacs : Cantabria",
+"pt": "Rios e albufeiras de Cantabria"
+},
+"es-cantabria-sea": {
+"es": "Costa de Cantabria",
+"en": "Cantabria coast",
+"fr": "Côte : Cantabria",
+"pt": "Costa de Cantabria"
+},
+"es-castellon-fresh": {
+"es": "Ríos y embalses de Castellón",
+"en": "Castelló rivers and lakes",
+"fr": "Rivières et lacs : Castellón",
+"pt": "Rios e albufeiras de Castelló"
+},
+"es-castellon-sea": {
+"es": "Costa de Castellón",
+"en": "Castelló coast",
+"fr": "Côte : Castellón",
+"pt": "Costa de Castelló"
+},
+"es-ciudad-real-fresh": {
+"es": "Ríos y embalses de Ciudad Real",
+"en": "Ciudad Real rivers and lakes",
+"fr": "Rivières et lacs : Ciudad Real",
+"pt": "Rios e albufeiras de Ciudad Real"
+},
+"es-comunidad-de-madrid-fresh": {
+"es": "Ríos y embalses de Comunidad de Madrid",
+"en": "Community of Madrid rivers and lakes",
+"fr": "Rivières et lacs : Communauté de Madrid",
+"pt": "Rios e albufeiras de Comunidade de Madrid"
+},
+"es-cordoba-fresh": {
+"es": "Ríos y embalses de Córdoba",
+"en": "Córdoba rivers and lakes",
+"fr": "Rivières et lacs : Cordoue",
+"pt": "Rios e albufeiras de Córdova"
+},
+"es-cuenca-fresh": {
+"es": "Ríos y embalses de Cuenca",
+"en": "Cuenca rivers and lakes",
+"fr": "Rivières et lacs : Cuenca",
+"pt": "Rios e albufeiras de Cuenca"
+},
+"es-el-hierro-sea": {
+"es": "Costa de El Hierro",
+"en": "El Hierro coast",
+"fr": "Côte : El Hierro",
+"pt": "Costa de El Hierro"
+},
+"es-fuerteventura-sea": {
+"es": "Costa de Fuerteventura",
+"en": "Fuerteventura coast",
+"fr": "Côte : Fuerteventura",
+"pt": "Costa de Fuerteventura"
+},
+"es-gipuzkoa-fresh": {
+"es": "Ríos y embalses de Guipúzcoa",
+"en": "Gipuzkoa rivers and lakes",
+"fr": "Rivières et lacs : Guipuscoa",
+"pt": "Rios e albufeiras de Guipúscoa"
+},
+"es-gipuzkoa-sea": {
+"es": "Costa de Guipúzcoa",
+"en": "Gipuzkoa coast",
+"fr": "Côte : Guipuscoa",
+"pt": "Costa de Guipúscoa"
+},
+"es-girona-fresh": {
+"es": "Ríos y embalses de Gerona",
+"en": "Girona rivers and lakes",
+"fr": "Rivières et lacs : Gérone",
+"pt": "Rios e albufeiras de Gerunda"
+},
+"es-girona-sea": {
+"es": "Costa de Gerona",
+"en": "Girona coast",
+"fr": "Côte : Gérone",
+"pt": "Costa de Gerunda"
+},
+"es-gran-canaria-sea": {
+"es": "Costa de Gran Canaria",
+"en": "Gran Canaria coast",
+"fr": "Côte : Gran Canaria",
+"pt": "Costa de Gran Canaria"
+},
+"es-granada-fresh": {
+"es": "Ríos y embalses de Granada",
+"en": "Granada rivers and lakes",
+"fr": "Rivières et lacs : Grenade",
+"pt": "Rios e albufeiras de Granada"
+},
+"es-granada-sea": {
+"es": "Costa de Granada",
+"en": "Granada coast",
+"fr": "Côte : Grenade",
+"pt": "Costa de Granada"
+},
+"es-guadalajara-fresh": {
+"es": "Ríos y embalses de Guadalajara",
+"en": "Guadalajara rivers and lakes",
+"fr": "Rivières et lacs : Guadalajara",
+"pt": "Rios e albufeiras de Guadalajara"
+},
+"es-huelva-fresh": {
+"es": "Ríos y embalses de Huelva",
+"en": "Huelva rivers and lakes",
+"fr": "Rivières et lacs : Huelva",
+"pt": "Rios e albufeiras de Huelva"
+},
+"es-huelva-sea": {
+"es": "Costa de Huelva",
+"en": "Huelva coast",
+"fr": "Côte : Huelva",
+"pt": "Costa de Huelva"
+},
+"es-huesca-fresh": {
+"es": "Ríos y embalses de Huesca",
+"en": "Huesca rivers and lakes",
+"fr": "Rivières et lacs : Huesca",
+"pt": "Rios e albufeiras de Huesca"
+},
+"es-ibiza-formentera-sea": {
+"es": "Costa de Ibiza y Formentera",
+"en": "Ibiza y Formentera coast",
+"fr": "Côte : Ibiza y Formentera",
+"pt": "Costa de Ibiza y Formentera"
+},
+"es-jaen-fresh": {
+"es": "Ríos y embalses de Jaén",
+"en": "Jaén rivers and lakes",
+"fr": "Rivières et lacs : Jaén",
+"pt": "Rios e albufeiras de Jaén"
+},
+"es-la-gomera-sea": {
+"es": "Costa de La Gomera",
+"en": "La Gomera coast",
+"fr": "Côte : La Gomera",
+"pt": "Costa de La Gomera"
+},
+"es-la-palma-sea": {
+"es": "Costa de La Palma",
+"en": "La Palma coast",
+"fr": "Côte : La Palma",
+"pt": "Costa de La Palma"
+},
+"es-la-rioja-fresh": {
+"es": "Ríos y embalses de La Rioja",
+"en": "Rioja rivers and lakes",
+"fr": "Rivières et lacs : La Rioja",
+"pt": "Rios e albufeiras de La Rioja"
+},
+"es-lanzarote-sea": {
+"es": "Costa de Lanzarote",
+"en": "Lanzarote coast",
+"fr": "Côte : Lanzarote",
+"pt": "Costa de Lanzarote"
+},
+"es-leon-fresh": {
+"es": "Ríos y embalses de León",
+"en": "León rivers and lakes",
+"fr": "Rivières et lacs : León",
+"pt": "Rios e albufeiras de Leão"
+},
+"es-lleida-fresh": {
+"es": "Ríos y embalses de Lérida",
+"en": "Lleida rivers and lakes",
+"fr": "Rivières et lacs : Lérida",
+"pt": "Rios e albufeiras de Lérida"
+},
+"es-lugo-fresh": {
+"es": "Ríos y embalses de Lugo",
+"en": "Lugo rivers and lakes",
+"fr": "Rivières et lacs : Lugo",
+"pt": "Rios e albufeiras de Lugo"
+},
+"es-lugo-sea": {
+"es": "Costa de Lugo",
+"en": "Lugo coast",
+"fr": "Côte : Lugo",
+"pt": "Costa de Lugo"
+},
+"es-malaga-fresh": {
+"es": "Ríos y embalses de Málaga",
+"en": "Malaga rivers and lakes",
+"fr": "Rivières et lacs : Malaga",
+"pt": "Rios e albufeiras de Málaga"
+},
+"es-malaga-sea": {
+"es": "Costa de Málaga",
+"en": "Malaga coast",
+"fr": "Côte : Malaga",
+"pt": "Costa de Málaga"
+},
+"es-mallorca-fresh": {
+"es": "Ríos y embalses de Mallorca",
+"en": "Mallorca rivers and lakes",
+"fr": "Rivières et lacs : Mallorca",
+"pt": "Rios e albufeiras de Mallorca"
+},
+"es-mallorca-sea": {
+"es": "Costa de Mallorca",
+"en": "Mallorca coast",
+"fr": "Côte : Mallorca",
+"pt": "Costa de Mallorca"
+},
+"es-menorca-sea": {
+"es": "Costa de Menorca",
+"en": "Menorca coast",
+"fr": "Côte : Menorca",
+"pt": "Costa de Menorca"
+},
+"es-navarra-fresh": {
+"es": "Ríos y embalses de Navarra",
+"en": "Navarre rivers and lakes",
+"fr": "Rivières et lacs : Navarre",
+"pt": "Rios e albufeiras de Navarra"
+},
+"es-otros-sea": {
+"es": "Costa de otras zonas",
+"en": "other coast",
+"fr": "Côte : autres",
+"pt": "Costa de outras"
+},
+"es-ourense-fresh": {
+"es": "Ríos y embalses de Ourense",
+"en": "Ourense rivers and lakes",
+"fr": "Rivières et lacs : Ourense",
+"pt": "Rios e albufeiras de Ourense"
+},
+"es-palencia-fresh": {
+"es": "Ríos y embalses de Palencia",
+"en": "Palencia rivers and lakes",
+"fr": "Rivières et lacs : Palencia",
+"pt": "Rios e albufeiras de Palencia"
+},
+"es-pontevedra-fresh": {
+"es": "Ríos y embalses de Pontevedra",
+"en": "Pontevedra rivers and lakes",
+"fr": "Rivières et lacs : Pontevedra",
+"pt": "Rios e albufeiras de Pontevedra"
+},
+"es-pontevedra-sea": {
+"es": "Costa de Pontevedra",
+"en": "Pontevedra coast",
+"fr": "Côte : Pontevedra",
+"pt": "Costa de Pontevedra"
+},
+"es-region-de-murcia-fresh": {
+"es": "Ríos y embalses de Región de Murcia",
+"en": "Region of Murcia rivers and lakes",
+"fr": "Rivières et lacs : Région de Murcie",
+"pt": "Rios e albufeiras de Região de Múrcia"
+},
+"es-region-de-murcia-sea": {
+"es": "Costa de Región de Murcia",
+"en": "Region of Murcia coast",
+"fr": "Côte : Région de Murcie",
+"pt": "Costa de Região de Múrcia"
+},
+"es-salamanca-fresh": {
+"es": "Ríos y embalses de Salamanca",
+"en": "Salamanca rivers and lakes",
+"fr": "Rivières et lacs : Salamanque",
+"pt": "Rios e albufeiras de Salamanca"
+},
+"es-segovia-fresh": {
+"es": "Ríos y embalses de Segovia",
+"en": "Segovia rivers and lakes",
+"fr": "Rivières et lacs : Ségovie",
+"pt": "Rios e albufeiras de Segovia"
+},
+"es-sevilla-fresh": {
+"es": "Ríos y embalses de Sevilla",
+"en": "Sevilla rivers and lakes",
+"fr": "Rivières et lacs : Séville",
+"pt": "Rios e albufeiras de Sevilla"
+},
+"es-soria-fresh": {
+"es": "Ríos y embalses de Soria",
+"en": "Soria rivers and lakes",
+"fr": "Rivières et lacs : Soria",
+"pt": "Rios e albufeiras de Sória"
+},
+"es-tarragona-fresh": {
+"es": "Ríos y embalses de Tarragona",
+"en": "Tarragona rivers and lakes",
+"fr": "Rivières et lacs : Tarragone",
+"pt": "Rios e albufeiras de Tarragona"
+},
+"es-tarragona-sea": {
+"es": "Costa de Tarragona",
+"en": "Tarragona coast",
+"fr": "Côte : Tarragone",
+"pt": "Costa de Tarragona"
+},
+"es-tenerife-sea": {
+"es": "Costa de Tenerife",
+"en": "Tenerife coast",
+"fr": "Côte : Tenerife",
+"pt": "Costa de Tenerife"
+},
+"es-teruel-fresh": {
+"es": "Ríos y embalses de Teruel",
+"en": "Teruel rivers and lakes",
+"fr": "Rivières et lacs : Teruel",
+"pt": "Rios e albufeiras de Teruel"
+},
+"es-toledo-fresh": {
+"es": "Ríos y embalses de Toledo",
+"en": "Toledo rivers and lakes",
+"fr": "Rivières et lacs : Tolède",
+"pt": "Rios e albufeiras de Toledo"
+},
+"es-valencia-fresh": {
+"es": "Ríos y embalses de Valencia",
+"en": "Valencia rivers and lakes",
+"fr": "Rivières et lacs : Valence",
+"pt": "Rios e albufeiras de València"
+},
+"es-valencia-sea": {
+"es": "Costa de Valencia",
+"en": "Valencia coast",
+"fr": "Côte : Valence",
+"pt": "Costa de València"
+},
+"es-valladolid-fresh": {
+"es": "Ríos y embalses de Valladolid",
+"en": "Valladolid rivers and lakes",
+"fr": "Rivières et lacs : Valladolid",
+"pt": "Rios e albufeiras de Valladolid"
+},
+"es-zamora-fresh": {
+"es": "Ríos y embalses de Zamora",
+"en": "Zamora rivers and lakes",
+"fr": "Rivières et lacs : Zamora",
+"pt": "Rios e albufeiras de Zamora"
+},
+"es-zaragoza-fresh": {
+"es": "Ríos y embalses de Zaragoza",
+"en": "Zaragoza rivers and lakes",
+"fr": "Rivières et lacs : Saragosse",
+"pt": "Rios e albufeiras de Saragoça"
+},
+"fr-ain-fresh": {
+"es": "Ríos y embalses de Ain",
+"en": "Ain rivers and lakes",
+"fr": "Rivières et lacs : Ain",
+"pt": "Rios e albufeiras de Ain"
+},
+"fr-aisne-fresh": {
+"es": "Ríos y embalses de Aisne",
+"en": "Aisne rivers and lakes",
+"fr": "Rivières et lacs : Aisne",
+"pt": "Rios e albufeiras de Aisne"
+},
+"fr-allier-fresh": {
+"es": "Ríos y embalses de Allier",
+"en": "Allier rivers and lakes",
+"fr": "Rivières et lacs : Allier",
+"pt": "Rios e albufeiras de Allier"
+},
+"fr-alpes-de-haute-provence-fresh": {
+"es": "Ríos y embalses de Alpes de Alta Provenza",
+"en": "Alpes-de-Haute-Provence rivers and lakes",
+"fr": "Rivières et lacs : Alpes-de-Haute-Provence",
+"pt": "Rios e albufeiras de Alpes-de-Haute-Provence"
+},
+"fr-alpes-maritimes-fresh": {
+"es": "Ríos y embalses de Alpes Marítimos",
+"en": "Maritime Alps rivers and lakes",
+"fr": "Rivières et lacs : Alpes-Maritimes",
+"pt": "Rios e albufeiras de Alpes Marítimos"
+},
+"fr-alpes-maritimes-sea": {
+"es": "Costa de Alpes Marítimos",
+"en": "Maritime Alps coast",
+"fr": "Côte : Alpes-Maritimes",
+"pt": "Costa de Alpes Marítimos"
+},
+"fr-ardeche-fresh": {
+"es": "Ríos y embalses de Ardecha",
+"en": "Ardèche rivers and lakes",
+"fr": "Rivières et lacs : Ardèche",
+"pt": "Rios e albufeiras de Ardèche"
+},
+"fr-ardennes-fresh": {
+"es": "Ríos y embalses de Ardenas",
+"en": "Ardennes rivers and lakes",
+"fr": "Rivières et lacs : Ardennes",
+"pt": "Rios e albufeiras de Ardenas"
+},
+"fr-ariege-fresh": {
+"es": "Ríos y embalses de Ariège",
+"en": "Ariège rivers and lakes",
+"fr": "Rivières et lacs : Ariège",
+"pt": "Rios e albufeiras de Ariège"
+},
+"fr-aube-fresh": {
+"es": "Ríos y embalses de Aube",
+"en": "Aube rivers and lakes",
+"fr": "Rivières et lacs : Aube",
+"pt": "Rios e albufeiras de Aube"
+},
+"fr-aude-fresh": {
+"es": "Ríos y embalses de Aude",
+"en": "Aude rivers and lakes",
+"fr": "Rivières et lacs : Aude",
+"pt": "Rios e albufeiras de Aude"
+},
+"fr-aude-sea": {
+"es": "Costa de Aude",
+"en": "Aude coast",
+"fr": "Côte : Aude",
+"pt": "Costa de Aude"
+},
+"fr-aveyron-fresh": {
+"es": "Ríos y embalses de Aveyron",
+"en": "Aveyron rivers and lakes",
+"fr": "Rivières et lacs : Aveyron",
+"pt": "Rios e albufeiras de Aveyron"
+},
+"fr-bas-rhin-fresh": {
+"es": "Ríos y embalses de Bajo-Rin",
+"en": "Bas-Rhin rivers and lakes",
+"fr": "Rivières et lacs : Bas-Rhin",
+"pt": "Rios e albufeiras de Baixo-Reno"
+},
+"fr-bouches-du-rhone-fresh": {
+"es": "Ríos y embalses de Bocas del Ródano",
+"en": "Bouches-du-Rhône rivers and lakes",
+"fr": "Rivières et lacs : Bouches-du-Rhône",
+"pt": "Rios e albufeiras de Bouches-du-Rhône"
+},
+"fr-bouches-du-rhone-sea": {
+"es": "Costa de Bocas del Ródano",
+"en": "Bouches-du-Rhône coast",
+"fr": "Côte : Bouches-du-Rhône",
+"pt": "Costa de Bouches-du-Rhône"
+},
+"fr-calvados-fresh": {
+"es": "Ríos y embalses de Calvados",
+"en": "Calvados rivers and lakes",
+"fr": "Rivières et lacs : Calvados",
+"pt": "Rios e albufeiras de Calvados"
+},
+"fr-calvados-sea": {
+"es": "Costa de Calvados",
+"en": "Calvados coast",
+"fr": "Côte : Calvados",
+"pt": "Costa de Calvados"
+},
+"fr-cantal-fresh": {
+"es": "Ríos y embalses de Cantal",
+"en": "Cantal rivers and lakes",
+"fr": "Rivières et lacs : Cantal",
+"pt": "Rios e albufeiras de Cantal"
+},
+"fr-charente-fresh": {
+"es": "Ríos y embalses de Charente",
+"en": "Charente rivers and lakes",
+"fr": "Rivières et lacs : Charente",
+"pt": "Rios e albufeiras de Charente"
+},
+"fr-charente-maritime-fresh": {
+"es": "Ríos y embalses de Charente-Maritime",
+"en": "Charente-Maritime rivers and lakes",
+"fr": "Rivières et lacs : Charente-Maritime",
+"pt": "Rios e albufeiras de Charente-Maritime"
+},
+"fr-charente-maritime-sea": {
+"es": "Costa de Charente-Maritime",
+"en": "Charente-Maritime coast",
+"fr": "Côte : Charente-Maritime",
+"pt": "Costa de Charente-Maritime"
+},
+"fr-cher-fresh": {
+"es": "Ríos y embalses de Cher",
+"en": "Cher rivers and lakes",
+"fr": "Rivières et lacs : Cher",
+"pt": "Rios e albufeiras de Cher"
+},
+"fr-correze-fresh": {
+"es": "Ríos y embalses de Corrèze",
+"en": "Corrèze rivers and lakes",
+"fr": "Rivières et lacs : Corrèze",
+"pt": "Rios e albufeiras de Corrèze"
+},
+"fr-corse-du-sud-fresh": {
+"es": "Ríos y embalses de Córcega del Sur",
+"en": "South Corsica rivers and lakes",
+"fr": "Rivières et lacs : Corse-du-Sud",
+"pt": "Rios e albufeiras de Corse-du-Sud"
+},
+"fr-corse-du-sud-sea": {
+"es": "Costa de Córcega del Sur",
+"en": "South Corsica coast",
+"fr": "Côte : Corse-du-Sud",
+"pt": "Costa de Corse-du-Sud"
+},
+"fr-cote-dor-fresh": {
+"es": "Ríos y embalses de Côte-d'Or",
+"en": "Côte-d'Or rivers and lakes",
+"fr": "Rivières et lacs : Côte-d'Or",
+"pt": "Rios e albufeiras de Côte-d'Or"
+},
+"fr-cotes-darmor-fresh": {
+"es": "Ríos y embalses de Côtes-d'Armor",
+"en": "Côtes-d'Armor rivers and lakes",
+"fr": "Rivières et lacs : Côtes-d'Armor",
+"pt": "Rios e albufeiras de Côtes-d'Armor"
+},
+"fr-cotes-darmor-sea": {
+"es": "Costa de Côtes-d'Armor",
+"en": "Côtes-d'Armor coast",
+"fr": "Côte : Côtes-d'Armor",
+"pt": "Costa de Côtes-d'Armor"
+},
+"fr-creuse-fresh": {
+"es": "Ríos y embalses de Creuse",
+"en": "Creuse rivers and lakes",
+"fr": "Rivières et lacs : Creuse",
+"pt": "Rios e albufeiras de Creuse"
+},
+"fr-deux-sevres-fresh": {
+"es": "Ríos y embalses de Deux-Sèvres",
+"en": "Deux-Sèvres rivers and lakes",
+"fr": "Rivières et lacs : Deux-Sèvres",
+"pt": "Rios e albufeiras de Deux-Sèvres"
+},
+"fr-dordogne-fresh": {
+"es": "Ríos y embalses de Dordogne",
+"en": "Dordogne rivers and lakes",
+"fr": "Rivières et lacs : Dordogne",
+"pt": "Rios e albufeiras de Dordogne"
+},
+"fr-doubs-fresh": {
+"es": "Ríos y embalses de Doubs",
+"en": "Doubs rivers and lakes",
+"fr": "Rivières et lacs : Doubs",
+"pt": "Rios e albufeiras de Doubs"
+},
+"fr-drome-fresh": {
+"es": "Ríos y embalses de Drôme",
+"en": "Drôme rivers and lakes",
+"fr": "Rivières et lacs : Drôme",
+"pt": "Rios e albufeiras de Drôme"
+},
+"fr-essonne-fresh": {
+"es": "Ríos y embalses de Essonne",
+"en": "Essonne rivers and lakes",
+"fr": "Rivières et lacs : Essonne",
+"pt": "Rios e albufeiras de Essonne"
+},
+"fr-eure-et-loir-fresh": {
+"es": "Ríos y embalses de Eure-y-Loir",
+"en": "Eure-et-Loir rivers and lakes",
+"fr": "Rivières et lacs : Eure-et-Loir",
+"pt": "Rios e albufeiras de Eure-et-Loir"
+},
+"fr-eure-fresh": {
+"es": "Ríos y embalses de Eure",
+"en": "Eure rivers and lakes",
+"fr": "Rivières et lacs : Eure",
+"pt": "Rios e albufeiras de Eure"
+},
+"fr-finistere-fresh": {
+"es": "Ríos y embalses de Finisterre",
+"en": "Finistère rivers and lakes",
+"fr": "Rivières et lacs : Finistère",
+"pt": "Rios e albufeiras de Finistère"
+},
+"fr-finistere-sea": {
+"es": "Costa de Finisterre",
+"en": "Finistère coast",
+"fr": "Côte : Finistère",
+"pt": "Costa de Finistère"
+},
+"fr-gard-fresh": {
+"es": "Ríos y embalses de Gard",
+"en": "Gard rivers and lakes",
+"fr": "Rivières et lacs : Gard",
+"pt": "Rios e albufeiras de Gard"
+},
+"fr-gard-sea": {
+"es": "Costa de Gard",
+"en": "Gard coast",
+"fr": "Côte : Gard",
+"pt": "Costa de Gard"
+},
+"fr-gers-fresh": {
+"es": "Ríos y embalses de Gers",
+"en": "Gers rivers and lakes",
+"fr": "Rivières et lacs : Gers",
+"pt": "Rios e albufeiras de Gers"
+},
+"fr-gironde-fresh": {
+"es": "Ríos y embalses de Gironda",
+"en": "Gironde rivers and lakes",
+"fr": "Rivières et lacs : Gironde",
+"pt": "Rios e albufeiras de Gironda"
+},
+"fr-gironde-sea": {
+"es": "Costa de Gironda",
+"en": "Gironde coast",
+"fr": "Côte : Gironde",
+"pt": "Costa de Gironda"
+},
+"fr-haut-rhin-fresh": {
+"es": "Ríos y embalses de Alto Rin",
+"en": "Haut-Rhin rivers and lakes",
+"fr": "Rivières et lacs : Haut-Rhin",
+"pt": "Rios e albufeiras de Haut-Rhin"
+},
+"fr-haute-corse-fresh": {
+"es": "Ríos y embalses de Alta Córcega",
+"en": "Upper Corsica rivers and lakes",
+"fr": "Rivières et lacs : Haute-Corse",
+"pt": "Rios e albufeiras de Haute-Corse"
+},
+"fr-haute-corse-sea": {
+"es": "Costa de Alta Córcega",
+"en": "Upper Corsica coast",
+"fr": "Côte : Haute-Corse",
+"pt": "Costa de Haute-Corse"
+},
+"fr-haute-garonne-fresh": {
+"es": "Ríos y embalses de Alto Garona",
+"en": "Haute-Garonne rivers and lakes",
+"fr": "Rivières et lacs : Haute-Garonne",
+"pt": "Rios e albufeiras de Alto Garona"
+},
+"fr-haute-loire-fresh": {
+"es": "Ríos y embalses de Alto Loira",
+"en": "Haute-Loire rivers and lakes",
+"fr": "Rivières et lacs : Haute-Loire",
+"pt": "Rios e albufeiras de Haute-Loire"
+},
+"fr-haute-marne-fresh": {
+"es": "Ríos y embalses de Alto Marne",
+"en": "Haute-Marne rivers and lakes",
+"fr": "Rivières et lacs : Haute-Marne",
+"pt": "Rios e albufeiras de Haute-Marne"
+},
+"fr-haute-saone-fresh": {
+"es": "Ríos y embalses de Alto Saona",
+"en": "Haute-Saône rivers and lakes",
+"fr": "Rivières et lacs : Haute-Saône",
+"pt": "Rios e albufeiras de Haute-Saône"
+},
+"fr-haute-savoie-fresh": {
+"es": "Ríos y embalses de Alta Saboya",
+"en": "Upper Savoy rivers and lakes",
+"fr": "Rivières et lacs : Haute-Savoie",
+"pt": "Rios e albufeiras de Haute-Savoie"
+},
+"fr-haute-vienne-fresh": {
+"es": "Ríos y embalses de Alto Vienne",
+"en": "Haute-Vienne rivers and lakes",
+"fr": "Rivières et lacs : Haute-Vienne",
+"pt": "Rios e albufeiras de Haute-Vienne"
+},
+"fr-hautes-alpes-fresh": {
+"es": "Ríos y embalses de Altos Alpes",
+"en": "Hautes-Alpes rivers and lakes",
+"fr": "Rivières et lacs : Hautes-Alpes",
+"pt": "Rios e albufeiras de Hautes-Alpes"
+},
+"fr-hautes-pyrenees-fresh": {
+"es": "Ríos y embalses de Altos Pirineos",
+"en": "Hautes Pyrenees rivers and lakes",
+"fr": "Rivières et lacs : Hautes-Pyrénées",
+"pt": "Rios e albufeiras de Altos Pirineus"
+},
+"fr-hauts-de-seine-fresh": {
+"es": "Ríos y embalses de Altos del Sena",
+"en": "Hauts-de-Seine rivers and lakes",
+"fr": "Rivières et lacs : Hauts-de-Seine",
+"pt": "Rios e albufeiras de Hauts-de-Seine"
+},
+"fr-herault-fresh": {
+"es": "Ríos y embalses de Hérault",
+"en": "Hérault rivers and lakes",
+"fr": "Rivières et lacs : Hérault",
+"pt": "Rios e albufeiras de Hérault"
+},
+"fr-herault-sea": {
+"es": "Costa de Hérault",
+"en": "Hérault coast",
+"fr": "Côte : Hérault",
+"pt": "Costa de Hérault"
+},
+"fr-ille-et-vilaine-fresh": {
+"es": "Ríos y embalses de Ille-et-Vilaine",
+"en": "Ille-et-Vilaine rivers and lakes",
+"fr": "Rivières et lacs : Ille-et-Vilaine",
+"pt": "Rios e albufeiras de Ille-et-Vilaine"
+},
+"fr-ille-et-vilaine-sea": {
+"es": "Costa de Ille-et-Vilaine",
+"en": "Ille-et-Vilaine coast",
+"fr": "Côte : Ille-et-Vilaine",
+"pt": "Costa de Ille-et-Vilaine"
+},
+"fr-indre-et-loire-fresh": {
+"es": "Ríos y embalses de Indre y Loira",
+"en": "Indre-et-Loire rivers and lakes",
+"fr": "Rivières et lacs : Indre-et-Loire",
+"pt": "Rios e albufeiras de Indre-et-Loire"
+},
+"fr-indre-fresh": {
+"es": "Ríos y embalses de Indre",
+"en": "Indre rivers and lakes",
+"fr": "Rivières et lacs : Indre",
+"pt": "Rios e albufeiras de Indre"
+},
+"fr-isere-fresh": {
+"es": "Ríos y embalses de Isère",
+"en": "Isère rivers and lakes",
+"fr": "Rivières et lacs : Isère",
+"pt": "Rios e albufeiras de Isère"
+},
+"fr-jura-fresh": {
+"es": "Ríos y embalses de Jura",
+"en": "Jura rivers and lakes",
+"fr": "Rivières et lacs : Jura",
+"pt": "Rios e albufeiras de Jura"
+},
+"fr-landes-fresh": {
+"es": "Ríos y embalses de Landas",
+"en": "Landes rivers and lakes",
+"fr": "Rivières et lacs : Landes",
+"pt": "Rios e albufeiras de Landes"
+},
+"fr-landes-sea": {
+"es": "Costa de Landas",
+"en": "Landes coast",
+"fr": "Côte : Landes",
+"pt": "Costa de Landes"
+},
+"fr-loir-et-cher-fresh": {
+"es": "Ríos y embalses de Loir y Cher",
+"en": "Loir-et-Cher rivers and lakes",
+"fr": "Rivières et lacs : Loir-et-Cher",
+"pt": "Rios e albufeiras de Loir-et-Cher"
+},
+"fr-loire-atlantique-fresh": {
+"es": "Ríos y embalses de Loira Atlántico",
+"en": "Loire-Atlantique rivers and lakes",
+"fr": "Rivières et lacs : Loire-Atlantique",
+"pt": "Rios e albufeiras de Loire-Atlantique"
+},
+"fr-loire-atlantique-sea": {
+"es": "Costa de Loira Atlántico",
+"en": "Loire-Atlantique coast",
+"fr": "Côte : Loire-Atlantique",
+"pt": "Costa de Loire-Atlantique"
+},
+"fr-loire-fresh": {
+"es": "Ríos y embalses de Loira",
+"en": "Loire rivers and lakes",
+"fr": "Rivières et lacs : Loire",
+"pt": "Rios e albufeiras de Loire"
+},
+"fr-loiret-fresh": {
+"es": "Ríos y embalses de Loiret",
+"en": "Loiret rivers and lakes",
+"fr": "Rivières et lacs : Loiret",
+"pt": "Rios e albufeiras de Loiret"
+},
+"fr-lot-et-garonne-fresh": {
+"es": "Ríos y embalses de Lot y Garona",
+"en": "Lot-et-Garonne rivers and lakes",
+"fr": "Rivières et lacs : Lot-et-Garonne",
+"pt": "Rios e albufeiras de Lot-et-Garonne"
+},
+"fr-lot-fresh": {
+"es": "Ríos y embalses de Lot",
+"en": "Lot rivers and lakes",
+"fr": "Rivières et lacs : Lot",
+"pt": "Rios e albufeiras de Lot"
+},
+"fr-lozere-fresh": {
+"es": "Ríos y embalses de Lozère",
+"en": "Lozère rivers and lakes",
+"fr": "Rivières et lacs : Lozère",
+"pt": "Rios e albufeiras de Lozère"
+},
+"fr-maine-et-loire-fresh": {
+"es": "Ríos y embalses de Maine-y-Loira",
+"en": "Maine-et-Loire rivers and lakes",
+"fr": "Rivières et lacs : Maine-et-Loire",
+"pt": "Rios e albufeiras de Maine-et-Loire"
+},
+"fr-manche-fresh": {
+"es": "Ríos y embalses de Mancha",
+"en": "Manche rivers and lakes",
+"fr": "Rivières et lacs : Manche",
+"pt": "Rios e albufeiras de Manche"
+},
+"fr-manche-sea": {
+"es": "Costa de Mancha",
+"en": "Manche coast",
+"fr": "Côte : Manche",
+"pt": "Costa de Manche"
+},
+"fr-marne-fresh": {
+"es": "Ríos y embalses de Marne",
+"en": "Marne rivers and lakes",
+"fr": "Rivières et lacs : Marne",
+"pt": "Rios e albufeiras de Marne"
+},
+"fr-mayenne-fresh": {
+"es": "Ríos y embalses de Mayenne",
+"en": "Mayenne rivers and lakes",
+"fr": "Rivières et lacs : Mayenne",
+"pt": "Rios e albufeiras de Mayenne"
+},
+"fr-metropole-de-lyon-fresh": {
+"es": "Ríos y embalses de Métropole de Lyon",
+"en": "Métropole de Lyon rivers and lakes",
+"fr": "Rivières et lacs : Métropole de Lyon",
+"pt": "Rios e albufeiras de Métropole de Lyon"
+},
+"fr-meurthe-et-moselle-fresh": {
+"es": "Ríos y embalses de Meurthe y Mosela",
+"en": "Meurthe-et-Moselle rivers and lakes",
+"fr": "Rivières et lacs : Meurthe-et-Moselle",
+"pt": "Rios e albufeiras de Meurthe-et-Moselle"
+},
+"fr-meuse-fresh": {
+"es": "Ríos y embalses de Mosa",
+"en": "Meuse rivers and lakes",
+"fr": "Rivières et lacs : Meuse",
+"pt": "Rios e albufeiras de Meuse"
+},
+"fr-morbihan-fresh": {
+"es": "Ríos y embalses de Morbihan",
+"en": "Morbihan rivers and lakes",
+"fr": "Rivières et lacs : Morbihan",
+"pt": "Rios e albufeiras de Morbihan"
+},
+"fr-morbihan-sea": {
+"es": "Costa de Morbihan",
+"en": "Morbihan coast",
+"fr": "Côte : Morbihan",
+"pt": "Costa de Morbihan"
+},
+"fr-moselle-fresh": {
+"es": "Ríos y embalses de Mosela",
+"en": "Moselle rivers and lakes",
+"fr": "Rivières et lacs : Moselle",
+"pt": "Rios e albufeiras de Moselle"
+},
+"fr-nievre-fresh": {
+"es": "Ríos y embalses de Nièvre",
+"en": "Nièvre rivers and lakes",
+"fr": "Rivières et lacs : Nièvre",
+"pt": "Rios e albufeiras de Nièvre"
+},
+"fr-nord-fresh": {
+"es": "Ríos y embalses de Norte",
+"en": "Nord rivers and lakes",
+"fr": "Rivières et lacs : Nord",
+"pt": "Rios e albufeiras de Nord"
+},
+"fr-nord-sea": {
+"es": "Costa de Norte",
+"en": "Nord coast",
+"fr": "Côte : Nord",
+"pt": "Costa de Nord"
+},
+"fr-oise-fresh": {
+"es": "Ríos y embalses de Oise",
+"en": "Oise rivers and lakes",
+"fr": "Rivières et lacs : Oise",
+"pt": "Rios e albufeiras de Oise"
+},
+"fr-orne-fresh": {
+"es": "Ríos y embalses de Orne",
+"en": "Orne rivers and lakes",
+"fr": "Rivières et lacs : Orne",
+"pt": "Rios e albufeiras de Orne"
+},
+"fr-paris-fresh": {
+"es": "Ríos y embalses de París",
+"en": "Paris rivers and lakes",
+"fr": "Rivières et lacs : Paris",
+"pt": "Rios e albufeiras de Paris"
+},
+"fr-pas-de-calais-fresh": {
+"es": "Ríos y embalses de Paso de Calais",
+"en": "Pas-de-Calais rivers and lakes",
+"fr": "Rivières et lacs : Pas-de-Calais",
+"pt": "Rios e albufeiras de Pas-de-Calais"
+},
+"fr-pas-de-calais-sea": {
+"es": "Costa de Paso de Calais",
+"en": "Pas-de-Calais coast",
+"fr": "Côte : Pas-de-Calais",
+"pt": "Costa de Pas-de-Calais"
+},
+"fr-puy-de-dome-fresh": {
+"es": "Ríos y embalses de Puy-de-Dôme",
+"en": "Puy-de-Dôme rivers and lakes",
+"fr": "Rivières et lacs : Puy-de-Dôme",
+"pt": "Rios e albufeiras de Puy-de-Dôme"
+},
+"fr-pyrenees-atlantiques-fresh": {
+"es": "Ríos y embalses de Pyrénées-Atlantiques",
+"en": "Pyrénées-Atlantiques rivers and lakes",
+"fr": "Rivières et lacs : Pyrénées-Atlantiques",
+"pt": "Rios e albufeiras de Pirenéus Atlânticos"
+},
+"fr-pyrenees-atlantiques-sea": {
+"es": "Costa de Pyrénées-Atlantiques",
+"en": "Pyrénées-Atlantiques coast",
+"fr": "Côte : Pyrénées-Atlantiques",
+"pt": "Costa de Pirenéus Atlânticos"
+},
+"fr-pyrenees-orientales-fresh": {
+"es": "Ríos y embalses de Pirineos Orientales",
+"en": "Pyrénées-Orientales rivers and lakes",
+"fr": "Rivières et lacs : Pyrénées-Orientales",
+"pt": "Rios e albufeiras de Pyrénées-Orientales"
+},
+"fr-pyrenees-orientales-sea": {
+"es": "Costa de Pirineos Orientales",
+"en": "Pyrénées-Orientales coast",
+"fr": "Côte : Pyrénées-Orientales",
+"pt": "Costa de Pyrénées-Orientales"
+},
+"fr-rhone-fresh": {
+"es": "Ríos y embalses de Ródano",
+"en": "Rhône rivers and lakes",
+"fr": "Rivières et lacs : Rhône",
+"pt": "Rios e albufeiras de Rhône"
+},
+"fr-saone-et-loire-fresh": {
+"es": "Ríos y embalses de Saona y Loira",
+"en": "Saône-et-Loire rivers and lakes",
+"fr": "Rivières et lacs : Saône-et-Loire",
+"pt": "Rios e albufeiras de Saône-et-Loire"
+},
+"fr-sarthe-fresh": {
+"es": "Ríos y embalses de Sarthe",
+"en": "Sarthe rivers and lakes",
+"fr": "Rivières et lacs : Sarthe",
+"pt": "Rios e albufeiras de Sarthe"
+},
+"fr-savoie-fresh": {
+"es": "Ríos y embalses de Saboya",
+"en": "Savoy rivers and lakes",
+"fr": "Rivières et lacs : Savoie",
+"pt": "Rios e albufeiras de Savoie"
+},
+"fr-seine-et-marne-fresh": {
+"es": "Ríos y embalses de Sena y Marne",
+"en": "Seine-et-Marne rivers and lakes",
+"fr": "Rivières et lacs : Seine-et-Marne",
+"pt": "Rios e albufeiras de Seine-et-Marne"
+},
+"fr-seine-maritime-fresh": {
+"es": "Ríos y embalses de Sena-Marítimo",
+"en": "Seine-Maritime rivers and lakes",
+"fr": "Rivières et lacs : Seine-Maritime",
+"pt": "Rios e albufeiras de Sena-Marítimo"
+},
+"fr-seine-maritime-sea": {
+"es": "Costa de Sena-Marítimo",
+"en": "Seine-Maritime coast",
+"fr": "Côte : Seine-Maritime",
+"pt": "Costa de Sena-Marítimo"
+},
+"fr-somme-fresh": {
+"es": "Ríos y embalses de Somme",
+"en": "Somme rivers and lakes",
+"fr": "Rivières et lacs : Somme",
+"pt": "Rios e albufeiras de Somme"
+},
+"fr-somme-sea": {
+"es": "Costa de Somme",
+"en": "Somme coast",
+"fr": "Côte : Somme",
+"pt": "Costa de Somme"
+},
+"fr-tarn-et-garonne-fresh": {
+"es": "Ríos y embalses de Tarn y Garona",
+"en": "Tarn-et-Garonne rivers and lakes",
+"fr": "Rivières et lacs : Tarn-et-Garonne",
+"pt": "Rios e albufeiras de Tarn-et-Garonne"
+},
+"fr-tarn-fresh": {
+"es": "Ríos y embalses de Tarn",
+"en": "Tarn rivers and lakes",
+"fr": "Rivières et lacs : Tarn",
+"pt": "Rios e albufeiras de Tarn"
+},
+"fr-val-de-marne-fresh": {
+"es": "Ríos y embalses de Valle del Marne",
+"en": "Val-de-Marne rivers and lakes",
+"fr": "Rivières et lacs : Val-de-Marne",
+"pt": "Rios e albufeiras de Val-de-Marne"
+},
+"fr-val-doise-fresh": {
+"es": "Ríos y embalses de Valle del Oise",
+"en": "Val-d'Oise rivers and lakes",
+"fr": "Rivières et lacs : Val-d'Oise",
+"pt": "Rios e albufeiras de Val-d'Oise"
+},
+"fr-var-fresh": {
+"es": "Ríos y embalses de Var",
+"en": "Var rivers and lakes",
+"fr": "Rivières et lacs : Var",
+"pt": "Rios e albufeiras de Var"
+},
+"fr-var-sea": {
+"es": "Costa de Var",
+"en": "Var coast",
+"fr": "Côte : Var",
+"pt": "Costa de Var"
+},
+"fr-vaucluse-fresh": {
+"es": "Ríos y embalses de Vaucluse",
+"en": "Vaucluse rivers and lakes",
+"fr": "Rivières et lacs : Vaucluse",
+"pt": "Rios e albufeiras de Vaucluse"
+},
+"fr-vendee-fresh": {
+"es": "Ríos y embalses de Vandea",
+"en": "Vendée rivers and lakes",
+"fr": "Rivières et lacs : Vendée",
+"pt": "Rios e albufeiras de Vendée"
+},
+"fr-vendee-sea": {
+"es": "Costa de Vandea",
+"en": "Vendée coast",
+"fr": "Côte : Vendée",
+"pt": "Costa de Vendée"
+},
+"fr-vienne-fresh": {
+"es": "Ríos y embalses de Vienne",
+"en": "Vienne rivers and lakes",
+"fr": "Rivières et lacs : Vienne",
+"pt": "Rios e albufeiras de Vienne"
+},
+"fr-vosges-fresh": {
+"es": "Ríos y embalses de Vosgos",
+"en": "Vosges rivers and lakes",
+"fr": "Rivières et lacs : Vosges",
+"pt": "Rios e albufeiras de Vosges"
+},
+"fr-yonne-fresh": {
+"es": "Ríos y embalses de Yonne",
+"en": "Yonne rivers and lakes",
+"fr": "Rivières et lacs : Yonne",
+"pt": "Rios e albufeiras de Yonne"
+},
+"fr-yvelines-fresh": {
+"es": "Ríos y embalses de Yvelines",
+"en": "Yvelines rivers and lakes",
+"fr": "Rivières et lacs : Yvelines",
+"pt": "Rios e albufeiras de Yvelines"
+},
+"ma-el-jadida-safi-sea": {
+"es": "Costa de El Jadida y Safi",
+"en": "El Jadida et Safi coast",
+"fr": "Côte : El Jadida et Safi",
+"pt": "Costa de El Jadida et Safi"
+},
+"ma-essaouira-agadir-sea": {
+"es": "Costa de Esauira y Agadir",
+"en": "Essaouira et Agadir coast",
+"fr": "Côte : Essaouira et Agadir",
+"pt": "Costa de Essaouira et Agadir"
+},
+"ma-rabat-casablanca-sea": {
+"es": "Costa de Rabat y Casablanca",
+"en": "Rabat et Casablanca coast",
+"fr": "Côte : Rabat et Casablanca",
+"pt": "Costa de Rabat et Casablanca"
+},
+"ma-sud-sea": {
+"es": "Costa de Sidi Ifni a Tarfaya",
+"en": "Sidi Ifni à Tarfaya coast",
+"fr": "Côte : Sidi Ifni à Tarfaya",
+"pt": "Costa de Sidi Ifni à Tarfaya"
+},
+"ma-tanger-kenitra-sea": {
+"es": "Costa de Tánger y Kenitra",
+"en": "Tanger et Kénitra coast",
+"fr": "Côte : Tanger et Kénitra",
+"pt": "Costa de Tanger et Kénitra"
+},
+"pt-acores-fresh": {
+"es": "Ríos y embalses de Azores",
+"en": "Azores rivers and lakes",
+"fr": "Rivières et lacs : Açores",
+"pt": "Rios e albufeiras de Açores"
+},
+"pt-acores-sea": {
+"es": "Costa de Azores",
+"en": "Azores coast",
+"fr": "Côte : Açores",
+"pt": "Costa de Açores"
+},
+"pt-aveiro-fresh": {
+"es": "Ríos y embalses de Aveiro",
+"en": "Aveiro rivers and lakes",
+"fr": "Rivières et lacs : Aveiro",
+"pt": "Rios e albufeiras de Aveiro"
+},
+"pt-aveiro-sea": {
+"es": "Costa de Aveiro",
+"en": "Aveiro coast",
+"fr": "Côte : Aveiro",
+"pt": "Costa de Aveiro"
+},
+"pt-beja-fresh": {
+"es": "Ríos y embalses de Beja",
+"en": "Beja rivers and lakes",
+"fr": "Rivières et lacs : Beja",
+"pt": "Rios e albufeiras de Beja"
+},
+"pt-beja-sea": {
+"es": "Costa de Beja",
+"en": "Beja coast",
+"fr": "Côte : Beja",
+"pt": "Costa de Beja"
+},
+"pt-braga-fresh": {
+"es": "Ríos y embalses de Braga",
+"en": "Braga rivers and lakes",
+"fr": "Rivières et lacs : Braga",
+"pt": "Rios e albufeiras de Braga"
+},
+"pt-braga-sea": {
+"es": "Costa de Braga",
+"en": "Braga coast",
+"fr": "Côte : Braga",
+"pt": "Costa de Braga"
+},
+"pt-braganca-fresh": {
+"es": "Ríos y embalses de Bragança",
+"en": "Bragança rivers and lakes",
+"fr": "Rivières et lacs : Bragance",
+"pt": "Rios e albufeiras de Distrito de Bragança"
+},
+"pt-castelo-branco-fresh": {
+"es": "Ríos y embalses de Castelo Branco",
+"en": "Castelo Branco rivers and lakes",
+"fr": "Rivières et lacs : Castelo Branco",
+"pt": "Rios e albufeiras de Castelo Branco"
+},
+"pt-coimbra-fresh": {
+"es": "Ríos y embalses de Coímbra",
+"en": "Coimbra rivers and lakes",
+"fr": "Rivières et lacs : Coïmbre",
+"pt": "Rios e albufeiras de Coimbra"
+},
+"pt-coimbra-sea": {
+"es": "Costa de Coímbra",
+"en": "Coimbra coast",
+"fr": "Côte : Coïmbre",
+"pt": "Costa de Coimbra"
+},
+"pt-evora-fresh": {
+"es": "Ríos y embalses de Évora",
+"en": "Évora rivers and lakes",
+"fr": "Rivières et lacs : Évora",
+"pt": "Rios e albufeiras de Évora"
+},
+"pt-faro-fresh": {
+"es": "Ríos y embalses de Faro",
+"en": "Faro rivers and lakes",
+"fr": "Rivières et lacs : Faro",
+"pt": "Rios e albufeiras de Faro"
+},
+"pt-faro-sea": {
+"es": "Costa de Faro",
+"en": "Faro coast",
+"fr": "Côte : Faro",
+"pt": "Costa de Faro"
+},
+"pt-guarda-fresh": {
+"es": "Ríos y embalses de Guarda",
+"en": "Guarda rivers and lakes",
+"fr": "Rivières et lacs : Guarda",
+"pt": "Rios e albufeiras de Guarda"
+},
+"pt-leiria-fresh": {
+"es": "Ríos y embalses de Leiria",
+"en": "Leiria rivers and lakes",
+"fr": "Rivières et lacs : Leiria",
+"pt": "Rios e albufeiras de Leiria"
+},
+"pt-leiria-sea": {
+"es": "Costa de Leiria",
+"en": "Leiria coast",
+"fr": "Côte : Leiria",
+"pt": "Costa de Leiria"
+},
+"pt-lisboa-sea": {
+"es": "Costa de Lisboa",
+"en": "Lisbon coast",
+"fr": "Côte : Lisbonne",
+"pt": "Costa de Lisboa"
+},
+"pt-madeira-sea": {
+"es": "Costa de Madeira",
+"en": "Madeira coast",
+"fr": "Côte : Madère",
+"pt": "Costa de Madeira"
+},
+"pt-otros-fresh": {
+"es": "Ríos y embalses de otras zonas",
+"en": "other rivers and lakes",
+"fr": "Rivières et lacs : autres",
+"pt": "Rios e albufeiras de outras"
+},
+"pt-otros-sea": {
+"es": "Costa de otras zonas",
+"en": "other coast",
+"fr": "Côte : autres",
+"pt": "Costa de outras"
+},
+"pt-portalegre-fresh": {
+"es": "Ríos y embalses de Portalegre",
+"en": "Portalegre rivers and lakes",
+"fr": "Rivières et lacs : Portalegre",
+"pt": "Rios e albufeiras de Portalegre"
+},
+"pt-porto-fresh": {
+"es": "Ríos y embalses de Oporto",
+"en": "Porto rivers and lakes",
+"fr": "Rivières et lacs : Porto",
+"pt": "Rios e albufeiras de Porto"
+},
+"pt-porto-sea": {
+"es": "Costa de Oporto",
+"en": "Porto coast",
+"fr": "Côte : Porto",
+"pt": "Costa de Porto"
+},
+"pt-santarem-fresh": {
+"es": "Ríos y embalses de Santarém",
+"en": "Santarém rivers and lakes",
+"fr": "Rivières et lacs : Santarém",
+"pt": "Rios e albufeiras de Santarém"
+},
+"pt-santarem-sea": {
+"es": "Costa de Santarém",
+"en": "Santarém coast",
+"fr": "Côte : Santarém",
+"pt": "Costa de Santarém"
+},
+"pt-setubal-fresh": {
+"es": "Ríos y embalses de Setúbal",
+"en": "Setúbal rivers and lakes",
+"fr": "Rivières et lacs : Setúbal",
+"pt": "Rios e albufeiras de Setúbal"
+},
+"pt-setubal-sea": {
+"es": "Costa de Setúbal",
+"en": "Setúbal coast",
+"fr": "Côte : Setúbal",
+"pt": "Costa de Setúbal"
+},
+"pt-viana-do-castelo-fresh": {
+"es": "Ríos y embalses de Viana do Castelo",
+"en": "Viana do Castelo rivers and lakes",
+"fr": "Rivières et lacs : Viana do Castelo",
+"pt": "Rios e albufeiras de Viana do Castelo"
+},
+"pt-viana-do-castelo-sea": {
+"es": "Costa de Viana do Castelo",
+"en": "Viana do Castelo coast",
+"fr": "Côte : Viana do Castelo",
+"pt": "Costa de Viana do Castelo"
+},
+"pt-vila-real-fresh": {
+"es": "Ríos y embalses de Vila Real",
+"en": "Vila Real rivers and lakes",
+"fr": "Rivières et lacs : Vila Real",
+"pt": "Rios e albufeiras de Vila Real"
+},
+"pt-viseu-fresh": {
+"es": "Ríos y embalses de Viseu",
+"en": "Viseu rivers and lakes",
+"fr": "Rivières et lacs : Viseu",
+"pt": "Rios e albufeiras de Viseu"
+}
+},
+"regions": {
+"es-an": {
+"cc": "ES",
+"sea": true,
+"l4": {
+"iso": "ES-AN",
+"name": "Andalucía",
+"names": {
+"name:ca": "Andalusia",
+"name:en": "Andalusia",
+"name:es": "Andalucía",
+"name:eu": "Andaluzia",
+"name:fr": "Andalousie",
+"name:gl": "Andalucía",
+"name:pt": "Andaluzia"
+}
+},
+"l6": null
+},
+"es-an-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-AN",
+"name": "Andalucía",
+"names": {
+"name:ca": "Andalusia",
+"name:en": "Andalusia",
+"name:es": "Andalucía",
+"name:eu": "Andaluzia",
+"name:fr": "Andalousie",
+"name:gl": "Andalucía",
+"name:pt": "Andaluzia"
+}
+},
+"l6": null
+},
+"es-ar-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-AR",
+"name": "Aragón",
+"names": {
+"name:ca": "Aragó",
+"name:en": "Aragon",
+"name:es": "Aragón",
+"name:eu": "Aragoi",
+"name:fr": "Aragon",
+"name:gl": "Aragón",
+"name:pt": "Aragão"
+}
+},
+"l6": null
+},
+"es-as": {
+"cc": "ES",
+"sea": true,
+"l4": {
+"iso": "ES-AS",
+"name": "Asturias / Asturies",
+"names": {
+"name:ca": "Astúries",
+"name:en": "Asturias",
+"name:es": "Asturias",
+"name:eu": "Asturias",
+"name:fr": "Asturies",
+"name:gl": "Asturias",
+"name:pt": "Astúrias"
+}
+},
+"l6": null
+},
+"es-as-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-AS",
+"name": "Asturias / Asturies",
+"names": {
+"name:ca": "Astúries",
+"name:en": "Asturias",
+"name:es": "Asturias",
+"name:eu": "Asturias",
+"name:fr": "Asturies",
+"name:gl": "Asturias",
+"name:pt": "Astúrias"
+}
+},
+"l6": null
+},
+"es-cb": {
+"cc": "ES",
+"sea": true,
+"l4": {
+"iso": "ES-CB",
+"name": "Cantabria",
+"names": {
+"name:ca": "Cantàbria",
+"name:en": "Cantabria",
+"name:es": "Cantabria",
+"name:eu": "Kantabria",
+"name:fr": "Cantabrie",
+"name:gl": "Cantabria"
+}
+},
+"l6": null
+},
+"es-cb-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-CB",
+"name": "Cantabria",
+"names": {
+"name:ca": "Cantàbria",
+"name:en": "Cantabria",
+"name:es": "Cantabria",
+"name:eu": "Kantabria",
+"name:fr": "Cantabrie",
+"name:gl": "Cantabria"
+}
+},
+"l6": null
+},
+"es-cl-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-CL",
+"name": "Castilla y León",
+"names": {
+"name:ca": "Castella i Lleó",
+"name:en": "Castile and León",
+"name:es": "Castilla y León",
+"name:eu": "Gaztela eta León",
+"name:fr": "Castille-et-León",
+"name:gl": "Castela e León",
+"name:pt": "Castela e Leão"
+}
+},
+"l6": null
+},
+"es-cm-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-CM",
+"name": "Castilla-La Mancha",
+"names": {
+"name:ca": "Castella-la Manxa",
+"name:en": "Castile-La Mancha",
+"name:es": "Castilla-La Mancha",
+"name:eu": "Gaztela-Mantxa",
+"name:fr": "Castille-La Manche",
+"name:gl": "Castela-A Mancha",
+"name:pt": "Castela-Mancha"
+}
+},
+"l6": null
+},
+"es-cn": {
+"cc": "ES",
+"sea": true,
+"l4": {
+"iso": "ES-CN",
+"name": "Canarias",
+"names": {
+"name:ca": "Canàries",
+"name:en": "Canary Islands",
+"name:es": "Canarias",
+"name:eu": "Kanariak",
+"name:fr": "Îles Canaries",
+"name:gl": "Illas Canarias",
+"name:pt": "Ilhas Canárias"
+}
+},
+"l6": null
+},
+"es-ct": {
+"cc": "ES",
+"sea": true,
+"l4": {
+"iso": "ES-CT",
+"name": "Catalunya",
+"names": {
+"name:ca": "Catalunya",
+"name:en": "Catalonia",
+"name:es": "Cataluña",
+"name:eu": "Katalunia",
+"name:fr": "Catalogne",
+"name:gl": "Cataluña",
+"name:pt": "Catalunha"
+}
+},
+"l6": null
+},
+"es-ct-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-CT",
+"name": "Catalunya",
+"names": {
+"name:ca": "Catalunya",
+"name:en": "Catalonia",
+"name:es": "Cataluña",
+"name:eu": "Katalunia",
+"name:fr": "Catalogne",
+"name:gl": "Cataluña",
+"name:pt": "Catalunha"
+}
+},
+"l6": null
+},
+"es-ex-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-EX",
+"name": "Extremadura",
+"names": {
+"name:ca": "Extremadura",
+"name:en": "Extremadura",
+"name:es": "Extremadura",
+"name:eu": "Extremadura",
+"name:fr": "Estrémadure",
+"name:gl": "Estremadura",
+"name:pt": "Estremadura"
+}
+},
+"l6": null
+},
+"es-ga": {
+"cc": "ES",
+"sea": true,
+"l4": {
+"iso": "ES-GA",
+"name": "Galicia",
+"names": {
+"name:ca": "Galícia",
+"name:en": "Galicia",
+"name:es": "Galicia",
+"name:eu": "Galizia",
+"name:fr": "Galice",
+"name:gl": "Galicia",
+"name:pt": "Galiza"
+}
+},
+"l6": null
+},
+"es-ga-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-GA",
+"name": "Galicia",
+"names": {
+"name:ca": "Galícia",
+"name:en": "Galicia",
+"name:es": "Galicia",
+"name:eu": "Galizia",
+"name:fr": "Galice",
+"name:gl": "Galicia",
+"name:pt": "Galiza"
+}
+},
+"l6": null
+},
+"es-ib": {
+"cc": "ES",
+"sea": true,
+"l4": {
+"iso": "ES-IB",
+"name": "Illes Balears",
+"names": {
+"name:ca": "Illes Balears",
+"name:en": "Balearic Islands",
+"name:es": "Islas Baleares",
+"name:eu": "Balear Uharteak",
+"name:fr": "Îles Baléares",
+"name:gl": "Illas Baleares",
+"name:pt": "Ilhas Baleares"
+}
+},
+"l6": null
+},
+"es-ib-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-IB",
+"name": "Illes Balears",
+"names": {
+"name:ca": "Illes Balears",
+"name:en": "Balearic Islands",
+"name:es": "Islas Baleares",
+"name:eu": "Balear Uharteak",
+"name:fr": "Îles Baléares",
+"name:gl": "Illas Baleares",
+"name:pt": "Ilhas Baleares"
+}
+},
+"l6": null
+},
+"es-mc": {
+"cc": "ES",
+"sea": true,
+"l4": {
+"iso": "ES-MC",
+"name": "Región de Murcia",
+"names": {
+"name:ca": "Regió de Múrcia",
+"name:en": "Region of Murcia",
+"name:es": "Región de Murcia",
+"name:eu": "Murtziako Erregioa",
+"name:fr": "Région de Murcie",
+"name:gl": "Rexión de Murcia",
+"name:pt": "Região de Múrcia"
+}
+},
+"l6": null
+},
+"es-mc-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-MC",
+"name": "Región de Murcia",
+"names": {
+"name:ca": "Regió de Múrcia",
+"name:en": "Region of Murcia",
+"name:es": "Región de Murcia",
+"name:eu": "Murtziako Erregioa",
+"name:fr": "Région de Murcie",
+"name:gl": "Rexión de Murcia",
+"name:pt": "Região de Múrcia"
+}
+},
+"l6": null
+},
+"es-md-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-MD",
+"name": "Comunidad de Madrid",
+"names": {
+"name:ca": "Comunitat de Madrid",
+"name:en": "Community of Madrid",
+"name:es": "Comunidad de Madrid",
+"name:eu": "Madrilgo Erkidegoa",
+"name:fr": "Communauté de Madrid",
+"name:gl": "Comunidade de Madrid",
+"name:pt": "Comunidade de Madrid"
+}
+},
+"l6": null
+},
+"es-nc-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-NC",
+"name": "Navarra / Nafarroa",
+"names": {
+"name:ca": "Navarra",
+"name:en": "Navarre",
+"name:es": "Navarra",
+"name:eu": "Nafarroa",
+"name:fr": "Navarre",
+"name:gl": "Comunidade Foral de Navarra",
+"name:pt": "Navarra"
+}
+},
+"l6": null
+},
+"es-pv": {
+"cc": "ES",
+"sea": true,
+"l4": {
+"iso": "ES-PV",
+"name": "Euskadi",
+"names": {
+"name:ca": "Comunitat autònoma del País Basc",
+"name:en": "Autonomous Community of the Basque Country",
+"name:es": "País Vasco",
+"name:eu": "Euskadi",
+"name:fr": "Pays basque autonome",
+"name:gl": "País Vasco",
+"name:pt": "Comunidade Autónoma do País Basco"
+}
+},
+"l6": null
+},
+"es-pv-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-PV",
+"name": "Euskadi",
+"names": {
+"name:ca": "Comunitat autònoma del País Basc",
+"name:en": "Autonomous Community of the Basque Country",
+"name:es": "País Vasco",
+"name:eu": "Euskadi",
+"name:fr": "Pays basque autonome",
+"name:gl": "País Vasco",
+"name:pt": "Comunidade Autónoma do País Basco"
+}
+},
+"l6": null
+},
+"es-ri-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-RI",
+"name": "La Rioja",
+"names": {
+"name:ca": "La Rioja",
+"name:en": "Rioja",
+"name:es": "La Rioja",
+"name:eu": "Errioxa",
+"name:fr": "La Rioja",
+"name:gl": "A Rioxa",
+"name:pt": "La Rioja"
+}
+},
+"l6": null
+},
+"es-vc": {
+"cc": "ES",
+"sea": true,
+"l4": {
+"iso": "ES-VC",
+"name": "Comunitat Valenciana",
+"names": {
+"name:ca": "Comunitat Valenciana",
+"name:en": "Valencian Community",
+"name:es": "Comunidad Valenciana",
+"name:eu": "Valentziako Erkidegoa",
+"name:fr": "Communauté Valencienne",
+"name:gl": "Comunidade Valenciana",
+"name:pt": "Comunidade Valenciana"
+}
+},
+"l6": null
+},
+"es-vc-cont": {
+"cc": "ES",
+"sea": false,
+"l4": {
+"iso": "ES-VC",
+"name": "Comunitat Valenciana",
+"names": {
+"name:ca": "Comunitat Valenciana",
+"name:en": "Valencian Community",
+"name:es": "Comunidad Valenciana",
+"name:eu": "Valentziako Erkidegoa",
+"name:fr": "Communauté Valencienne",
+"name:gl": "Comunidade Valenciana",
+"name:pt": "Comunidade Valenciana"
+}
+},
+"l6": null
+},
+"fr-bre": {
+"cc": "FR",
+"sea": true,
+"l4": {
+"iso": "FR-BRE",
+"name": "Bretagne",
+"names": {
+"name:ca": "Bretanya",
+"name:en": "Brittany",
+"name:es": "Bretaña",
+"name:eu": "Bretainia",
+"name:fr": "Bretagne",
+"name:gl": "Bretaña",
+"name:pt": "Bretanha"
+}
+},
+"l6": null
+},
+"fr-cor": {
+"cc": "FR",
+"sea": true,
+"l4": {
+"iso": "FR-20R",
+"name": "Corse",
+"names": {
+"name:ca": "Còrsega",
+"name:en": "Corsica",
+"name:es": "Córcega",
+"name:eu": "Korsika",
+"name:fr": "Corse",
+"name:pt": "Córsega"
+}
+},
+"l6": null
+},
+"fr-d-01": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-01",
+"name": "Ain",
+"names": {
+"name:fr": "Ain"
+}
+}
+},
+"fr-d-02": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-HDF",
+"name": "Hauts-de-France",
+"names": {
+"name:ca": "Alts de França",
+"name:en": "Hauts-de-France",
+"name:es": "Alta Francia",
+"name:eu": "Frantzia Garaia",
+"name:fr": "Hauts-de-France"
+}
+},
+"l6": {
+"iso": "FR-02",
+"name": "Aisne",
+"names": {
+"name:fr": "Aisne"
+}
+}
+},
+"fr-d-03": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-03",
+"name": "Allier",
+"names": {}
+}
+},
+"fr-d-04": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-PAC",
+"name": "Provence-Alpes-Côte d'Azur",
+"names": {
+"name:ca": "Provença-Alps-Costa Blava",
+"name:en": "Provence-Alpes-Côte d'Azur",
+"name:es": "Provenza-Alpes-Costa Azul",
+"name:eu": "Proventza-Alpeak-Kosta Urdina",
+"name:fr": "Provence-Alpes-Côte d'Azur",
+"name:pt": "Provença-Alpes-Costa Azul"
+}
+},
+"l6": {
+"iso": "FR-04",
+"name": "Alpes-de-Haute-Provence",
+"names": {
+"name:ca": "Alps de l'Alta Provença",
+"name:es": "Alpes de Alta Provenza",
+"name:fr": "Alpes-de-Haute-Provence"
+}
+}
+},
+"fr-d-05": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-PAC",
+"name": "Provence-Alpes-Côte d'Azur",
+"names": {
+"name:ca": "Provença-Alps-Costa Blava",
+"name:en": "Provence-Alpes-Côte d'Azur",
+"name:es": "Provenza-Alpes-Costa Azul",
+"name:eu": "Proventza-Alpeak-Kosta Urdina",
+"name:fr": "Provence-Alpes-Côte d'Azur",
+"name:pt": "Provença-Alpes-Costa Azul"
+}
+},
+"l6": {
+"iso": "FR-05",
+"name": "Hautes-Alpes",
+"names": {
+"name:ca": "Alts Alps",
+"name:es": "Altos Alpes",
+"name:fr": "Hautes-Alpes"
+}
+}
+},
+"fr-d-06": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-PAC",
+"name": "Provence-Alpes-Côte d'Azur",
+"names": {
+"name:ca": "Provença-Alps-Costa Blava",
+"name:en": "Provence-Alpes-Côte d'Azur",
+"name:es": "Provenza-Alpes-Costa Azul",
+"name:eu": "Proventza-Alpeak-Kosta Urdina",
+"name:fr": "Provence-Alpes-Côte d'Azur",
+"name:pt": "Provença-Alpes-Costa Azul"
+}
+},
+"l6": {
+"iso": "FR-06",
+"name": "Alpes-Maritimes",
+"names": {
+"name:ca": "Alps Marítims",
+"name:en": "Maritime Alps",
+"name:es": "Alpes Marítimos",
+"name:eu": "Itsas Alpeak",
+"name:fr": "Alpes-Maritimes",
+"name:gl": "Alpes Marítimos",
+"name:pt": "Alpes Marítimos"
+}
+}
+},
+"fr-d-07": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-07",
+"name": "Ardèche",
+"names": {
+"name:ca": "Ardecha",
+"name:es": "Ardecha"
+}
+}
+},
+"fr-d-08": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-GES",
+"name": "Grand Est",
+"names": {
+"name:ca": "Gran Est",
+"name:en": "Great East",
+"name:es": "Gran Este",
+"name:eu": "Ekialde Handia",
+"name:fr": "Grand Est",
+"name:pt": "Grande Leste"
+}
+},
+"l6": {
+"iso": "FR-08",
+"name": "Ardennes",
+"names": {
+"name:ca": "Ardenes",
+"name:es": "Ardenas",
+"name:eu": "Ardenak",
+"name:fr": "Ardennes",
+"name:gl": "Ardenas",
+"name:pt": "Ardenas"
+}
+}
+},
+"fr-d-09": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-09",
+"name": "Ariège",
+"names": {
+"name:ca": "Arieja",
+"name:fr": "Ariège"
+}
+}
+},
+"fr-d-10": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-GES",
+"name": "Grand Est",
+"names": {
+"name:ca": "Gran Est",
+"name:en": "Great East",
+"name:es": "Gran Este",
+"name:eu": "Ekialde Handia",
+"name:fr": "Grand Est",
+"name:pt": "Grande Leste"
+}
+},
+"l6": {
+"iso": "FR-10",
+"name": "Aube",
+"names": {
+"name:ca": "Auba",
+"name:fr": "Aube"
+}
+}
+},
+"fr-d-11": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-11",
+"name": "Aude",
+"names": {
+"name:fr": "Aude"
+}
+}
+},
+"fr-d-12": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-12",
+"name": "Aveyron",
+"names": {
+"name:ca": "Avairon",
+"name:fr": "Aveyron"
+}
+}
+},
+"fr-d-13": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-PAC",
+"name": "Provence-Alpes-Côte d'Azur",
+"names": {
+"name:ca": "Provença-Alps-Costa Blava",
+"name:en": "Provence-Alpes-Côte d'Azur",
+"name:es": "Provenza-Alpes-Costa Azul",
+"name:eu": "Proventza-Alpeak-Kosta Urdina",
+"name:fr": "Provence-Alpes-Côte d'Azur",
+"name:pt": "Provença-Alpes-Costa Azul"
+}
+},
+"l6": {
+"iso": "FR-13",
+"name": "Bouches-du-Rhône",
+"names": {
+"name:ca": "Boques del Roine",
+"name:es": "Bocas del Ródano",
+"name:fr": "Bouches-du-Rhône"
+}
+}
+},
+"fr-d-14": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NOR",
+"name": "Normandie",
+"names": {
+"name:ca": "Normandia",
+"name:en": "Normandy",
+"name:es": "Normandía",
+"name:eu": "Normandia",
+"name:fr": "Normandie",
+"name:pt": "Normandia"
+}
+},
+"l6": {
+"iso": "FR-14",
+"name": "Calvados",
+"names": {
+"name:fr": "Calvados"
+}
+}
+},
+"fr-d-15": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-15",
+"name": "Cantal",
+"names": {
+"name:fr": "Cantal"
+}
+}
+},
+"fr-d-16": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-16",
+"name": "Charente",
+"names": {
+"name:fr": "Charente"
+}
+}
+},
+"fr-d-17": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-17",
+"name": "Charente-Maritime",
+"names": {
+"name:ca": "Charente Marítim",
+"name:eu": "Itsas Charente",
+"name:fr": "Charente-Maritime"
+}
+}
+},
+"fr-d-18": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-CVL",
+"name": "Centre-Val de Loire",
+"names": {
+"name:ca": "Centre – Vall del Loira",
+"name:en": "Centre-Val de Loire",
+"name:eu": "Erdialdea -Loira Harana",
+"name:fr": "Centre-Val de Loire"
+}
+},
+"l6": {
+"iso": "FR-18",
+"name": "Cher",
+"names": {
+"name:fr": "Cher"
+}
+}
+},
+"fr-d-19": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-19",
+"name": "Corrèze",
+"names": {
+"name:ca": "Corresa",
+"name:fr": "Corrèze"
+}
+}
+},
+"fr-d-21": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-BFC",
+"name": "Bourgogne-Franche-Comté",
+"names": {
+"name:ca": "Borgonya – Franc Comtat",
+"name:en": "Bourgogne – Franche-Comté",
+"name:es": "Borgoña-Franco Condado",
+"name:eu": "Borgoina-Franche-Comté",
+"name:fr": "Bourgogne-Franche-Comté",
+"name:pt": "Borgonha-Franco-Condado"
+}
+},
+"l6": {
+"iso": "FR-21",
+"name": "Côte-d'Or",
+"names": {
+"name:ca": "Costa d'Or"
+}
+}
+},
+"fr-d-22": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-BRE",
+"name": "Bretagne",
+"names": {
+"name:ca": "Bretanya",
+"name:en": "Brittany",
+"name:es": "Bretaña",
+"name:eu": "Bretainia",
+"name:fr": "Bretagne",
+"name:gl": "Bretaña",
+"name:pt": "Bretanha"
+}
+},
+"l6": {
+"iso": "FR-22",
+"name": "Côtes-d'Armor",
+"names": {
+"name:ca": "Costes del Nord",
+"name:fr": "Côtes-d'Armor"
+}
+}
+},
+"fr-d-23": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-23",
+"name": "Creuse",
+"names": {
+"name:ca": "Cruesa",
+"name:fr": "Creuse"
+}
+}
+},
+"fr-d-24": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-24",
+"name": "Dordogne",
+"names": {
+"name:ca": "Dordonya",
+"name:fr": "Dordogne"
+}
+}
+},
+"fr-d-25": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-BFC",
+"name": "Bourgogne-Franche-Comté",
+"names": {
+"name:ca": "Borgonya – Franc Comtat",
+"name:en": "Bourgogne – Franche-Comté",
+"name:es": "Borgoña-Franco Condado",
+"name:eu": "Borgoina-Franche-Comté",
+"name:fr": "Bourgogne-Franche-Comté",
+"name:pt": "Borgonha-Franco-Condado"
+}
+},
+"l6": {
+"iso": "FR-25",
+"name": "Doubs",
+"names": {
+"name:fr": "Doubs"
+}
+}
+},
+"fr-d-26": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-26",
+"name": "Drôme",
+"names": {
+"name:ca": "Droma",
+"name:fr": "Drôme"
+}
+}
+},
+"fr-d-27": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NOR",
+"name": "Normandie",
+"names": {
+"name:ca": "Normandia",
+"name:en": "Normandy",
+"name:es": "Normandía",
+"name:eu": "Normandia",
+"name:fr": "Normandie",
+"name:pt": "Normandia"
+}
+},
+"l6": {
+"iso": "FR-27",
+"name": "Eure",
+"names": {}
+}
+},
+"fr-d-28": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-CVL",
+"name": "Centre-Val de Loire",
+"names": {
+"name:ca": "Centre – Vall del Loira",
+"name:en": "Centre-Val de Loire",
+"name:eu": "Erdialdea -Loira Harana",
+"name:fr": "Centre-Val de Loire"
+}
+},
+"l6": {
+"iso": "FR-28",
+"name": "Eure-et-Loir",
+"names": {
+"name:ca": "Eure-i-Loir",
+"name:es": "Eure-y-Loir",
+"name:fr": "Eure-et-Loir",
+"name:gl": "Eure-e-Loir"
+}
+}
+},
+"fr-d-29": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-BRE",
+"name": "Bretagne",
+"names": {
+"name:ca": "Bretanya",
+"name:en": "Brittany",
+"name:es": "Bretaña",
+"name:eu": "Bretainia",
+"name:fr": "Bretagne",
+"name:gl": "Bretaña",
+"name:pt": "Bretanha"
+}
+},
+"l6": {
+"iso": "FR-29",
+"name": "Finistère",
+"names": {
+"name:ca": "Finisterre",
+"name:es": "Finisterre",
+"name:fr": "Finistère"
+}
+}
+},
+"fr-d-2a": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-20R",
+"name": "Corse",
+"names": {
+"name:ca": "Còrsega",
+"name:en": "Corsica",
+"name:es": "Córcega",
+"name:eu": "Korsika",
+"name:fr": "Corse",
+"name:pt": "Córsega"
+}
+},
+"l6": {
+"iso": "FR-2A",
+"name": "Corse-du-Sud",
+"names": {
+"name:ca": "Còrsega del Sud",
+"name:en": "South Corsica",
+"name:es": "Córcega del Sur",
+"name:eu": "Hego Korsika",
+"name:fr": "Corse-du-Sud"
+}
+}
+},
+"fr-d-2b": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-20R",
+"name": "Corse",
+"names": {
+"name:ca": "Còrsega",
+"name:en": "Corsica",
+"name:es": "Córcega",
+"name:eu": "Korsika",
+"name:fr": "Corse",
+"name:pt": "Córsega"
+}
+},
+"l6": {
+"iso": "FR-2B",
+"name": "Haute-Corse",
+"names": {
+"name:ca": "Alta Còrsega",
+"name:en": "Upper Corsica",
+"name:es": "Alta Córcega",
+"name:eu": "Korsika Garaia",
+"name:fr": "Haute-Corse"
+}
+}
+},
+"fr-d-30": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-30",
+"name": "Gard",
+"names": {
+"name:fr": "Gard"
+}
+}
+},
+"fr-d-31": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-31",
+"name": "Haute-Garonne",
+"names": {
+"name:ca": "Alta Garona",
+"name:es": "Alto Garona",
+"name:eu": "Garona Garaia",
+"name:fr": "Haute-Garonne",
+"name:gl": "Alta Garona",
+"name:pt": "Alto Garona"
+}
+}
+},
+"fr-d-32": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-32",
+"name": "Gers",
+"names": {
+"name:fr": "Gers"
+}
+}
+},
+"fr-d-33": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-33",
+"name": "Gironde",
+"names": {
+"name:ca": "Gironda",
+"name:es": "Gironda",
+"name:eu": "Gironda",
+"name:fr": "Gironde",
+"name:gl": "Xironda",
+"name:pt": "Gironda"
+}
+}
+},
+"fr-d-34": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-34",
+"name": "Hérault",
+"names": {
+"name:ca": "Erau",
+"name:fr": "Hérault"
+}
+}
+},
+"fr-d-35": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-BRE",
+"name": "Bretagne",
+"names": {
+"name:ca": "Bretanya",
+"name:en": "Brittany",
+"name:es": "Bretaña",
+"name:eu": "Bretainia",
+"name:fr": "Bretagne",
+"name:gl": "Bretaña",
+"name:pt": "Bretanha"
+}
+},
+"l6": {
+"iso": "FR-35",
+"name": "Ille-et-Vilaine",
+"names": {}
+}
+},
+"fr-d-36": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-CVL",
+"name": "Centre-Val de Loire",
+"names": {
+"name:ca": "Centre – Vall del Loira",
+"name:en": "Centre-Val de Loire",
+"name:eu": "Erdialdea -Loira Harana",
+"name:fr": "Centre-Val de Loire"
+}
+},
+"l6": {
+"iso": "FR-36",
+"name": "Indre",
+"names": {
+"name:fr": "Indre"
+}
+}
+},
+"fr-d-37": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-CVL",
+"name": "Centre-Val de Loire",
+"names": {
+"name:ca": "Centre – Vall del Loira",
+"name:en": "Centre-Val de Loire",
+"name:eu": "Erdialdea -Loira Harana",
+"name:fr": "Centre-Val de Loire"
+}
+},
+"l6": {
+"iso": "FR-37",
+"name": "Indre-et-Loire",
+"names": {
+"name:ca": "Indre i Loira",
+"name:es": "Indre y Loira"
+}
+}
+},
+"fr-d-38": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-38",
+"name": "Isère",
+"names": {}
+}
+},
+"fr-d-39": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-BFC",
+"name": "Bourgogne-Franche-Comté",
+"names": {
+"name:ca": "Borgonya – Franc Comtat",
+"name:en": "Bourgogne – Franche-Comté",
+"name:es": "Borgoña-Franco Condado",
+"name:eu": "Borgoina-Franche-Comté",
+"name:fr": "Bourgogne-Franche-Comté",
+"name:pt": "Borgonha-Franco-Condado"
+}
+},
+"l6": {
+"iso": "FR-39",
+"name": "Jura",
+"names": {
+"name:fr": "Jura"
+}
+}
+},
+"fr-d-40": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-40",
+"name": "Landes",
+"names": {
+"name:es": "Landas",
+"name:eu": "Landak",
+"name:fr": "Landes"
+}
+}
+},
+"fr-d-41": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-CVL",
+"name": "Centre-Val de Loire",
+"names": {
+"name:ca": "Centre – Vall del Loira",
+"name:en": "Centre-Val de Loire",
+"name:eu": "Erdialdea -Loira Harana",
+"name:fr": "Centre-Val de Loire"
+}
+},
+"l6": {
+"iso": "FR-41",
+"name": "Loir-et-Cher",
+"names": {
+"name:es": "Loir y Cher"
+}
+}
+},
+"fr-d-42": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-42",
+"name": "Loire",
+"names": {
+"name:es": "Loira"
+}
+}
+},
+"fr-d-43": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-43",
+"name": "Haute-Loire",
+"names": {
+"name:es": "Alto Loira"
+}
+}
+},
+"fr-d-44": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-PDL",
+"name": "Pays de la Loire",
+"names": {
+"name:ca": "País del Loira",
+"name:en": "Pays de la Loire",
+"name:es": "Países del Loira",
+"name:eu": "Loirerria",
+"name:fr": "Pays de la Loire",
+"name:gl": "Países do Loira",
+"name:pt": "País do Loire"
+}
+},
+"l6": {
+"iso": "FR-44",
+"name": "Loire-Atlantique",
+"names": {
+"name:ca": "Loira Atlàntic",
+"name:es": "Loira Atlántico",
+"name:fr": "Loire-Atlantique",
+"name:gl": "Loira Atlántico"
+}
+}
+},
+"fr-d-45": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-CVL",
+"name": "Centre-Val de Loire",
+"names": {
+"name:ca": "Centre – Vall del Loira",
+"name:en": "Centre-Val de Loire",
+"name:eu": "Erdialdea -Loira Harana",
+"name:fr": "Centre-Val de Loire"
+}
+},
+"l6": {
+"iso": "FR-45",
+"name": "Loiret",
+"names": {}
+}
+},
+"fr-d-46": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-46",
+"name": "Lot",
+"names": {
+"name:ca": "Òlt",
+"name:fr": "Lot"
+}
+}
+},
+"fr-d-47": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-47",
+"name": "Lot-et-Garonne",
+"names": {
+"name:ca": "Òlt i Garona",
+"name:es": "Lot y Garona",
+"name:eu": "Lot eta Garona",
+"name:fr": "Lot-et-Garonne"
+}
+}
+},
+"fr-d-48": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-48",
+"name": "Lozère",
+"names": {
+"name:ca": "Losera",
+"name:fr": "Lozère"
+}
+}
+},
+"fr-d-49": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-PDL",
+"name": "Pays de la Loire",
+"names": {
+"name:ca": "País del Loira",
+"name:en": "Pays de la Loire",
+"name:es": "Países del Loira",
+"name:eu": "Loirerria",
+"name:fr": "Pays de la Loire",
+"name:gl": "Países do Loira",
+"name:pt": "País do Loire"
+}
+},
+"l6": {
+"iso": "FR-49",
+"name": "Maine-et-Loire",
+"names": {
+"name:ca": "Maine i Loira",
+"name:es": "Maine-y-Loira",
+"name:fr": "Maine-et-Loire",
+"name:gl": "Maine-e-Loira"
+}
+}
+},
+"fr-d-50": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NOR",
+"name": "Normandie",
+"names": {
+"name:ca": "Normandia",
+"name:en": "Normandy",
+"name:es": "Normandía",
+"name:eu": "Normandia",
+"name:fr": "Normandie",
+"name:pt": "Normandia"
+}
+},
+"l6": {
+"iso": "FR-50",
+"name": "Manche",
+"names": {
+"name:es": "Mancha",
+"name:fr": "Manche"
+}
+}
+},
+"fr-d-51": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-GES",
+"name": "Grand Est",
+"names": {
+"name:ca": "Gran Est",
+"name:en": "Great East",
+"name:es": "Gran Este",
+"name:eu": "Ekialde Handia",
+"name:fr": "Grand Est",
+"name:pt": "Grande Leste"
+}
+},
+"l6": {
+"iso": "FR-51",
+"name": "Marne",
+"names": {
+"name:fr": "Marne"
+}
+}
+},
+"fr-d-52": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-GES",
+"name": "Grand Est",
+"names": {
+"name:ca": "Gran Est",
+"name:en": "Great East",
+"name:es": "Gran Este",
+"name:eu": "Ekialde Handia",
+"name:fr": "Grand Est",
+"name:pt": "Grande Leste"
+}
+},
+"l6": {
+"iso": "FR-52",
+"name": "Haute-Marne",
+"names": {
+"name:es": "Alto Marne"
+}
+}
+},
+"fr-d-53": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-PDL",
+"name": "Pays de la Loire",
+"names": {
+"name:ca": "País del Loira",
+"name:en": "Pays de la Loire",
+"name:es": "Países del Loira",
+"name:eu": "Loirerria",
+"name:fr": "Pays de la Loire",
+"name:gl": "Países do Loira",
+"name:pt": "País do Loire"
+}
+},
+"l6": {
+"iso": "FR-53",
+"name": "Mayenne",
+"names": {
+"name:fr": "Mayenne"
+}
+}
+},
+"fr-d-54": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-GES",
+"name": "Grand Est",
+"names": {
+"name:ca": "Gran Est",
+"name:en": "Great East",
+"name:es": "Gran Este",
+"name:eu": "Ekialde Handia",
+"name:fr": "Grand Est",
+"name:pt": "Grande Leste"
+}
+},
+"l6": {
+"iso": "FR-54",
+"name": "Meurthe-et-Moselle",
+"names": {
+"name:ca": "Meurthe i Mosel·la",
+"name:es": "Meurthe y Mosela"
+}
+}
+},
+"fr-d-55": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-GES",
+"name": "Grand Est",
+"names": {
+"name:ca": "Gran Est",
+"name:en": "Great East",
+"name:es": "Gran Este",
+"name:eu": "Ekialde Handia",
+"name:fr": "Grand Est",
+"name:pt": "Grande Leste"
+}
+},
+"l6": {
+"iso": "FR-55",
+"name": "Meuse",
+"names": {
+"name:es": "Mosa"
+}
+}
+},
+"fr-d-56": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-BRE",
+"name": "Bretagne",
+"names": {
+"name:ca": "Bretanya",
+"name:en": "Brittany",
+"name:es": "Bretaña",
+"name:eu": "Bretainia",
+"name:fr": "Bretagne",
+"name:gl": "Bretaña",
+"name:pt": "Bretanha"
+}
+},
+"l6": {
+"iso": "FR-56",
+"name": "Morbihan",
+"names": {}
+}
+},
+"fr-d-57": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-GES",
+"name": "Grand Est",
+"names": {
+"name:ca": "Gran Est",
+"name:en": "Great East",
+"name:es": "Gran Este",
+"name:eu": "Ekialde Handia",
+"name:fr": "Grand Est",
+"name:pt": "Grande Leste"
+}
+},
+"l6": {
+"iso": "FR-57",
+"name": "Moselle",
+"names": {
+"name:es": "Mosela",
+"name:fr": "Moselle"
+}
+}
+},
+"fr-d-58": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-BFC",
+"name": "Bourgogne-Franche-Comté",
+"names": {
+"name:ca": "Borgonya – Franc Comtat",
+"name:en": "Bourgogne – Franche-Comté",
+"name:es": "Borgoña-Franco Condado",
+"name:eu": "Borgoina-Franche-Comté",
+"name:fr": "Bourgogne-Franche-Comté",
+"name:pt": "Borgonha-Franco-Condado"
+}
+},
+"l6": {
+"iso": "FR-58",
+"name": "Nièvre",
+"names": {
+"name:fr": "Nièvre"
+}
+}
+},
+"fr-d-59": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-HDF",
+"name": "Hauts-de-France",
+"names": {
+"name:ca": "Alts de França",
+"name:en": "Hauts-de-France",
+"name:es": "Alta Francia",
+"name:eu": "Frantzia Garaia",
+"name:fr": "Hauts-de-France"
+}
+},
+"l6": {
+"iso": "FR-59",
+"name": "Nord",
+"names": {
+"name:es": "Norte"
+}
+}
+},
+"fr-d-60": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-HDF",
+"name": "Hauts-de-France",
+"names": {
+"name:ca": "Alts de França",
+"name:en": "Hauts-de-France",
+"name:es": "Alta Francia",
+"name:eu": "Frantzia Garaia",
+"name:fr": "Hauts-de-France"
+}
+},
+"l6": {
+"iso": "FR-60",
+"name": "Oise",
+"names": {
+"name:fr": "Oise"
+}
+}
+},
+"fr-d-61": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NOR",
+"name": "Normandie",
+"names": {
+"name:ca": "Normandia",
+"name:en": "Normandy",
+"name:es": "Normandía",
+"name:eu": "Normandia",
+"name:fr": "Normandie",
+"name:pt": "Normandia"
+}
+},
+"l6": {
+"iso": "FR-61",
+"name": "Orne",
+"names": {
+"name:es": "Orne",
+"name:fr": "Orne"
+}
+}
+},
+"fr-d-62": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-HDF",
+"name": "Hauts-de-France",
+"names": {
+"name:ca": "Alts de França",
+"name:en": "Hauts-de-France",
+"name:es": "Alta Francia",
+"name:eu": "Frantzia Garaia",
+"name:fr": "Hauts-de-France"
+}
+},
+"l6": {
+"iso": "FR-62",
+"name": "Pas-de-Calais",
+"names": {
+"name:es": "Paso de Calais"
+}
+}
+},
+"fr-d-63": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-63",
+"name": "Puy-de-Dôme",
+"names": {
+"name:ca": "Puèi de Doma",
+"name:fr": "Puy-de-Dôme"
+}
+}
+},
+"fr-d-64": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-64",
+"name": "Pyrénées-Atlantiques",
+"names": {
+"name:ca": "Pirineus Atlàntics",
+"name:eu": "Pirinio Atlantikoak",
+"name:fr": "Pyrénées-Atlantiques",
+"name:gl": "Pireneos Atlánticos",
+"name:pt": "Pirenéus Atlânticos"
+}
+}
+},
+"fr-d-65": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-65",
+"name": "Hautes-Pyrénées",
+"names": {
+"name:ca": "Alts Pirineus",
+"name:en": "Hautes Pyrenees",
+"name:es": "Altos Pirineos",
+"name:eu": "Pirinio Garaiak",
+"name:fr": "Hautes-Pyrénées",
+"name:gl": "Altos Pireneos",
+"name:pt": "Altos Pirineus"
+}
+}
+},
+"fr-d-66": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-66",
+"name": "Pyrénées-Orientales",
+"names": {
+"name:ca": "Pirineus Orientals",
+"name:es": "Pirineos Orientales",
+"name:fr": "Pyrénées-Orientales"
+}
+}
+},
+"fr-d-67": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-GES",
+"name": "Grand Est",
+"names": {
+"name:ca": "Gran Est",
+"name:en": "Great East",
+"name:es": "Gran Este",
+"name:eu": "Ekialde Handia",
+"name:fr": "Grand Est",
+"name:pt": "Grande Leste"
+}
+},
+"l6": {
+"iso": "FR-67",
+"name": "Bas-Rhin",
+"names": {
+"name:ca": "Baix-Rin",
+"name:es": "Bajo-Rin",
+"name:fr": "Bas-Rhin",
+"name:gl": "Baixo-Rin",
+"name:pt": "Baixo-Reno"
+}
+}
+},
+"fr-d-68": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-GES",
+"name": "Grand Est",
+"names": {
+"name:ca": "Gran Est",
+"name:en": "Great East",
+"name:es": "Gran Este",
+"name:eu": "Ekialde Handia",
+"name:fr": "Grand Est",
+"name:pt": "Grande Leste"
+}
+},
+"l6": {
+"iso": "FR-68",
+"name": "Haut-Rhin",
+"names": {
+"name:es": "Alto Rin",
+"name:fr": "Haut-Rhin"
+}
+}
+},
+"fr-d-69": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-69",
+"name": "Rhône",
+"names": {
+"name:es": "Ródano",
+"name:fr": "Rhône"
+}
+}
+},
+"fr-d-70": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-BFC",
+"name": "Bourgogne-Franche-Comté",
+"names": {
+"name:ca": "Borgonya – Franc Comtat",
+"name:en": "Bourgogne – Franche-Comté",
+"name:es": "Borgoña-Franco Condado",
+"name:eu": "Borgoina-Franche-Comté",
+"name:fr": "Bourgogne-Franche-Comté",
+"name:pt": "Borgonha-Franco-Condado"
+}
+},
+"l6": {
+"iso": "FR-70",
+"name": "Haute-Saône",
+"names": {
+"name:es": "Alto Saona"
+}
+}
+},
+"fr-d-71": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-BFC",
+"name": "Bourgogne-Franche-Comté",
+"names": {
+"name:ca": "Borgonya – Franc Comtat",
+"name:en": "Bourgogne – Franche-Comté",
+"name:es": "Borgoña-Franco Condado",
+"name:eu": "Borgoina-Franche-Comté",
+"name:fr": "Bourgogne-Franche-Comté",
+"name:pt": "Borgonha-Franco-Condado"
+}
+},
+"l6": {
+"iso": "FR-71",
+"name": "Saône-et-Loire",
+"names": {
+"name:es": "Saona y Loira"
+}
+}
+},
+"fr-d-72": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-PDL",
+"name": "Pays de la Loire",
+"names": {
+"name:ca": "País del Loira",
+"name:en": "Pays de la Loire",
+"name:es": "Países del Loira",
+"name:eu": "Loirerria",
+"name:fr": "Pays de la Loire",
+"name:gl": "Países do Loira",
+"name:pt": "País do Loire"
+}
+},
+"l6": {
+"iso": "FR-72",
+"name": "Sarthe",
+"names": {
+"name:fr": "Sarthe"
+}
+}
+},
+"fr-d-73": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-73",
+"name": "Savoie",
+"names": {
+"name:ca": "Savoia",
+"name:en": "Savoy",
+"name:es": "Saboya",
+"name:fr": "Savoie"
+}
+}
+},
+"fr-d-74": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-ARA",
+"name": "Auvergne-Rhône-Alpes",
+"names": {
+"name:ca": "Alvèrnia-Roine-Alps",
+"name:en": "Auvergne-Rhône-Alpes",
+"name:eu": "Auvernia-Rodano-Alpeak",
+"name:fr": "Auvergne-Rhône-Alpes"
+}
+},
+"l6": {
+"iso": "FR-74",
+"name": "Haute-Savoie",
+"names": {
+"name:ca": "Alta Savoia",
+"name:en": "Upper Savoy",
+"name:es": "Alta Saboya",
+"name:fr": "Haute-Savoie"
+}
+}
+},
+"fr-d-75": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-IDF",
+"name": "Île-de-France",
+"names": {
+"name:ca": "Illa de França",
+"name:en": "Ile-de-France",
+"name:es": "Isla de Francia",
+"name:eu": "Île-de-France",
+"name:fr": "Île-de-France",
+"name:pt": "Ilha de França"
+}
+},
+"l6": {
+"iso": "FR-75C",
+"name": "Paris",
+"names": {
+"name:ca": "París",
+"name:es": "París",
+"name:eu": "Paris",
+"name:fr": "Paris",
+"name:gl": "París"
+}
+}
+},
+"fr-d-76": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NOR",
+"name": "Normandie",
+"names": {
+"name:ca": "Normandia",
+"name:en": "Normandy",
+"name:es": "Normandía",
+"name:eu": "Normandia",
+"name:fr": "Normandie",
+"name:pt": "Normandia"
+}
+},
+"l6": {
+"iso": "FR-76",
+"name": "Seine-Maritime",
+"names": {
+"name:ca": "Sena-Marítim",
+"name:es": "Sena-Marítimo",
+"name:fr": "Seine-Maritime",
+"name:pt": "Sena-Marítimo"
+}
+}
+},
+"fr-d-77": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-IDF",
+"name": "Île-de-France",
+"names": {
+"name:ca": "Illa de França",
+"name:en": "Ile-de-France",
+"name:es": "Isla de Francia",
+"name:eu": "Île-de-France",
+"name:fr": "Île-de-France",
+"name:pt": "Ilha de França"
+}
+},
+"l6": {
+"iso": "FR-77",
+"name": "Seine-et-Marne",
+"names": {
+"name:es": "Sena y Marne"
+}
+}
+},
+"fr-d-78": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-IDF",
+"name": "Île-de-France",
+"names": {
+"name:ca": "Illa de França",
+"name:en": "Ile-de-France",
+"name:es": "Isla de Francia",
+"name:eu": "Île-de-France",
+"name:fr": "Île-de-France",
+"name:pt": "Ilha de França"
+}
+},
+"l6": {
+"iso": "FR-78",
+"name": "Yvelines",
+"names": {}
+}
+},
+"fr-d-79": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-79",
+"name": "Deux-Sèvres",
+"names": {
+"name:fr": "Deux-Sèvres"
+}
+}
+},
+"fr-d-80": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-HDF",
+"name": "Hauts-de-France",
+"names": {
+"name:ca": "Alts de França",
+"name:en": "Hauts-de-France",
+"name:es": "Alta Francia",
+"name:eu": "Frantzia Garaia",
+"name:fr": "Hauts-de-France"
+}
+},
+"l6": {
+"iso": "FR-80",
+"name": "Somme",
+"names": {
+"name:fr": "Somme"
+}
+}
+},
+"fr-d-81": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-81",
+"name": "Tarn",
+"names": {
+"name:fr": "Tarn"
+}
+}
+},
+"fr-d-82": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": {
+"iso": "FR-82",
+"name": "Tarn-et-Garonne",
+"names": {
+"name:ca": "Tarn i Garona",
+"name:es": "Tarn y Garona",
+"name:eu": "Tarn eta Garona",
+"name:fr": "Tarn-et-Garonne"
+}
+}
+},
+"fr-d-83": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-PAC",
+"name": "Provence-Alpes-Côte d'Azur",
+"names": {
+"name:ca": "Provença-Alps-Costa Blava",
+"name:en": "Provence-Alpes-Côte d'Azur",
+"name:es": "Provenza-Alpes-Costa Azul",
+"name:eu": "Proventza-Alpeak-Kosta Urdina",
+"name:fr": "Provence-Alpes-Côte d'Azur",
+"name:pt": "Provença-Alpes-Costa Azul"
+}
+},
+"l6": {
+"iso": "FR-83",
+"name": "Var",
+"names": {}
+}
+},
+"fr-d-84": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-PAC",
+"name": "Provence-Alpes-Côte d'Azur",
+"names": {
+"name:ca": "Provença-Alps-Costa Blava",
+"name:en": "Provence-Alpes-Côte d'Azur",
+"name:es": "Provenza-Alpes-Costa Azul",
+"name:eu": "Proventza-Alpeak-Kosta Urdina",
+"name:fr": "Provence-Alpes-Côte d'Azur",
+"name:pt": "Provença-Alpes-Costa Azul"
+}
+},
+"l6": {
+"iso": "FR-84",
+"name": "Vaucluse",
+"names": {
+"name:ca": "Valclusa"
+}
+}
+},
+"fr-d-85": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-PDL",
+"name": "Pays de la Loire",
+"names": {
+"name:ca": "País del Loira",
+"name:en": "Pays de la Loire",
+"name:es": "Países del Loira",
+"name:eu": "Loirerria",
+"name:fr": "Pays de la Loire",
+"name:gl": "Países do Loira",
+"name:pt": "País do Loire"
+}
+},
+"l6": {
+"iso": "FR-85",
+"name": "Vendée",
+"names": {
+"name:es": "Vandea"
+}
+}
+},
+"fr-d-86": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-86",
+"name": "Vienne",
+"names": {
+"name:ca": "Viena",
+"name:fr": "Vienne"
+}
+}
+},
+"fr-d-87": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": {
+"iso": "FR-87",
+"name": "Haute-Vienne",
+"names": {
+"name:es": "Alto Vienne",
+"name:eu": "Vienne Garaia",
+"name:fr": "Haute-Vienne"
+}
+}
+},
+"fr-d-88": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-GES",
+"name": "Grand Est",
+"names": {
+"name:ca": "Gran Est",
+"name:en": "Great East",
+"name:es": "Gran Este",
+"name:eu": "Ekialde Handia",
+"name:fr": "Grand Est",
+"name:pt": "Grande Leste"
+}
+},
+"l6": {
+"iso": "FR-88",
+"name": "Vosges",
+"names": {
+"name:es": "Vosgos"
+}
+}
+},
+"fr-d-89": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-BFC",
+"name": "Bourgogne-Franche-Comté",
+"names": {
+"name:ca": "Borgonya – Franc Comtat",
+"name:en": "Bourgogne – Franche-Comté",
+"name:es": "Borgoña-Franco Condado",
+"name:eu": "Borgoina-Franche-Comté",
+"name:fr": "Bourgogne-Franche-Comté",
+"name:pt": "Borgonha-Franco-Condado"
+}
+},
+"l6": {
+"iso": "FR-89",
+"name": "Yonne",
+"names": {
+"name:fr": "Yonne"
+}
+}
+},
+"fr-d-91": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-IDF",
+"name": "Île-de-France",
+"names": {
+"name:ca": "Illa de França",
+"name:en": "Ile-de-France",
+"name:es": "Isla de Francia",
+"name:eu": "Île-de-France",
+"name:fr": "Île-de-France",
+"name:pt": "Ilha de França"
+}
+},
+"l6": {
+"iso": "FR-91",
+"name": "Essonne",
+"names": {
+"name:fr": "Essonne"
+}
+}
+},
+"fr-d-92": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-IDF",
+"name": "Île-de-France",
+"names": {
+"name:ca": "Illa de França",
+"name:en": "Ile-de-France",
+"name:es": "Isla de Francia",
+"name:eu": "Île-de-France",
+"name:fr": "Île-de-France",
+"name:pt": "Ilha de França"
+}
+},
+"l6": {
+"iso": "FR-92",
+"name": "Hauts-de-Seine",
+"names": {
+"name:es": "Altos del Sena",
+"name:fr": "Hauts-de-Seine"
+}
+}
+},
+"fr-d-94": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-IDF",
+"name": "Île-de-France",
+"names": {
+"name:ca": "Illa de França",
+"name:en": "Ile-de-France",
+"name:es": "Isla de Francia",
+"name:eu": "Île-de-France",
+"name:fr": "Île-de-France",
+"name:pt": "Ilha de França"
+}
+},
+"l6": {
+"iso": "FR-94",
+"name": "Val-de-Marne",
+"names": {
+"name:es": "Valle del Marne",
+"name:fr": "Val-de-Marne"
+}
+}
+},
+"fr-d-95": {
+"cc": "FR",
+"sea": false,
+"l4": {
+"iso": "FR-IDF",
+"name": "Île-de-France",
+"names": {
+"name:ca": "Illa de França",
+"name:en": "Ile-de-France",
+"name:es": "Isla de Francia",
+"name:eu": "Île-de-France",
+"name:fr": "Île-de-France",
+"name:pt": "Ilha de França"
+}
+},
+"l6": {
+"iso": "FR-95",
+"name": "Val-d'Oise",
+"names": {
+"name:es": "Valle del Oise",
+"name:fr": "Val-d'Oise"
+}
+}
+},
+"fr-hdf": {
+"cc": "FR",
+"sea": true,
+"l4": {
+"iso": "FR-HDF",
+"name": "Hauts-de-France",
+"names": {
+"name:ca": "Alts de França",
+"name:en": "Hauts-de-France",
+"name:es": "Alta Francia",
+"name:eu": "Frantzia Garaia",
+"name:fr": "Hauts-de-France"
+}
+},
+"l6": null
+},
+"fr-naq": {
+"cc": "FR",
+"sea": true,
+"l4": {
+"iso": "FR-NAQ",
+"name": "Nouvelle-Aquitaine",
+"names": {
+"name:ca": "Nova Aquitània",
+"name:en": "Nouvelle-Aquitaine",
+"name:es": "Nueva Aquitania",
+"name:eu": "Akitania Berria",
+"name:fr": "Nouvelle-Aquitaine"
+}
+},
+"l6": null
+},
+"fr-nor": {
+"cc": "FR",
+"sea": true,
+"l4": {
+"iso": "FR-NOR",
+"name": "Normandie",
+"names": {
+"name:ca": "Normandia",
+"name:en": "Normandy",
+"name:es": "Normandía",
+"name:eu": "Normandia",
+"name:fr": "Normandie",
+"name:pt": "Normandia"
+}
+},
+"l6": null
+},
+"fr-occ": {
+"cc": "FR",
+"sea": true,
+"l4": {
+"iso": "FR-OCC",
+"name": "Occitanie",
+"names": {
+"name:ca": "Occitània",
+"name:en": "Occitania",
+"name:es": "Occitania",
+"name:eu": "Okzitania",
+"name:fr": "Occitanie",
+"name:pt": "Occitânia"
+}
+},
+"l6": null
+},
+"fr-pac": {
+"cc": "FR",
+"sea": true,
+"l4": {
+"iso": "FR-PAC",
+"name": "Provence-Alpes-Côte d'Azur",
+"names": {
+"name:ca": "Provença-Alps-Costa Blava",
+"name:en": "Provence-Alpes-Côte d'Azur",
+"name:es": "Provenza-Alpes-Costa Azul",
+"name:eu": "Proventza-Alpeak-Kosta Urdina",
+"name:fr": "Provence-Alpes-Côte d'Azur",
+"name:pt": "Provença-Alpes-Costa Azul"
+}
+},
+"l6": null
+},
+"fr-pdl": {
+"cc": "FR",
+"sea": true,
+"l4": {
+"iso": "FR-PDL",
+"name": "Pays de la Loire",
+"names": {
+"name:ca": "País del Loira",
+"name:en": "Pays de la Loire",
+"name:es": "Países del Loira",
+"name:eu": "Loirerria",
+"name:fr": "Pays de la Loire",
+"name:gl": "Países do Loira",
+"name:pt": "País do Loire"
+}
+},
+"l6": null
+},
+"ma": {
+"cc": "MA",
+"sea": true,
+"l4": {
+"iso": "MA-09",
+"name": "Souss-Massa ⵙⵓⵙⵙ-ⵎⴰⵙⵙⴰ سوس-ماسة",
+"names": {
+"name:en": "Souss-Massa",
+"name:es": "Sus-Masa",
+"name:fr": "Souss-Massa"
+}
+},
+"l6": null
+},
+"pt": {
+"cc": "PT",
+"sea": true,
+"l4": {
+"iso": "PT",
+"name": "Portugal",
+"names": {
+"name:ca": "Portugal",
+"name:en": "Portugal",
+"name:es": "Portugal",
+"name:eu": "Portugal",
+"name:fr": "Portugal",
+"name:gl": "Portugal",
+"name:pt": "Portugal"
+}
+},
+"l6": null
+},
+"pt-ac": {
+"cc": "PT",
+"sea": true,
+"l4": {
+"iso": "PT",
+"name": "Portugal",
+"names": {
+"name:ca": "Portugal",
+"name:en": "Portugal",
+"name:es": "Portugal",
+"name:eu": "Portugal",
+"name:fr": "Portugal",
+"name:gl": "Portugal",
+"name:pt": "Portugal"
+}
+},
+"l6": null
+},
+"pt-cont": {
+"cc": "PT",
+"sea": false,
+"l4": {
+"iso": "PT",
+"name": "Portugal",
+"names": {
+"name:ca": "Portugal",
+"name:en": "Portugal",
+"name:es": "Portugal",
+"name:eu": "Portugal",
+"name:fr": "Portugal",
+"name:gl": "Portugal",
+"name:pt": "Portugal"
+}
+},
+"l6": null
+},
+"pt-md": {
+"cc": "PT",
+"sea": true,
+"l4": {
+"iso": "PT",
+"name": "Portugal",
+"names": {
+"name:ca": "Portugal",
+"name:en": "Portugal",
+"name:es": "Portugal",
+"name:eu": "Portugal",
+"name:fr": "Portugal",
+"name:gl": "Portugal",
+"name:pt": "Portugal"
+}
+},
+"l6": null
+}
+}
+}

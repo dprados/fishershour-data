@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+# never commit credentials
+credentials.env
+*.env
+*.p8
+*service*account*.json
+*-key*.json
+*keystore*
+# forecast build scratch (never commit GRIB/NetCDF or generated site)
+/cache/
+/work/
+/site/
+*.grib2
+*.nc
+*.pbf
+!tests/fixtures/sources/*.nc
+report.json

@@ -1,0 +1,38 @@
+name: Spots
+
+# Catalogue checks whenever spot files change: unique ids, valid kinds/modes/regions, and no published id
+# lost without alias (data/published_ids.txt + data/aliases.json). The catalogue itself is rebuilt
+# locally with spots_build/ (Geofabrik extracts are too big for a routine CI job; see README).
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/spots/**
+      - data/regions/**
+      - data/published_ids.txt
+      - data/aliases.json
+  pull_request:
+    paths:
+      - data/spots/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - name: Install
+        run: python -m pip install --quiet -r requirements-dev.txt
+      - name: Catalogue tests
+        run: |
+          python -m pytest -q tests/test_ids.py tests/test_catalog.py
+          python -m fishershour_pipeline.ids

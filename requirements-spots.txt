@@ -1,0 +1,7 @@
+# Only for rebuilding the spot catalogue locally (spots_build/).
+numpy>=2.0
+shapely>=2.0
+osmium>=4.0
+pyshp>=2.3
+eccodes>=2.38
+pytest>=8

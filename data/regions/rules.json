@@ -1,0 +1,705 @@
+{
+ "checked": "2026-11-15",
+ "rules": {
+  "es-an": {
+   "url": "https://www.juntadeandalucia.es/organismos/agriculturapescaaguaydesarrollorural/areas/pesca-acuicultura/pesca-maritima-recreo.html",
+   "verified": true,
+   "note": "Junta de Andalucía: Pesca Marítima de Recreo (Decreto 205/2023)"
+  },
+  "es-an-cont": {
+   "url": "https://www.juntadeandalucia.es/medioambiente/portal/web/caza-y-pesca",
+   "verified": true,
+   "note": "Junta de Andalucía: Portal de Caza y Pesca (continental)"
+  },
+  "es-ar-cont": {
+   "url": "https://www.aragon.es/-/pesca",
+   "verified": true,
+   "note": "Gobierno de Aragón: Pesca en Aragón"
+  },
+  "es-as": {
+   "url": "https://pesca.asturias.es/",
+   "verified": true,
+   "note": "DG Pesca Marítima Asturias home (licencias de pesca section); no dedicated recreational landing page found"
+  },
+  "es-as-cont": {
+   "url": "https://pescafluvial.asturias.es/",
+   "verified": true,
+   "note": "Principado de Asturias: Pesca Fluvial portal (licencias, normativa)"
+  },
+  "es-cb": {
+   "url": "https://www.cantabria.es/web/consejeria-de-desarrollo-rural-ganaderia-pesca-y-biodiversidad/detalle/-/journal_content/56_INSTANCE_DETALLE/16401/80773926",
+   "verified": true,
+   "note": "Gobierno de Cantabria: licencia pesca marítima de recreo 1ª clase"
+  },
+  "es-cb-cont": {
+   "url": "https://sede.cantabria.es/sede/catalogo-de-tramites/tramite/licencias-de-caza-y-pesca-fluvial/5011",
+   "verified": true,
+   "note": "Cantabria sede: licencias caza y pesca fluvial; annual order (Orden DES/02/2026) published in BOC"
+  },
+  "es-cl-cont": {
+   "url": "https://medioambiente.jcyl.es/web/es/caza-pesca/pesca.html",
+   "verified": true,
+   "note": "Junta de Castilla y León: Pesca"
+  },
+  "es-cm-cont": {
+   "url": "https://cazaypesca.castillalamancha.es/pesca/normativa",
+   "verified": true,
+   "note": "JCCM: normativa pesca (orden de vedas)"
+  },
+  "es-cn": {
+   "url": "https://www.gobiernodecanarias.org/pesca/temas/pesca_recreativa/",
+   "verified": true,
+   "note": "Gobierno de Canarias: pesca marítima de recreo"
+  },
+  "es-ct": {
+   "url": "https://agricultura.gencat.cat/ca/ambits/pesca/pesca-recreativa/",
+   "verified": true,
+   "note": "Generalitat (DARPA): pesca recreativa marítima, with normativa/llicències subpages"
+  },
+  "es-ct-cont": {
+   "url": "https://agricultura.gencat.cat/ca/ambits/medi-natural/pesca-continental/",
+   "verified": true,
+   "note": "Generalitat: pesca continental (normativa subpage has annual resolució)"
+  },
+  "es-ex-cont": {
+   "url": "https://www.juntaex.es/temas/medio-ambiente/pesca",
+   "verified": true,
+   "note": "Junta de Extremadura: Pesca"
+  },
+  "es-ga": {
+   "url": "https://mar.xunta.gal/es/el-sector/pesca/pesca-deportiva",
+   "verified": true,
+   "note": "Consellería do Mar, pesca deportiva/recreativa; licences via SIPMAR"
+  },
+  "es-ga-cont": {
+   "url": "https://cazaepescafluvial.xunta.gal/w_xescop/",
+   "verified": true,
+   "note": "Xunta: Caza e pesca fluvial en Galicia"
+  },
+  "es-ib": {
+   "url": "https://www.caib.es/sites/recursosmarins/ca/pesca_recreativa",
+   "verified": true,
+   "note": "Govern Balear, Recursos Marins: pesca recreativa"
+  },
+  "es-ib-cont": {
+   "url": "https://www.caib.es/webgoib/es/pesca",
+   "verified": true,
+   "note": "Govern Balear general fishing page; inland fishing in Balearics is minimal, no dedicated page found"
+  },
+  "es-mapa": {
+   "url": "https://www.mapa.gob.es/es/pesca/temas/pesca-maritima-de-recreo",
+   "verified": true,
+   "note": "MAPA: pesca marítima de recreo (aguas exteriores, RD 347/2011)"
+  },
+  "es-mc": {
+   "url": "https://sede.carm.es/web/procedimiento/1865",
+   "verified": false,
+   "note": "CARM sede procedure 1865 (licencia pesca marítima de recreo); bot-protection blocked automated check, found via search"
+  },
+  "es-mc-cont": {
+   "url": "https://cazaypesca.carm.es/",
+   "verified": true,
+   "note": "CARM: Caza y Pesca Fluvial portal"
+  },
+  "es-md-cont": {
+   "url": "https://www.comunidad.madrid/medio-ambiente/especies-normas-pesca",
+   "verified": true,
+   "note": "Comunidad de Madrid: especies y normas de pesca"
+  },
+  "es-nc-cont": {
+   "url": "https://www.navarra.es/es/medio-ambiente/pesca",
+   "verified": true,
+   "note": "Gobierno de Navarra: Pesca"
+  },
+  "es-pescarec": {
+   "url": "https://www.mapa.gob.es/es/pesca/temas/pesca-maritima-de-recreo/pesca-rec",
+   "verified": true,
+   "note": "MAPA PescaREC app page (catch declaration)"
+  },
+  "es-pv": {
+   "url": "https://www.euskadi.eus/autorizacion/licencias-de-pesca-maritima-recreativa/web01-a2arraku/es/",
+   "verified": true,
+   "note": "Gobierno Vasco: licencias de pesca marítima recreativa"
+  },
+  "es-pv-cont": {
+   "url": "https://www.bizkaia.eus/es/tema-detalle/-/edukia/dt/4342",
+   "verified": true,
+   "note": "Inland fishing managed by each Diputación Foral (Bizkaia shown; Gipuzkoa: egoitza.gipuzkoa.eus, Araba: araba.eus); licence is Basque autonómica"
+  },
+  "es-ri-cont": {
+   "url": "https://web.larioja.org/oficina-electronica/tramite?n=15049",
+   "verified": false,
+   "note": "La Rioja licencia de pesca procedure; Cloudflare blocks automated check, found via search"
+  },
+  "es-vc": {
+   "url": "https://sede.gva.es/es/detall-tramit?id_proc=647",
+   "verified": true,
+   "note": "GVA sede: licencia pesca marítima de recreo en aguas interiores (no better landing page found)"
+  },
+  "es-vc-cont": {
+   "url": "https://agroambient.gva.es/es/web/medio-natural/pesca",
+   "verified": true,
+   "note": "GVA Medio Natural: pesca continental (redirects to mediambient.gva.es)"
+  },
+  "fr-bre": {
+   "url": "https://www.dirm.nord-atlantique-manche-ouest.developpement-durable.gouv.fr/peche-de-loisir-r61.html",
+   "verified": true,
+   "note": "DIRM NAMO: pêche de loisir"
+  },
+  "fr-cartedepeche": {
+   "url": "https://www.cartedepeche.fr/",
+   "verified": true,
+   "note": "Official fishing card site"
+  },
+  "fr-cor": {
+   "url": "https://www.dirm.mediterranee.developpement-durable.gouv.fr/peche-de-loisir-r18.html",
+   "verified": true,
+   "note": "DIRM Méditerranée: pêche de loisir"
+  },
+  "fr-d-01": {
+   "url": "https://www.federation-peche-ain.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-02": {
+   "url": "https://www.peche02.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory); HTTPS OK (curl flagged cert chain, loads with browser trust)"
+  },
+  "fr-d-03": {
+   "url": "https://www.federation-peche-allier.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-04": {
+   "url": "https://www.peche04.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory); HTTPS OK (curl flagged cert chain, loads with browser trust)"
+  },
+  "fr-d-05": {
+   "url": "https://peche-hautes-alpes.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-06": {
+   "url": "https://www.peche06.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-07": {
+   "url": "https://www.peche-ardeche.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-08": {
+   "url": "https://www.peche08.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-09": {
+   "url": "https://www.peche-ariege.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-10": {
+   "url": "https://www.fedepeche10.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-11": {
+   "url": "https://www.fedepeche11.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-12": {
+   "url": "https://www.pecheaveyron.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-13": {
+   "url": "https://www.peche13.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-14": {
+   "url": "https://www.federation-peche14.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-15": {
+   "url": "https://www.cantal-peche.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-16": {
+   "url": "https://www.federationpeche16.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-17": {
+   "url": "https://www.peche17.org/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-18": {
+   "url": "https://federationpeche18.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-19": {
+   "url": "https://www.peche19.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-21": {
+   "url": "https://www.fedepeche21.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-22": {
+   "url": "https://www.federationpeche22.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-23": {
+   "url": "https://fdpeche23.wixsite.com/peche23",
+   "verified": true,
+   "note": "Fédération de la Creuse (Wix site)"
+  },
+  "fr-d-24": {
+   "url": "https://www.federationpechedordogne.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-25": {
+   "url": "https://federation-peche-doubs.org/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-26": {
+   "url": "https://drome.federationpeche.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory); HTTPS OK (curl flagged cert chain, loads with browser trust)"
+  },
+  "fr-d-27": {
+   "url": "https://www.eure-peche.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory); HTTPS OK (curl flagged cert chain, loads with browser trust)"
+  },
+  "fr-d-28": {
+   "url": "https://www.peche28.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory); HTTPS OK (curl flagged cert chain, loads with browser trust)"
+  },
+  "fr-d-29": {
+   "url": "https://peche-en-finistere.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-2a": {
+   "url": "https://www.truitecorse.org/",
+   "verified": true,
+   "note": "Single Fédération de la Corse covers 2A and 2B"
+  },
+  "fr-d-2b": {
+   "url": "https://www.truitecorse.org/",
+   "verified": true,
+   "note": "Single Fédération de la Corse covers 2A and 2B"
+  },
+  "fr-d-30": {
+   "url": "https://www.pechegard.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-31": {
+   "url": "https://www.fede-peche31.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-32": {
+   "url": "https://www.gers-peche.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-33": {
+   "url": "https://www.peche33.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-34": {
+   "url": "https://www.pecheherault.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-35": {
+   "url": "https://www.peche35.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-36": {
+   "url": "https://www.peche36.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-37": {
+   "url": "https://www.fedepeche37.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-38": {
+   "url": "https://www.peche-isere.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-39": {
+   "url": "https://www.peche-jura.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-40": {
+   "url": "https://www.peche-landes.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-41": {
+   "url": "https://www.peche41.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory); HTTPS OK (curl flagged cert chain, loads with browser trust)"
+  },
+  "fr-d-42": {
+   "url": "https://peche42.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-43": {
+   "url": "https://www.pechehauteloire.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-44": {
+   "url": "https://www.federationpeche44.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-45": {
+   "url": "https://www.federationpeche45.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-46": {
+   "url": "https://www.pechelot.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-47": {
+   "url": "https://www.peche47.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-48": {
+   "url": "https://www.lozerepeche.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-49": {
+   "url": "https://fedepeche49.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-50": {
+   "url": "https://www.peche-manche.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-51": {
+   "url": "https://www.peche51.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-52": {
+   "url": "https://www.peche52.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-53": {
+   "url": "https://www.fedepeche53.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-54": {
+   "url": "https://www.peche-54.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-55": {
+   "url": "https://www.peche55.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-56": {
+   "url": "https://morbihan.federationpeche.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory); HTTPS OK (curl flagged cert chain, loads with browser trust)"
+  },
+  "fr-d-57": {
+   "url": "https://www.federationpeche57.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-58": {
+   "url": "https://www.federationdepeche58.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-59": {
+   "url": "https://www.peche59.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-60": {
+   "url": "https://www.peche60.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-61": {
+   "url": "https://www.peche-orne.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-62": {
+   "url": "https://www.peche62.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-63": {
+   "url": "https://www.peche63.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-64": {
+   "url": "https://www.federation-peche64.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-65": {
+   "url": "https://www.peche65.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-66": {
+   "url": "https://www.peche66.org/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-67": {
+   "url": "https://www.peche67.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-68": {
+   "url": "https://www.peche68.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-69": {
+   "url": "https://www.peche69.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-70": {
+   "url": "https://www.peche-haute-saone.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-71": {
+   "url": "https://www.peche-saone-et-loire.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-72": {
+   "url": "https://www.peche72.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-73": {
+   "url": "https://www.savoiepeche.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-74": {
+   "url": "https://pechehautesavoie.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-75": {
+   "url": "https://www.federation-peche-paris.fr/",
+   "verified": true,
+   "note": "Fédération interdépartementale Paris/petite couronne (75, 92, 93, 94)"
+  },
+  "fr-d-76": {
+   "url": "https://www.peche76.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-77": {
+   "url": "https://www.federationpeche77.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory); HTTPS OK (curl flagged cert chain, loads with browser trust)"
+  },
+  "fr-d-78": {
+   "url": "https://www.federationpeche78.net/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-79": {
+   "url": "https://peche-en-deux-sevres.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-80": {
+   "url": "https://www.peche80.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-81": {
+   "url": "https://www.pechetarn.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-82": {
+   "url": "https://www.pechetarnetgaronne.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-83": {
+   "url": "https://www.pechevar.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-84": {
+   "url": "https://www.peche-vaucluse.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-85": {
+   "url": "https://federation-peche-vendee.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-86": {
+   "url": "https://www.peche86.fr/",
+   "verified": false,
+   "note": "Fédération de la Vienne; site renders but returned HTTP 500 at check time"
+  },
+  "fr-d-87": {
+   "url": "https://www.federation-peche87.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-88": {
+   "url": "https://www.peche88.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-89": {
+   "url": "https://www.federation-peche-yonne.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-90": {
+   "url": "https://www.fede-peche90.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-d-91": {
+   "url": "https://www.peche91.com/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory); HTTPS OK (curl flagged cert chain, loads with browser trust)"
+  },
+  "fr-d-92": {
+   "url": "https://www.federation-peche-paris.fr/",
+   "verified": true,
+   "note": "Fédération interdépartementale Paris/petite couronne (75, 92, 93, 94)"
+  },
+  "fr-d-93": {
+   "url": "https://www.federation-peche-paris.fr/",
+   "verified": true,
+   "note": "Fédération interdépartementale Paris/petite couronne (75, 92, 93, 94)"
+  },
+  "fr-d-94": {
+   "url": "https://www.federation-peche-paris.fr/",
+   "verified": true,
+   "note": "Fédération interdépartementale Paris/petite couronne (75, 92, 93, 94)"
+  },
+  "fr-d-95": {
+   "url": "https://www.peche95.fr/",
+   "verified": true,
+   "note": "Fédération départementale de pêche (from FNPF directory)"
+  },
+  "fr-fnpf": {
+   "url": "https://www.generationpeche.fr/176-regles-a-connaitre.htm",
+   "verified": true,
+   "note": "FNPF 'Génération Pêche' rules page (federationpeche.fr has no regulations page; FD directory: https://www.federationpeche.fr/116-fd.htm)"
+  },
+  "fr-hdf": {
+   "url": "https://www.dirm.memn.developpement-durable.gouv.fr/peche-de-loisir-r395.html",
+   "verified": true,
+   "note": "DIRM Manche Est-Mer du Nord: pêche de loisir"
+  },
+  "fr-naq": {
+   "url": "https://www.mer.gouv.fr/peche-de-loisir-en-mer",
+   "verified": true,
+   "note": "National page; DIRM Sud-Atlantique has no pêche de loisir section"
+  },
+  "fr-nor": {
+   "url": "https://www.dirm.memn.developpement-durable.gouv.fr/peche-de-loisir-r395.html",
+   "verified": true,
+   "note": "DIRM Manche Est-Mer du Nord: pêche de loisir"
+  },
+  "fr-occ": {
+   "url": "https://www.dirm.mediterranee.developpement-durable.gouv.fr/peche-de-loisir-r18.html",
+   "verified": true,
+   "note": "DIRM Méditerranée: pêche de loisir"
+  },
+  "fr-pac": {
+   "url": "https://www.dirm.mediterranee.developpement-durable.gouv.fr/peche-de-loisir-r18.html",
+   "verified": true,
+   "note": "DIRM Méditerranée: pêche de loisir"
+  },
+  "fr-pdl": {
+   "url": "https://www.dirm.nord-atlantique-manche-ouest.developpement-durable.gouv.fr/peche-de-loisir-r61.html",
+   "verified": true,
+   "note": "DIRM NAMO: pêche de loisir"
+  },
+  "fr-recfishing": {
+   "url": "https://www.mer.gouv.fr/peche-de-loisir-en-mer",
+   "verified": true,
+   "note": "No standalone RecFishing page; this official page links the RecFishing app (iOS/Android) and manual"
+  },
+  "ma": {
+   "url": "http://www.mpm.gov.ma/",
+   "verified": false,
+   "note": "Département de la Pêche Maritime homepage (HTTP only); no dedicated pêche de loisir page found"
+  },
+  "pt": {
+   "url": "https://www.dgrm.pt/licenca-de-pesca-ludica",
+   "verified": true,
+   "note": "DGRM: licença de pesca lúdica"
+  },
+  "pt-ac": {
+   "url": "https://portal.azores.gov.pt/en/web/drp/-/licen%C3%A7as-para-pesca-l%C3%BAdica",
+   "verified": false,
+   "note": "Direção Regional das Pescas Açores; Cloudflare blocks automated check, found via search"
+  },
+  "pt-cont": {
+   "url": "https://www.gov.pt/servicos/obter-licenca-de-pesca-desportiva-em-aguas-interiores",
+   "verified": true,
+   "note": "gov.pt service page (ICNF is the entity); icnf.pt is a JS app whose pages can't be verified automatically"
+  },
+  "pt-md": {
+   "url": "https://simplifica.madeira.gov.pt/services/8-26-1",
+   "verified": true,
+   "note": "Governo Regional Madeira (SIMplifica): licença de pesca lúdica, DR Pescas"
+  }
+ }
+}

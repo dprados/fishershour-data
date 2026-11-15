@@ -1,0 +1,46 @@
+name: Regulation links
+
+# Weekly check of every official regulation URL in data/regions/rules.json. On a broken link it opens
+# (or updates) an issue; the JSON is never rewritten automatically, so the app keeps the last good link.
+on:
+  schedule:
+    - cron: "15 6 * * 1"
+  push:
+    branches: [main]
+    paths:
+      - data/regions/rules.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: python -m pip install --quiet requests
+      - name: Check links
+        id: check
+        run: |
+          python -m fishershour_pipeline.links --report links.md || echo "failed=true" >> "$GITHUB_OUTPUT"
+          cat links.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Open or update issue
+        if: steps.check.outputs.failed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Broken regulation links"
+          n=$(gh issue list --state open --search "in:title \"$title\"" --json number -q '.[0].number')
+          if [ -n "$n" ]; then
+            gh issue comment "$n" --body-file links.md
+          else
+            gh issue create --title "$title" --body-file links.md --label data \
+              || gh issue create --title "$title" --body-file links.md
+          fi
