@@ -154,7 +154,8 @@ Debug a few spots: `--only es-playa-de-el-palmar fr-loire-a-blois`; skip sources
 ~17 KB per spot (all series, 7 days hourly + `h3` to day 14) → ~230 MB for 13.3k spots plus index and
 zones; the validator fails above 800 MB. Sky, weather code, currents and storm flags (16-11-2026) add
 ~3.3 KB per sea spot (`cc`, `wx`, `cs`, `cd`) and ~1.3 KB per freshwater spot (`cc`, `wx`; no `cs`/`cd`),
-≈ +36 MB; ramps add ~180 tiles, ~0.4 MB. The forecast run downloads ~0.6 GB more ECMWF fields (`tcc`,
+measured on the first run: site 232 → 269 MB, `es-playa-de-langre.json` 17.1 → 20.5 KB; ramps add 178 tiles.
+Build time (report `total`) 291 → 432 s, workflow 6 → 8.5 min (Hub'Eau, not ECMWF, bounded the fetch). The forecast run downloads ~0.6 GB more ECMWF fields (`tcc`,
 `cp`, `mucape`, `2d` ≤ 180 h), ~0.15 GB more ICON-EU (`CLCT`, `CAPE_ML`), ~0.4 GB AROME SP2 and one
 Copernicus currents subset per wave tile.
 Each tile entry also carries `h0` (epoch seconds of the generation hour) and `hs` (36 hourly scores of its
