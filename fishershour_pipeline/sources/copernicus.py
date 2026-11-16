@@ -4,6 +4,7 @@
   2°x2° tile of sea spots and basin.
 - SST: daily surface `thetao` (IBI PHY / MED PHY-TEM), one request per basin over the spots' bbox.
 - Clarity: daily diffuse attenuation (IBI BGC optics `kd`, MED BGC optics `kd490`), mapped to cl in 0..1.
+- Currents: hourly surface uo/vo (IBI PHY 2D, with tides; MED PHY-CUR 2D), same tiles as waves.
 Each spot uses the nearest valid sea cell, preferring cells whose 8 neighbours are sea (cached).
 Attribution: "Generated using E.U. Copernicus Marine Service Information".
 """
@@ -113,26 +114,27 @@ def _surface(da):
     return da
 
 
-def fetch_waves(spots: list[dict], h_start: dt.datetime, work_dir: str, cache_dir: str | None, workers: int = 6):
-    t0 = time.time()
+def _fetch_hourly(spots, h_start, end, work_dir, cache_dir, kind: str, datasets: dict[str, str],
+                  variables: list[str], names: list[str], workers: int):
+    """One hourly subset per 2°x2° tile and basin -> (target times, {name: (nspots, nt)}, covered, failed, bytes).
+
+    `names[k]` is the output name of `variables[k]`. Each spot takes the nearest valid sea cell (eroded first).
+    """
     groups = tiles(spots)
-    if not groups:
-        return None, SourceStatus("waves-cmems", False, 0.0, "no sea spot in IBI/MED")
-    end = h_start + dt.timedelta(hours=config.H_HOURS - 1)
-    os.makedirs(work_dir, exist_ok=True)
+    nt = int((end - h_start).total_seconds() // 3600) + 1
+    target = int(h_start.timestamp()) + 3600 * np.arange(nt, dtype=np.int64)
     nspots = len(spots)
-    target = int(h_start.timestamp()) + 3600 * np.arange(config.H_HOURS, dtype=np.int64)
-    fields = {n: np.full((nspots, config.H_HOURS), np.nan, dtype=np.float32) for n in ("hs", "tp", "dir")}
+    fields = {n: np.full((nspots, nt), np.nan, dtype=np.float32) for n in names}
     covered = np.zeros(nspots, bool)
     failed: dict[str, list[str]] = {"ibi": [], "med": []}
     nbytes = 0
+    os.makedirs(work_dir, exist_ok=True)
 
     def work(key):
         basin = key.split("_")[0]
-        dataset = config.MED_WAV if basin == "med" else config.IBI_WAV
         domain = config.MED_DOMAIN if basin == "med" else config.IBI_DOMAIN
         box = _box(spots, groups[key], config.WAVE_TILE_MARGIN, domain)
-        return subset(dataset, config.WAV_VARS, box, h_start, end, work_dir, f"wav_{key}.nc")
+        return subset(datasets[basin], variables, box, h_start, end, work_dir, f"{kind}_{key}.nc")
 
     import xarray as xr
 
@@ -146,28 +148,38 @@ def fetch_waves(spots: list[dict], h_start: dt.datetime, work_dir: str, cache_di
                 nbytes += os.path.getsize(path)
                 with IO_LOCK, xr.open_dataset(path) as ds:
                     grid = _grid_of(ds)
-                    hs = ds["VHM0"].values
-                    tp = ds["VTPK"].values
-                    dr = ds["VMDR"].values
+                    arrs = [_surface(ds[v]).values for v in variables]
                     times = ds["time"].values.astype("datetime64[s]").astype(np.int64)
                 os.remove(path)
             except Exception as e:
                 failed[key.split("_")[0]].append(key)
-                log.warning("waves tile %s failed: %s", key, e)
+                log.warning("%s tile %s failed: %s", kind, key, e)
                 continue
-            valid = np.isfinite(hs).any(axis=0)
+            valid = np.isfinite(arrs[0]).any(axis=0)
             sub = [spots[i] for i in idx]
-            cells, _ = map_cells(f"wav_{key}", grid, lambda: [erode_valid(valid), valid], sub, 12.0, cache_dir)
+            cells, _ = map_cells(f"{kind}_{key}", grid, lambda: [erode_valid(valid), valid], sub, 12.0, cache_dir)
             ok = cells[:, 0] >= 0
             pos = np.searchsorted(target, times)
             inside = (pos < len(target)) & (target[np.clip(pos, 0, len(target) - 1)] == times)
             gi = np.array(idx)
-            for name, arr in (("hs", hs), ("tp", tp), ("dir", dr)):
+            for name, arr in zip(names, arrs):
                 vals = arr[:, cells[ok, 0], cells[ok, 1]].T  # (n_ok, nt)
                 blk = fields[name][gi[ok]]
                 blk[:, pos[inside]] = vals[:, inside]
                 fields[name][gi[ok]] = blk
             covered[gi[ok]] = True
+    return groups, target, fields, covered, failed, nbytes
+
+
+def fetch_waves(spots: list[dict], h_start: dt.datetime, work_dir: str, cache_dir: str | None, workers: int = 6):
+    t0 = time.time()
+    groups = tiles(spots)
+    if not groups:
+        return None, SourceStatus("waves-cmems", False, 0.0, "no sea spot in IBI/MED")
+    end = h_start + dt.timedelta(hours=config.H_HOURS - 1)
+    groups, target, fields, covered, failed, nbytes = _fetch_hourly(
+        spots, h_start, end, work_dir, cache_dir, "wav", {"ibi": config.IBI_WAV, "med": config.MED_WAV},
+        config.WAV_VARS, ["hs", "tp", "dir"], workers)
     elapsed = time.time() - t0
     n_ibi = sum(1 for k in groups if k.startswith("ibi"))
     n_med = len(groups) - n_ibi
@@ -178,6 +190,25 @@ def fetch_waves(spots: list[dict], h_start: dt.datetime, work_dir: str, cache_di
     if not covered.any():
         return None, [st_ibi, st_med]
     return SourceData("cmems-waves", target, fields, covered), [st_ibi, st_med]
+
+
+def fetch_currents(spots: list[dict], h_start: dt.datetime, work_dir: str, cache_dir: str | None,
+                   workers: int = 6):
+    """Hourly surface currents uo/vo (m/s) from IBI / MEDSEA PHY 2D, as far as the forecast goes (~9 days)."""
+    t0 = time.time()
+    groups = tiles(spots)
+    if not groups:
+        return None, SourceStatus("cmems-cur", False, 0.0, "no sea spot in IBI/MED")
+    end = h_start + dt.timedelta(days=config.CUR_DAYS) - dt.timedelta(hours=1)
+    groups, target, fields, covered, failed, nbytes = _fetch_hourly(
+        spots, h_start, end, work_dir, cache_dir, "cur", {"ibi": config.IBI_CUR, "med": config.MED_CUR},
+        config.CUR_VARS, ["u", "v"], workers)
+    nfail = len(failed["ibi"]) + len(failed["med"])
+    st = SourceStatus("cmems-cur", bool(covered.any()) and nfail < max(1, len(groups)) * 0.2, time.time() - t0,
+                      f"{len(groups) - nfail}/{len(groups)} tiles; {int(covered.sum())} spots", nbytes)
+    if not covered.any():
+        return None, st
+    return SourceData("cmems-cur", target, fields, covered), st
 
 
 def _daily(spots, h_start, work_dir, cache_dir, which: str, days: int = 10):

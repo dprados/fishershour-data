@@ -90,3 +90,16 @@ def regions_meta(used: set[str], rules_path: str = REGIONS_RULES, zones_path: st
         out.append({"id": rid, "name": name, "kind": "sea" if sea else "fresh", "rules": rule.get("url"),
                     "declare": declare})
     return out
+
+
+def load_depth(path: str = config.DEPTH_FILE) -> dict[str, dict]:
+    """Static per-spot depth (spots_build/depth.py): {id: {lat, lon, depth, depth10}}; {} when absent.
+
+    File: {"v": 1, "cols": ["lat", "lon", "depth", "depth10", "src"], "spots": {id: [..]}}.
+    """
+    if not path or not os.path.exists(path):
+        return {}
+    with open(path) as f:
+        blob = json.load(f)
+    cols = blob.get("cols") or ["lat", "lon", "depth", "depth10", "src"]
+    return {sid: dict(zip(cols, row)) for sid, row in blob.get("spots", {}).items()}

@@ -1,8 +1,9 @@
 """Météo-France AROME 0.025° (Licence Ouverte Etalab 2.0, "Source : Météo-France").
 
-10 m wind (10u, 10v) and hourly max gust (max_i10fg) for France and northern
-Spain, 0–48 h. Files come from the public OVH bucket (no key), one SP1 package
-per 6-hour block (~58 MB each, ~490 MB per run). Only the three needed
+10 m wind (10u, 10v) and hourly max gust (max_i10fg) from SP1, low/medium/high
+cloud cover (lcc, mcc, hcc -> total `cc`) from SP2, for France and northern
+Spain, 0–48 h. Files come from the public OVH bucket (no key), one SP1 and one
+SP2 package per 6-hour block (~58 + 47 MB each, ~860 MB per run). Only the needed
 messages per hour are decoded. Spots within 0.5° of the grid edge are skipped
 (lateral boundary zone).
 """
@@ -15,15 +16,16 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 
 from .. import config
+from ..weather import total_cloud
 from ..cells import map_cells
 from .base import SourceData, SourceStatus, decode_grib, extract, http_exists, http_get, log, peek_grib, split_grib
 
-WANTED = {"10u": "u10", "10v": "v10", "max_i10fg": "gust"}
+WANTED = {"10u": "u10", "10v": "v10", "max_i10fg": "gust", "lcc": "lcc", "mcc": "mcc", "hcc": "hcc"}
 
 
-def _url(run: dt.datetime, block: str) -> str:
+def _url(run: dt.datetime, block: str, package: str = "SP1") -> str:
     r = run.strftime("%Y-%m-%dT%H:%M:%SZ")
-    return f"{config.AROME_BASE}/pnt/{r}/arome/0025/SP1/arome__0025__SP1__{block}__{r}.grib2"
+    return f"{config.AROME_BASE}/pnt/{r}/arome/0025/{package}/arome__0025__{package}__{block}__{r}.grib2"
 
 
 def find_run(now: dt.datetime) -> dt.datetime | None:
@@ -31,7 +33,7 @@ def find_run(now: dt.datetime) -> dt.datetime | None:
     base = now.replace(minute=0, second=0, microsecond=0, hour=(now.hour // 3) * 3)
     for k in range(9):
         run = base - dt.timedelta(hours=3 * k)
-        if http_exists(_url(run, config.AROME_BLOCKS[-1])):
+        if all(http_exists(_url(run, config.AROME_BLOCKS[-1], p)) for p in config.AROME_PACKAGES):
             return run
     return None
 
@@ -83,7 +85,8 @@ def fetch(spots: list[dict], now: dt.datetime, cache_dir: str | None, workers: i
     nbytes = 0
     failed = []
     with ThreadPoolExecutor(workers) as ex:
-        futs = {ex.submit(http_get, _url(run, b), None, 300): b for b in config.AROME_BLOCKS}
+        futs = {ex.submit(http_get, _url(run, b, p), None, 300): f"{p}/{b}"
+                for b in config.AROME_BLOCKS for p in config.AROME_PACKAGES}
         for f in as_completed(futs):
             try:
                 data = f.result()
@@ -97,13 +100,15 @@ def fetch(spots: list[dict], now: dt.datetime, cache_dir: str | None, workers: i
         return None, SourceStatus("arome", False, time.time() - t0, "no field decoded", nbytes, run_s)
     times = np.array(sorted(per_t), dtype=np.int64)
     fields = {}
-    for name in WANTED.values():
+    for name in set(WANTED.values()):
         arr = np.full((nspots, len(times)), np.nan, dtype=np.float32)
         for k, t in enumerate(times):
             v = per_t[int(t)].get(name)
             if v is not None:
                 arr[:, k] = v
         fields[name] = arr
-    detail = f"{len(config.AROME_BLOCKS) - len(failed)}/{len(config.AROME_BLOCKS)} blocks; {int(inside.sum())} spots"
+    fields["cc"] = total_cloud(fields.pop("lcc"), fields.pop("mcc"), fields.pop("hcc"))
+    nblocks = len(config.AROME_BLOCKS) * len(config.AROME_PACKAGES)
+    detail = f"{nblocks - len(failed)}/{nblocks} blocks; {int(inside.sum())} spots"
     return (SourceData("arome", times, fields, inside, {"run": run_s}),
             SourceStatus("arome", not failed, time.time() - t0, detail, nbytes, run_s))

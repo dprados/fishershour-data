@@ -24,6 +24,11 @@ IBI_SST = ("cmems_mod_ibi_phy_anfc_0.027deg-3D_P1D-m", "thetao")
 MED_SST = ("cmems_mod_med_phy-tem_anfc_4.2km_P1D-m", "thetao")
 IBI_KD = ("cmems_mod_ibi_bgc-optics_anfc_0.027deg_P1D-m", "kd")
 MED_KD = ("cmems_mod_med_bgc-optics_anfc_4.2km_P1D-m", "kd490")
+# Surface currents, hourly (IBI includes tides). Forecast ~9–10 days: all of `h`, the start of `h3`.
+IBI_CUR = "cmems_mod_ibi_phy_anfc_0.027deg-2D_PT1H-m"
+MED_CUR = "cmems_mod_med_phy-cur_anfc_4.2km-2D_PT1H-m"
+CUR_VARS = ["uo", "vo"]
+CUR_DAYS = 14            # requested span; the service clips it to the forecast it has
 WAVE_TILE_DEG = 2.0      # spots are grouped in 2°x2° tiles, one subset request per tile and basin
 WAVE_TILE_MARGIN = 0.12
 
@@ -38,17 +43,19 @@ ECMWF_MIRRORS = [
 ]
 ECMWF_RESOL = "0p1"
 ECMWF_WAVE_PARAMS = ["swh", "mwd", "pp1d"]
-ECMWF_OPER_PARAMS = ["10u", "10v", "10fg", "2t", "msl", "tp"]
+ECMWF_OPER_PARAMS = ["10u", "10v", "10fg", "2t", "msl", "tp", "tcc", "cp", "mucape", "2d"]
+ECMWF_MAX_STEP = {"2d": 180}   # dew point only for fog on `h` (7 days): saves ~30 GRIB fields per run
 ECMWF_STEPS = list(range(0, 145, 3)) + list(range(150, 361, 6))
 
 # ------------------------------------------------------------------ DWD ICON-EU
 ICON_EU_BASE = "https://opendata.dwd.de/weather/nwp/icon-eu/grib"
-ICON_EU_VARS = {"u_10m": "U_10M", "v_10m": "V_10M", "vmax_10m": "VMAX_10M"}
+ICON_EU_VARS = {"u_10m": "U_10M", "v_10m": "V_10M", "vmax_10m": "VMAX_10M", "clct": "CLCT", "cape_ml": "CAPE_ML"}
 ICON_EU_STEPS = list(range(0, 79)) + list(range(81, 121, 3))
 ICON_EU_DOMAIN = (29.5, 70.5, -23.5, 62.5)
 
 # ------------------------------------------------------------------ Météo-France AROME
 AROME_BASE = "https://meteofrance-pnt.s3.rbx.io.cloud.ovh.net"
+AROME_PACKAGES = ["SP1", "SP2"]   # SP1: wind, gusts; SP2: low/medium/high cloud
 AROME_BLOCKS = ["00H06H", "07H12H", "13H18H", "19H24H", "25H30H", "31H36H", "37H42H", "43H48H"]
 AROME_DOMAIN = (37.5, 55.4, -12.0, 16.0)
 AROME_EDGE_MARGIN = 0.5
@@ -77,7 +84,12 @@ ATTRIBUTION = [
     "MITECO",
     "©Junta de Castilla y León (datos gratuitos en www.jcyl.es)",
     "EOT20 DGFI-TUM (CC BY 4.0)",
+    "EMODnet Bathymetry Consortium, EMODnet Digital Bathymetry (DTM) (CC BY 4.0)",
+    "GEBCO Compilation Group, GEBCO 2020 Grid",
     "© OpenStreetMap contributors (ODbL)",
 ]
+
+DEPTH_FILE = "data/spots/depth.json"     # static, from spots_build/depth.py (EMODnet DTM, GEBCO fallback)
+RAMPS_FILE = "data/ramps/ramps.json"     # weekly, from fishershour_pipeline.ramps (OSM via Overpass)
 
 SPOT_FILES = ["data/spots/sea.json", "data/spots/fresh.json"]

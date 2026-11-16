@@ -1,4 +1,5 @@
-"""ECMWF IFS 0.1° open data (CC BY 4.0): waves (swh, mwd, pp1d) and weather (10u, 10v, 10fg, 2t, msl, tp).
+"""ECMWF IFS 0.1° open data (CC BY 4.0): waves (swh, mwd, pp1d) and weather (10u, 10v, 10fg, 2t, msl, tp,
+tcc, cp, mucape, 2d).
 
 Only the needed GRIB messages are fetched with HTTP byte ranges read from the
 `.index` sidecar files. Mirrors: AWS (eu-central-1) first, data.ecmwf.int next.
@@ -113,7 +114,8 @@ def fetch(spots: list[dict], now: dt.datetime, cache_dir: str | None, workers: i
         wind_cells[miss] = fallback[miss]
 
     tasks = [("wave", st, p) for st in config.ECMWF_STEPS for p in config.ECMWF_WAVE_PARAMS]
-    tasks += [("oper", st, p) for st in config.ECMWF_STEPS for p in config.ECMWF_OPER_PARAMS]
+    tasks += [("oper", st, p) for st in config.ECMWF_STEPS for p in config.ECMWF_OPER_PARAMS
+              if st <= config.ECMWF_MAX_STEP.get(p, 10_000)]
     wave_t: dict[int, dict[str, np.ndarray]] = {}
     wind_t: dict[int, dict[str, np.ndarray]] = {}
     failures = 0
@@ -123,7 +125,7 @@ def fetch(spots: list[dict], now: dt.datetime, cache_dir: str | None, workers: i
         if r is None:
             return stream, step, param, None, None, 0
         fld, n = r
-        if param == "10fg" and step == 0:
+        if param in ("10fg", "cp") and step == 0:
             return stream, step, param, None, None, n  # gust undefined at analysis time (all zeros)
         cells = wave_cells if stream == "wave" else wind_cells
         return stream, step, param, fld.valid_time, extract(fld.values, cells), n
@@ -138,7 +140,7 @@ def fetch(spots: list[dict], now: dt.datetime, cache_dir: str | None, workers: i
                 log.warning("ECMWF field failed: %s", e)
                 continue
             if vals is None:
-                if not (param == "10fg" and step == 0):
+                if not (param in ("10fg", "cp") and step == 0):
                     failures += 1
                 continue
             nbytes += n
@@ -155,7 +157,9 @@ def fetch(spots: list[dict], now: dt.datetime, cache_dir: str | None, workers: i
         times, f = stack_times(wind_t, config.ECMWF_OPER_PARAMS, nspots)
         t2 = f["2t"] - 273.15
         wind = SourceData("ecmwf", times, {"u10": f["10u"], "v10": f["10v"], "gust": f["10fg"], "t2": t2,
-                                           "msl": f["msl"] / 100.0, "tp": f["tp"] * 1000.0},
+                                           "msl": f["msl"] / 100.0, "tp": f["tp"] * 1000.0,
+                                           "cc": f["tcc"] * 100.0, "cp": f["cp"] * 1000.0, "cape": f["mucape"],
+                                           "td2": f["2d"] - 273.15},
                           wind_cells[:, 0] >= 0, {"run": run_s, "run_ts": int(run.timestamp())})
     total = len(tasks)
     detail = f"{total - failures}/{total} fields"

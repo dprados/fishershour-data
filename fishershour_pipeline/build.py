@@ -18,15 +18,15 @@ import time
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
 
-from . import config, ids, products
+from . import config, ids, products, ramps
 from .blend import Sources, blend
 from .sources import arome, copernicus, ecmwf, glofas, hubeau, icon_eu, miteco
 from .sources.base import SourceStatus
-from .spots import load_spots, load_zone_names, regions_meta, tile_of
+from .spots import load_depth, load_spots, load_zone_names, regions_meta, tile_of
 from .state import LastGood
 
 log = logging.getLogger("fishershour")
-ALL_SOURCES = ("waves", "sst", "kd", "ecmwf", "icon-eu", "arome", "hubeau", "miteco", "glofas")
+ALL_SOURCES = ("waves", "currents", "sst", "kd", "ecmwf", "icon-eu", "arome", "hubeau", "miteco", "glofas")
 
 
 def dumps(obj) -> str:
@@ -64,6 +64,7 @@ def fetch_all(spots, now, h_start, work, cache, skip: set[str]) -> tuple[Sources
 
     jobs = {
         "waves": lambda: copernicus.fetch_waves(spots, h_start, os.path.join(work, "cmems"), cache),
+        "currents": lambda: copernicus.fetch_currents(spots, h_start, os.path.join(work, "cmems"), cache),
         "sst": lambda: copernicus.fetch_sst(spots, h_start, os.path.join(work, "cmems"), cache),
         "kd": lambda: copernicus.fetch_kd(spots, h_start, os.path.join(work, "cmems"), cache),
         "ecmwf": lambda: ecmwf.fetch(spots, now, cache),
@@ -91,6 +92,8 @@ def fetch_all(spots, now, h_start, work, cache, skip: set[str]) -> tuple[Sources
         statuses.extend(st if isinstance(st, list) else [st])
         if name == "waves":
             src.waves = data
+        elif name == "currents":
+            src.currents = data
         elif name == "sst":
             src.sst = data
         elif name == "kd":
@@ -121,6 +124,7 @@ def meta_status(statuses: list[SourceStatus]) -> dict:
         return "ok" if all(s.ok for s in found) else "failed"
 
     return {"ibi": word("ibi"), "medsea": word("medsea"), "sst": word("cmems-sst"), "clarity": word("cmems-kd"),
+            "currents": word("cmems-cur"),
             "ecmwf": word("ecmwf-wave", "ecmwf-wind"), "icon": word("icon-eu"), "arome": word("arome"),
             "glofas": word("glofas"), "hubeau": word("hubeau"), "miteco": word("miteco")}
 
@@ -130,6 +134,8 @@ def main(argv=None) -> int:
     ap.add_argument("--out", default="site/v1")
     ap.add_argument("--spots", nargs="+", default=config.SPOT_FILES)
     ap.add_argument("--tides", default="data/tides/eot20_constituents.json")
+    ap.add_argument("--depth", default=config.DEPTH_FILE)
+    ap.add_argument("--ramps", default=config.RAMPS_FILE)
     ap.add_argument("--cache", default="cache")
     ap.add_argument("--work", default="work")
     ap.add_argument("--skip", nargs="*", default=[], help=f"sources to skip: {ALL_SOURCES}")
@@ -173,7 +179,7 @@ def main(argv=None) -> int:
 
     t = time.time()
     builder = products.SpotBuilder(blended, h_start, now, generated, src.hubeau.meta if src.hubeau else None,
-                                   src.miteco, src.glofas)
+                                   src.miteco, src.glofas, load_depth(args.depth))
     last_good = LastGood(args.cache, args.base_url)
     out = args.out
     tiles: dict[str, list] = defaultdict(list)
@@ -234,6 +240,9 @@ def main(argv=None) -> int:
         write(os.path.join(out, "index", f"{tile}.json"), {"v": config.SCHEMA_VERSION, "spots": entries})
     for z, cands in zone_cands.items():
         write(os.path.join(out, "zones", f"{z}.json"), products.zone_doc(z, cands, generated))
+    ramp_tiles = ramps.tiles(ramps.load(args.ramps))
+    for tile, doc in ramp_tiles.items():
+        write(os.path.join(out, "ramps", f"{tile}.json"), doc)
     znames = load_zone_names().get("zones", {})
     zone_list = [{"id": z, "name": znames.get(z, {}), "bbox": [round(v, 3) for v in zone_bbox[z]]}
                  for z in sorted(zone_bbox)]
@@ -245,7 +254,7 @@ def main(argv=None) -> int:
     }
     meta = {"v": config.SCHEMA_VERSION, "generated": generated, "tiles": sorted(tiles), "zones": zone_list,
             "regions": regions_meta(regions_used), "status": meta_status(statuses),
-            "attribution": config.ATTRIBUTION, "run": run}
+            "attribution": config.ATTRIBUTION, "ramps": sorted(ramp_tiles), "run": run}
     write(os.path.join(out, "index", "meta.json"), meta)
     timings["index"] = time.time() - t
     timings["total"] = time.time() - t_start

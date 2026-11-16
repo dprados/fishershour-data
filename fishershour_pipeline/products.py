@@ -7,12 +7,14 @@ from zoneinfo import ZoneInfo
 
 import numpy as np
 
-from . import astro, config, score, tides, wtemp
+from . import astro, config, score, tides, weather, wtemp
 
-DEC2 = ("hs", "ws", "wg", "cl")
+DEC2 = ("hs", "ws", "wg", "cl", "cs")
 DEC1 = ("tp", "t2", "p", "pr", "sst", "wt")
-INT = ("dir", "wd")
-SERIES = ["hs", "tp", "dir", "ws", "wg", "wd", "t2", "p", "pr", "sst", "cl", "q", "wt"]
+INT = ("dir", "wd", "cd")          # directions, 0–359
+PLAIN_INT = ("cc", "wx")
+SERIES = ["hs", "tp", "dir", "ws", "wg", "wd", "t2", "p", "pr", "sst", "cl", "q", "wt", "cc", "wx", "cs", "cd"]
+SEA_ONLY = ("cs", "cd")            # omitted (not null arrays) on freshwater spots
 
 
 def round_list(arr, field: str) -> list:
@@ -23,7 +25,7 @@ def round_list(arr, field: str) -> list:
         vals = (np.rint(z).astype(np.int64) % 360).tolist()
     elif field == "q":
         vals = [round(x, 2) if abs(x) < 10 else round(x, 1) for x in z.tolist()]
-    elif field == "sc":
+    elif field == "sc" or field in PLAIN_INT:
         vals = np.rint(z).astype(np.int64).tolist()
     else:
         vals = np.round(z, 1 if field in DEC1 else 2).tolist()
@@ -86,8 +88,9 @@ def local_today(tz: str, now: dt.datetime) -> dt.date:
 
 class SpotBuilder:
     def __init__(self, blended, h_start: dt.datetime, now: dt.datetime, generated: str, hub_meta: dict | None,
-                 miteco: dict, glofas: dict):
+                 miteco: dict, glofas: dict, depth: dict | None = None):
         self.b = blended
+        self.depth = depth or {}
         self.h_start = h_start
         self.now = now
         self.generated = generated
@@ -189,6 +192,11 @@ class SpotBuilder:
         t = self.t_all
         nh = len(self.b.th)
         info = dict(spot["info"])
+        if spot["kind"] == "sea":
+            d = self.depth.get(spot["id"])
+            if d and abs(d.get("lat", spot["lat"]) - spot["lat"]) < 1e-4 and abs(d.get("lon", spot["lon"]) - spot["lon"]) < 1e-4:
+                info["depth"] = d.get("depth")
+                info["depth10"] = d.get("depth10")
         modes = spot["modes"]
         phase = astro.light_phase(spot["lat"], spot["lon"], t)
         p = self.series(i, "p")
@@ -225,13 +233,14 @@ class SpotBuilder:
             sc = {m: score.fresh_scores(m, spot["kind"], s) for m in modes}
             del daily
         series["wt"] = wt
-        h, h3 = self._blocks(series, sc, nh)
+        h, h3 = self._blocks(series, sc, nh, sea=spot["kind"] == "sea")
+        storm = weather.storms(self.b.th, h["wx"], h["wg"], spot["kind"], int(self.now.timestamp()))
         return {
             "v": config.SCHEMA_VERSION, "id": spot["id"], "name": spot["name"], "aliases": spot.get("aliases", []),
             "lat": spot["lat"], "lon": spot["lon"], "country": spot["country"], "zone": spot["zone"],
             "region": spot["region"], "tz": spot["tz"], "kind": spot["kind"], "type": spot["type"],
             "modes": modes, "info": info, "generated": self.generated,
-            "h": h, "h3": h3, "daily": self.daily(i, spot), "tide": tide,
+            "h": h, "h3": h3, "daily": self.daily(i, spot), "tide": tide, "storm": storm,
         }
 
     def _rain24(self, i: int) -> np.ndarray:
@@ -249,10 +258,12 @@ class SpotBuilder:
         out[t > rt[ok][-1]] = np.nan
         return out
 
-    def _blocks(self, series: dict, sc: dict, nh: int):
+    def _blocks(self, series: dict, sc: dict, nh: int, sea: bool = True):
         def blk(sl, start, step, n):
             d = {"start": start, "step": step, "n": n}
             for f in SERIES:
+                if f in SEA_ONLY and not sea:
+                    continue
                 d[f] = round_list(series[f][sl], f)
             d["sc"] = {m: round_list(v[sl], "sc") for m, v in sc.items()}
             return d

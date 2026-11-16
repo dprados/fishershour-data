@@ -106,7 +106,7 @@ jobs:
           <p>Fishers Hour open fishing-forecast data. See <a href="v1/index/meta.json">v1/index/meta.json</a>.
           Sources: Copernicus Marine Service, Copernicus Emergency Management Service, ECMWF (CC BY 4.0), DWD,
           Météo-France, Hub'Eau / Eaufrance (Licence Ouverte), MITECO, ©Junta de Castilla y León,
-          EOT20 (CC BY 4.0), © OpenStreetMap contributors (ODbL).</p>
+          EOT20 (CC BY 4.0), EMODnet Bathymetry (CC BY 4.0), GEBCO, © OpenStreetMap contributors (ODbL).</p>
           HTML
 
       - uses: actions/upload-pages-artifact@v5

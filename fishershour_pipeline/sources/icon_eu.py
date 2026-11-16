@@ -1,4 +1,5 @@
-"""DWD ICON-EU 0.0625° (CC BY 4.0, "Quelle: Deutscher Wetterdienst"): 10 m wind and gusts.
+"""DWD ICON-EU 0.0625° (CC BY 4.0, "Quelle: Deutscher Wetterdienst"): 10 m wind and gusts, total cloud
+cover (CLCT, %) and mixed-layer CAPE (CAPE_ML, J/kg).
 
 Domain lat 29.5–70.5: no Canaries, no Morocco south of 29.5°N (those spots
 get ECMWF wind). One bz2-compressed GRIB2 file per variable and step.
@@ -103,7 +104,8 @@ def fetch(spots: list[dict], now: dt.datetime, cache_dir: str | None, workers: i
         return None, SourceStatus("icon-eu", False, time.time() - t0, "no field decoded", nbytes, run_s)
     times, f = stack_times(per_t, list(config.ICON_EU_VARS), nspots)
     # VMAX_10M at step 0 is undefined (max since previous step).
-    data = SourceData("icon-eu", times, {"u10": f["u_10m"], "v10": f["v_10m"], "gust": f["vmax_10m"]},
+    data = SourceData("icon-eu", times, {"u10": f["u_10m"], "v10": f["v_10m"], "gust": f["vmax_10m"],
+                                         "cc": f["clct"], "cape": f["cape_ml"]},
                       cells[:, 0] >= 0, {"run": run_s})
     ok = failures < len(tasks) * 0.1
     return data, SourceStatus("icon-eu", ok, time.time() - t0, f"{len(tasks) - failures}/{len(tasks)} fields",

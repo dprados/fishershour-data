@@ -23,6 +23,12 @@ FIELDS = ["hs", "tp", "dir", "ws", "wg", "wd", "t2", "p", "pr", "sst", "cl", "q"
 RANGES = {"hs": (0, 25), "tp": (0, 30), "dir": (0, 359), "ws": (0, 70), "wg": (0, 90), "wd": (0, 359),
           "t2": (-40, 50), "p": (900, 1080), "pr": (0, 300), "sst": (-2, 35), "cl": (0, 1), "q": (0, 50000),
           "wt": (0, 40)}
+# Optional series (added 16-11-2026): validated when present. cs/cd only on sea spots.
+OPT_FIELDS = ["cc", "wx", "cs", "cd"]
+OPT_RANGES = {"cc": (0, 100), "wx": (0, 99), "cs": (0, 5), "cd": (0, 359)}
+INT_FIELDS = {"cc", "wx", "cd"}
+WX_CODES = {0, 1, 2, 3, 45, 51, 61, 63, 65, 71, 80, 95, 96}
+STORM_KINDS = {"thunder", "gale"}
 MAX_SITE_MB = 800
 
 
@@ -42,6 +48,21 @@ def check_block(doc, name, n_expected, step, errors):
         bad = [v for v in arr if v is not None and not (lo <= v <= hi)]
         if bad:
             errors.append(f"{doc['id']}: {name}.{f} out of range {bad[:3]}")
+    for f in OPT_FIELDS:
+        if f not in b:
+            continue
+        if f in ("cs", "cd") and doc.get("kind") != "sea":
+            errors.append(f"{doc['id']}: {name}.{f} on a freshwater spot")
+        arr = b[f]
+        if not isinstance(arr, list) or len(arr) != b.get("n"):
+            errors.append(f"{doc['id']}: {name}.{f} length")
+            continue
+        lo, hi = OPT_RANGES[f]
+        bad = [v for v in arr if v is not None and (not isinstance(v, (int, float)) or isinstance(v, bool)
+                                                   or not (lo <= v <= hi) or (f in INT_FIELDS and not _is_int(v))
+                                                   or (f == "wx" and v not in WX_CODES))]
+        if bad:
+            errors.append(f"{doc['id']}: {name}.{f} invalid {bad[:3]}")
     sc = b.get("sc") or {}
     if set(sc) != set(doc["modes"]):
         errors.append(f"{doc['id']}: {name}.sc modes {sorted(sc)} != {doc['modes']}")
@@ -68,6 +89,61 @@ def check_tile_hours(e: dict) -> list[str]:
         out.append(f"hs must be a list of {config.TILE_HOURS}")
     elif any(v is not None and not (_is_int(v) and 0 <= v <= 100) for v in hs):
         out.append("hs values must be ints 0-100 or null")
+    return out
+
+
+def check_storm(storm) -> list[str]:
+    """Optional doc-level `storm`: [{from, to, kind, max}] (epoch seconds on the hour, from < to)."""
+    if not isinstance(storm, list):
+        return ["storm must be a list"]
+    out = []
+    for e in storm:
+        if not isinstance(e, dict) or set(e) != {"from", "to", "kind", "max"}:
+            out.append(f"bad storm entry {e!r}"[:120])
+            continue
+        if not (_is_int(e["from"]) and _is_int(e["to"]) and e["from"] < e["to"]
+                and e["from"] % 3600 == 0 and e["to"] % 3600 == 0):
+            out.append(f"bad storm interval {e['from']}–{e['to']}")
+        if e["kind"] not in STORM_KINDS:
+            out.append(f"bad storm kind {e['kind']!r}")
+        m = e["max"]
+        if m is not None and (isinstance(m, bool) or not isinstance(m, (int, float)) or not 0 <= m <= 90):
+            out.append(f"bad storm max {m!r}")
+    return out
+
+
+def check_depth(doc) -> list[str]:
+    info = doc.get("info") or {}
+    out = []
+    d, d10 = info.get("depth"), info.get("depth10")
+    if d is not None:
+        if doc.get("kind") != "sea":
+            out.append("depth on a freshwater spot")
+        elif isinstance(d, bool) or not isinstance(d, (int, float)) or not 0 < d <= 11000:
+            out.append(f"bad depth {d!r}")
+    if d10 is not None and (not _is_int(d10) or d10 < 0 or doc.get("kind") != "sea"):
+        out.append(f"bad depth10 {d10!r}")
+    return out
+
+
+def check_ramp_tile(tile: str, doc) -> list[str]:
+    """`ramps/{tile}.json`: {"v": 1, "r": [{"lat", "lon", "n"}]} with every point inside the 1° tile."""
+    if not isinstance(doc, dict) or doc.get("v") != config.SCHEMA_VERSION or not isinstance(doc.get("r"), list):
+        return [f"ramps {tile}: bad structure"]
+    try:
+        _, la, lo = tile.split("_")
+        la, lo = int(la), int(lo)
+    except ValueError:
+        return [f"ramps {tile}: bad tile name"]
+    out = []
+    for r in doc["r"]:
+        if not isinstance(r, dict) or set(r) != {"lat", "lon", "n"}:
+            out.append(f"ramps {tile}: bad entry {r!r}"[:120])
+            continue
+        if not (la <= r["lat"] < la + 1 and lo <= r["lon"] < lo + 1):
+            out.append(f"ramps {tile}: point outside tile {r['lat']},{r['lon']}")
+        if r["n"] is not None and not isinstance(r["n"], str):
+            out.append(f"ramps {tile}: bad name")
     return out
 
 
@@ -106,6 +182,11 @@ def check_spot(doc, errors, warnings):
         warnings.append(f"{sid}: no waves")
     if all(v is None for v in doc["h"]["ws"]):
         errors.append(f"{sid}: no wind")
+    if "storm" in doc:
+        errors.extend(f"{sid}: {m}" for m in check_storm(doc["storm"]))
+    errors.extend(f"{sid}: {m}" for m in check_depth(doc))
+    if "cc" in doc["h"] and all(v is None for v in doc["h"]["cc"]):
+        warnings.append(f"{sid}: no cloud cover")
 
 
 def main(argv=None) -> int:
@@ -146,6 +227,16 @@ def main(argv=None) -> int:
     for z in zone_ids:
         if not os.path.exists(os.path.join(root, "zones", f"{z}.json")):
             errors.append(f"zone file missing: {z}")
+    ramp_tiles = meta.get("ramps") or []
+    nramps = 0
+    for t in ramp_tiles:
+        path = os.path.join(root, "ramps", f"{t}.json")
+        if not os.path.exists(path):
+            errors.append(f"ramps tile missing: {t}")
+            continue
+        doc = json.load(open(path))
+        errors.extend(check_ramp_tile(t, doc))
+        nramps += len(doc.get("r") or [])
     aliases = json.load(open(os.path.join(root, "index", "aliases.json"))).get("aliases", {})
     for old, new in aliases.items():
         if new not in index_ids:
@@ -165,7 +256,7 @@ def main(argv=None) -> int:
     if mb > MAX_SITE_MB:
         errors.append(f"site is {mb:.0f} MB > {MAX_SITE_MB} MB")
     print(f"validated {len(ids)} spots, {len(index_ids)} indexed, {len(meta['tiles'])} tiles, "
-          f"{len(zone_ids)} zones, {len(region_ids)} regions, {mb:.0f} MB; "
+          f"{len(zone_ids)} zones, {len(region_ids)} regions, {nramps} ramps in {len(ramp_tiles)} tiles, {mb:.0f} MB; "
           f"{len(errors)} errors, {len(warnings)} warnings")
     for e in errors[:40]:
         print("ERROR", e)

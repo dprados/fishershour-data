@@ -6,6 +6,10 @@ Wind   h : AROME (FR + ES, 0–48 h) > ICON-EU (0–120 h) > ECMWF, 6 h cross-fa
 Wind  h3 : ECMWF. t2, p (msl), pr (from accumulated tp): ECMWF.
 SST, cl  : Copernicus daily, linear between daily means, held up to 3 days past the last day.
 q        : Hub'Eau hourly observations (past hours only).
+cc     h : AROME (lcc/mcc/hcc -> total) > ICON-EU CLCT > ECMWF tcc, same 6 h cross-fades as the wind.
+cc    h3 : ECMWF. wx: weather.wx_code from cc, pr, ECMWF cp (convective rate), MUCAPE, ICON-EU CAPE_ML (h),
+           t2, dew point, wind and gusts.
+cs, cd   : Copernicus IBI / MEDSEA hourly surface currents (sea spots, ~9 days: all of h, part of h3).
 """
 from __future__ import annotations
 
@@ -18,6 +22,7 @@ from . import config
 from .sources.base import SourceData
 from .sources.copernicus import clarity
 from .timeseries import interp_direction, interp_scalar, wind_from_uv
+from .weather import current_speed_dir, wx_code
 
 DIR_FIELDS = {"dir", "wd"}
 
@@ -32,6 +37,7 @@ class Sources:
     sst: SourceData | None = None
     kd: SourceData | None = None
     hubeau: SourceData | None = None
+    currents: SourceData | None = None
     miteco: dict = field(default_factory=dict)
     glofas: dict = field(default_factory=dict)
 
@@ -78,6 +84,33 @@ def _daily_on(src: SourceData | None, name: str, target: np.ndarray, nspots: int
     return out
 
 
+def _fade(ok: np.ndarray) -> np.ndarray:
+    """Weight of a regional source on its valid hours, ramping over 6 h at both ends (as Wavespot)."""
+    n = len(ok)
+    first = int(np.nonzero(ok)[0].min())
+    last = int(np.nonzero(ok)[0].max())
+    w = ok.astype(float)
+    if first > 0:
+        fade_in = np.arange(first, min(first + 7, last + 1))
+        w[fade_in] = np.minimum(w[fade_in], (fade_in - first) / 6.0)
+    if last < n - 1:
+        fade = np.arange(max(0, last - 6), last + 1)
+        w[fade] = np.minimum(w[fade], (last - fade) / 6.0)
+    return w
+
+
+def overlay_scalar(base: np.ndarray, regional: np.ndarray) -> np.ndarray:
+    """Cross-fade a regional scalar (NaN outside its range) over a base series, per spot."""
+    out = base.copy()
+    for i in range(base.shape[0]):
+        ok = np.isfinite(regional[i])
+        if not ok.any():
+            continue
+        w = np.where(np.isfinite(base[i]), _fade(ok), ok.astype(float))
+        out[i] = np.where(ok, w * regional[i] + (1 - w) * np.nan_to_num(base[i]), base[i])
+    return out.astype(np.float32)
+
+
 def _overlay(base_u, base_v, base_g, src: SourceData, target, nspots, max_gap_h):
     iu = _on(src, "u10", target, nspots, max_gap_h)
     iv = _on(src, "v10", target, nspots, max_gap_h)
@@ -87,15 +120,7 @@ def _overlay(base_u, base_v, base_g, src: SourceData, target, nspots, max_gap_h)
         ok = np.isfinite(iu[i]) & np.isfinite(iv[i])
         if not ok.any():
             continue
-        first = int(np.nonzero(ok)[0].min())
-        last = int(np.nonzero(ok)[0].max())
-        w = ok.astype(float)
-        if first > 0:
-            fade_in = np.arange(first, min(first + 7, last + 1))
-            w[fade_in] = np.minimum(w[fade_in], (fade_in - first) / 6.0)
-        if last < len(target) - 1:
-            fade = np.arange(max(0, last - 6), last + 1)
-            w[fade] = np.minimum(w[fade], (last - fade) / 6.0)
+        w = _fade(ok)
         has_base = np.isfinite(base_u[i]) & np.isfinite(base_v[i])
         w = np.where(has_base, w, ok.astype(float))
         u[i] = np.where(ok, w * iu[i] + (1 - w) * np.nan_to_num(base_u[i]), base_u[i])
@@ -123,13 +148,13 @@ def _wind(src: Sources, target: np.ndarray, nspots: int, regional: bool):
     return {"ws": ws, "wg": g.astype(np.float32), "wd": wd}
 
 
-def accum_rate(src: SourceData | None, target: np.ndarray, nspots: int) -> np.ndarray:
-    """Precipitation rate (mm/h) on target from accumulated `tp` (mm since run start)."""
+def accum_rate(src: SourceData | None, target: np.ndarray, nspots: int, name: str = "tp") -> np.ndarray:
+    """Precipitation rate (mm/h) on target from an accumulated field (`tp`, `cp`: mm since run start)."""
     out = np.full((nspots, len(target)), np.nan, dtype=np.float32)
-    if src is None or "tp" not in src.fields:
+    if src is None or name not in src.fields:
         return out
     t = src.times
-    acc = src.fields["tp"]
+    acc = src.fields[name]
     k = np.searchsorted(t, target, side="left")      # interval (t[k-1], t[k]]
     valid = (target >= t[0]) & (target <= t[-1])
     k = np.clip(k, 1, len(t) - 1)
@@ -164,6 +189,33 @@ def _waves(src: Sources, th: np.ndarray, th3: np.ndarray, nspots: int):
     return h, h3
 
 
+def _sky(src: Sources, h: dict, h3: dict, th, th3, nspots: int) -> None:
+    """cc (blended like the wind) and wx on both axes."""
+    cc = _on(src.ecmwf_wind, "cc", th, nspots, 6.0)
+    for s, gap in ((src.icon, 3.5), (src.arome, 1.5)):
+        if s is not None and "cc" in s.fields:
+            cc = overlay_scalar(cc, _on(s, "cc", th, nspots, gap))
+    h["cc"] = np.clip(cc, 0, 100).astype(np.float32)
+    h3["cc"] = np.clip(_on(src.ecmwf_wind, "cc", th3, nspots, 6.0), 0, 100).astype(np.float32)
+    for blk, t, regional in ((h, th, True), (h3, th3, False)):
+        cape_ml = _on(src.icon, "cape", t, nspots, 3.5) if regional else None
+        # thresholds on pr as published (1 decimal), so `wx` never contradicts the `pr` the app shows
+        blk["wx"] = wx_code(blk["cc"], np.round(blk["pr"], 1), cpr=accum_rate(src.ecmwf_wind, t, nspots, "cp"),
+                            cape=_on(src.ecmwf_wind, "cape", t, nspots, 6.0), cape_ml=cape_ml, t2=blk["t2"],
+                            td2=_on(src.ecmwf_wind, "td2", t, nspots, 6.0), ws=blk["ws"], wg=blk["wg"])
+
+
+def _currents(src: Sources, h: dict, h3: dict, th, th3, nspots: int) -> None:
+    """cs (m/s) and cd (deg, flowing to) from hourly u/v; NaN beyond the Copernicus forecast."""
+    for blk, t in ((h, th), (h3, th3)):
+        u = _on(src.currents, "u", t, nspots, 1.5)
+        v = _on(src.currents, "v", t, nspots, 1.5)
+        cs, cd = current_speed_dir(u, v)
+        bad = ~(np.isfinite(u) & np.isfinite(v))
+        blk["cs"] = np.where(bad, np.nan, cs).astype(np.float32)
+        blk["cd"] = np.where(bad, np.nan, cd).astype(np.float32)
+
+
 def blend(src: Sources, spots: list[dict], h_start: dt.datetime) -> Blended:
     nspots = len(spots)
     th, th3 = target_times(h_start)
@@ -180,6 +232,8 @@ def blend(src: Sources, spots: list[dict], h_start: dt.datetime) -> Blended:
         kd = _daily_on(src.kd, "kd", t, nspots)
         blk["cl"] = np.where(np.isfinite(kd), clarity(kd), np.nan).astype(np.float32)
         blk["q"] = np.full((nspots, len(t)), np.nan, dtype=np.float32)
+    _sky(src, h, h3, th, th3, nspots)
+    _currents(src, h, h3, th, th3, nspots)
     q_hist = None
     if src.hubeau is not None:
         qt, qv = src.hubeau.times, src.hubeau.fields["q"]
@@ -197,6 +251,6 @@ def blend(src: Sources, spots: list[dict], h_start: dt.datetime) -> Blended:
                 blk["q"][i] = np.nan
         else:
             for blk in (h, h3):
-                for f in ("hs", "tp", "dir", "sst", "cl"):
+                for f in ("hs", "tp", "dir", "sst", "cl", "cs", "cd"):
                     blk[f][i] = np.nan
     return Blended(th, th3, h, h3, rain_acc, q_hist)

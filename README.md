@@ -14,8 +14,10 @@ computes the curve.
 | Path | What |
 |---|---|
 | `fishershour_pipeline/build.py` | Forecast run: fetch all sources in parallel → blend → score → `site/v1` |
-| `fishershour_pipeline/sources/` | `copernicus` (IBI + MEDSEA waves, SST, light attenuation), `ecmwf` (IFS 0.1°: WAM waves, wind, gusts, t2, msl, precipitation), `icon_eu` (DWD wind), `arome` (Météo-France wind, FR + ES), `hubeau` (French real-time flow + monthly normals), `miteco` (Spanish reservoirs, weekly), `glofas` (optional, needs `EWDS_API_KEY`) |
+| `fishershour_pipeline/sources/` | `copernicus` (IBI + MEDSEA waves, surface currents, SST, light attenuation), `ecmwf` (IFS 0.1°: WAM waves, wind, gusts, t2, msl, precipitation, cloud, convective precipitation, MUCAPE, dew point), `icon_eu` (DWD wind, cloud, CAPE_ML), `arome` (Météo-France wind and cloud, FR + ES), `hubeau` (French real-time flow + monthly normals), `miteco` (Spanish reservoirs, weekly), `glofas` (optional, needs `EWDS_API_KEY`) |
 | `fishershour_pipeline/blend.py` | Per-spot series on `h` (hourly, 7 days) and `h3` (3-hourly, days 7–14) |
+| `fishershour_pipeline/weather.py` | `wx` weather code, `storm` flags, current speed/direction, AROME total cloud (thresholds in the docstring) |
+| `fishershour_pipeline/ramps.py` | Weekly OSM slipways (Overpass) → `data/ramps/ramps.json` → `v1/ramps/{tile}.json` |
 | `fishershour_pipeline/score.py` | Contract §3, literal and vectorised; `tests/test_score.py` has one test per factor and safety rule |
 | `fishershour_pipeline/products.py` | Spot documents, index tiles, zone tops; tide speed/coefficient, light phase, flow ratio |
 | `fishershour_pipeline/astro.py`, `wtemp.py`, `tides.py` | Sunrise/sunset ±90 min and moon phase; air→water temperature (Mohseni); harmonic tides (copied from Wavespot) |
@@ -24,6 +26,8 @@ computes the curve.
 | `data/spots/sea.json`, `fresh.json`, `zones.json` | The catalogue (ODbL derivative) and zone/region names |
 | `data/regions/rules.json` | Official regulation URL per region (curated, checked weekly) |
 | `data/tides/eot20_constituents.json` | EOT20 constants per sea spot (`tides.yml`) |
+| `data/spots/depth.json` | Static depth per sea spot (`spots_build/depth.py`, EMODnet DTM / GEBCO): `[lat, lon, depth, depth10, src]` |
+| `data/ramps/ramps.json` | OSM slipways `[lat, lon, name]` (ODbL, `ramps.yml` every Monday) |
 | `data/fresh/hubeau_normals.json` | Monthly median flow per Hub'Eau station (refreshed every 120 days by the forecast run) |
 | `data/published_ids.txt`, `data/aliases.json` | Ids are permanent: every id ever published, and retired id → current id |
 | `data/inputs/wavespot_layer1.json` | Wavespot layer-1 coastal points reused as low-priority sea candidates |
@@ -34,8 +38,11 @@ computes the curve.
 |---|---|---|
 | Copernicus Marine IBI (`cmems_mod_ibi_wav_anfc_0.027deg_PT1H-i`, `…phy…3D_P1D-m`, `…bgc-optics…P1D-m` `kd`) | Atlantic waves, SST, clarity | Copernicus Marine licence (free, commercial use, attribution) |
 | Copernicus Marine MEDSEA (`cmems_mod_med_wav_anfc_4.2km_PT1H-i`, `…phy-tem…P1D-m`, `…bgc-optics…P1D-m` `kd490`) | Mediterranean waves, SST, clarity | idem |
-| ECMWF open data IFS 0.1° | waves for `h3`/fallback, wind, gusts, t2, msl, precipitation | CC BY 4.0 |
-| DWD ICON-EU, Météo-France AROME | wind 0–120 h / 0–48 h | DWD open data; Licence Ouverte 2.0 |
+| Copernicus Marine IBI `cmems_mod_ibi_phy_anfc_0.027deg-2D_PT1H-m`, MEDSEA `cmems_mod_med_phy-cur_anfc_4.2km-2D_PT1H-m` | surface currents `cs`/`cd` (~9 days) | idem |
+| ECMWF open data IFS 0.1° | waves for `h3`/fallback, wind, gusts, t2, msl, precipitation, `tcc`, `cp`, `mucape`, `2d` | CC BY 4.0 |
+| DWD ICON-EU, Météo-France AROME | wind 0–120 h / 0–48 h; cloud (ICON `CLCT`, AROME SP2 `lcc`/`mcc`/`hcc`), ICON `CAPE_ML` | DWD open data; Licence Ouverte 2.0 |
+| EMODnet Bathymetry DTM (WCS `emodnet__mean`), GEBCO 2020 (NOAA CoastWatch ERDDAP) | static `info.depth`, `info.depth10` | CC BY 4.0 «EMODnet Bathymetry Consortium»; GEBCO public domain with attribution |
+| OpenStreetMap via Overpass API | slipways `v1/ramps/` | ODbL «© OpenStreetMap contributors» |
 | Hub'Eau hydrométrie (Eaufrance) | French flow `q` and normals `qn` | Licence Ouverte 2.0 |
 | MITECO Boletín Hidrológico (ArcGIS layer `Embalses_Mapa` of the official dashboard) | Spanish reservoir % and weekly change | reuse allowed citing MITECO (aviso legal, Ley 37/2007); provisional data |
 | GloFAS (CEMS, via EWDS) | 30-day river discharge forecast | CEMS-FLOODS licence, attribution; **disabled until `EWDS_API_KEY` exists** |
@@ -61,6 +68,22 @@ Hub'Eau temperature (not real time: last values a year old).
   for rivers, 7-day for reservoirs/lakes; colder curve for salmonid rivers), `info.wtEstimated: true`.
 - **Flow**: Hub'Eau station on the same river within 30 km (or any within 3 km) that currently publishes Q.
   `q` = observations only; the score holds the last observation 72 h, then GloFAS daily if available.
+- **Sky `cc`, weather `wx`**: `cc` blended like the wind (AROME > ICON-EU > ECMWF on `h`, ECMWF on `h3`;
+  AROME total = mean of maximum and random overlap of low/medium/high). `wx` (WMO-style) from cc, pr, ECMWF
+  convective precipitation, MUCAPE / ICON CAPE_ML, t2, dew point (fog, `h` only) and wind: thunder needs
+  `pr` ≥ 0.5 and convective ≥ 0.5 mm/h with MUCAPE ≥ 400 or CAPE_ML ≥ 300 J/kg (96 with gusts ≥ 60 km/h);
+  full table in `weather.py` and the contract. Not used by the score.
+- **Storm flags**: `storm` = next 72 h episodes, `thunder` (wx ≥ 95) or `gale` (gusts ≥ 60 km/h at sea,
+  ≥ 70 km/h inland), contiguous hours merged, `max` = top gust in m/s.
+- **Currents**: Copernicus hourly surface `uo`/`vo` (IBI includes tides) on the wave tiles; `cs` m/s, `cd`
+  direction it flows **to**. Only on sea spots (absent on freshwater docs); `null` past ~day 9.
+- **Depth**: static, never downloaded in the forecast run. `spots_build/depth.py` asks the EMODnet WCS for a
+  ~4 km window per spot (text grid, a few KB) and writes `data/spots/depth.json`; run it again after a
+  catalogue rebuild (it only computes new or moved spots). `depth` = median of water cells ≤ 300 m seaward of
+  the shore point, `depth10` = distance to the 10 m isobath. Reservoirs and rivers stay null.
+- **Ramps**: `ramps.yml` (Monday 05:45 UTC) runs one Overpass query for `leisure=slipway` / `man_made=slipway`
+  in ES, PT, FR (Europe + Macaronesia box), dedupes at 25 m and commits `data/ramps/ramps.json` unless it
+  shrank > 20 %. Each forecast run writes `v1/ramps/{tile}.json` and lists the tiles in `meta.ramps`.
 - **Reservoir level**: MITECO weekly %, `lvlTrend` = `Variacion_Porcentaje` (points per week); the last
   good table is kept in the state cache.
 
@@ -76,6 +99,7 @@ PY="python -I"
 $PY spots_build/extract_osm.py $CACHE/pbf spain canary-islands portugal france morocco
 $PY spots_build/land.py $CACHE/land/land-polygons-split-4326/land_polygons.shp
 $PY spots_build/build.py
+.venv/bin/python -m spots_build.depth          # depth of new/moved sea spots (EMODnet WCS, ~10 min for all)
 ```
 
 - **Sea** (9.5k): OSM `leisure=fishing`, named `man_made=pier|breakwater` (unnamed breakwaters ≥ 300 m get
@@ -109,6 +133,7 @@ $PY spots_build/build.py
   opens/updates an issue when one is broken (bot-protected 403/429 count as «blocked», not broken).
 - `spots.yml` — on catalogue changes: unique ids, valid modes/species/regions, no published id lost.
 - `tides.yml` — on `sea.json` changes and twice a week (keeps the 2.3 GB EOT20 cache warm).
+- `ramps.yml` — weekly (Monday 05:45 UTC) + manual: OSM slipways → `data/ramps/ramps.json` (commit).
 
 Secrets: `COPERNICUSMARINE_SERVICE_USERNAME`, `COPERNICUSMARINE_SERVICE_PASSWORD`; optional `EWDS_API_KEY`.
 
@@ -127,7 +152,11 @@ Debug a few spots: `--only es-playa-de-el-palmar fr-loire-a-blois`; skip sources
 ## Size
 
 ~17 KB per spot (all series, 7 days hourly + `h3` to day 14) → ~230 MB for 13.3k spots plus index and
-zones; the validator fails above 800 MB.
+zones; the validator fails above 800 MB. Sky, weather code, currents and storm flags (16-11-2026) add
+~3.3 KB per sea spot (`cc`, `wx`, `cs`, `cd`) and ~1.3 KB per freshwater spot (`cc`, `wx`; no `cs`/`cd`),
+≈ +36 MB; ramps add ~180 tiles, ~0.4 MB. The forecast run downloads ~0.6 GB more ECMWF fields (`tcc`,
+`cp`, `mucape`, `2d` ≤ 180 h), ~0.15 GB more ICON-EU (`CLCT`, `CAPE_ML`), ~0.4 GB AROME SP2 and one
+Copernicus currents subset per wave tile.
 Each tile entry also carries `h0` (epoch seconds of the generation hour) and `hs` (36 hourly scores of its
 best mode `bm` from `h0`, `null` without data) so the map can tell which spots are fishing well right now
 without downloading spot files; that adds ~130 bytes per spot to the tiles. Both fields are optional in
